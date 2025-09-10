@@ -1,0 +1,17 @@
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Official Trane logo inspired by trane.com -->
+  <g>
+    <!-- Red circular background with lines -->
+    <circle cx="20" cy="20" r="18" fill="#E53E3E"/>
+    <g stroke="white" stroke-width="1.5" opacity="0.8">
+      <line x1="8" y1="12" x2="32" y2="12"/>
+      <line x1="8" y1="16" x2="32" y2="16"/>
+      <line x1="8" y1="20" x2="32" y2="20"/>
+      <line x1="8" y1="24" x2="32" y2="24"/>
+      <line x1="8" y1="28" x2="32" y2="28"/>
+    </g>
+    
+    <!-- TRANE text -->
+    <text x="50" y="26" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#E53E3E">TRANE</text>
+  </g>
+</svg>

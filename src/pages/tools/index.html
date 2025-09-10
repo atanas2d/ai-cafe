@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Tools Showcase - Discover cutting-edge AI tools explored by the Nuvolo & Trane Technologies AI Cafe community">
+    <title>AI Tools - AI Cafe | Nuvolo & Trane Technologies AI Learning Initiative</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.ico">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <a href="../../index.html" class="brand-link" aria-label="AI Cafe Home">
+                        <img src="../../assets/images/ai-cafe-logo.svg" alt="AI Cafe Logo" class="brand-logo">
+                        <span class="brand-text">AI Cafe</span>
+                    </a>
+                </div>
+                
+                <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+                
+                <ul class="nav-menu" role="menubar">
+                    <li class="nav-item" role="none">
+                        <a href="../../index.html#home" class="nav-link" role="menuitem">Home</a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="../../index.html#meetings" class="nav-link" role="menuitem">Meetings</a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="../../index.html#tools" class="nav-link active" role="menuitem">Tools</a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="../../index.html#team" class="nav-link" role="menuitem">Team</a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="../news/" class="nav-link" role="menuitem">AI News</a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="../resources/" class="nav-link" role="menuitem">Resources</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">AI Tools Showcase</h1>
+                <p class="page-subtitle">
+                    Discover the cutting-edge AI tools we've explored and demonstrated at Nuvolo & Trane Technologies
+                </p>
+                <nav aria-label="Breadcrumb">
+                    <ol class="breadcrumb">
+                        <li><a href="../../index.html">Home</a></li>
+                        <li aria-current="page">Tools</li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Tools Categories -->
+        <section class="tools-categories">
+            <div class="container">
+                <div class="category-filters">
+                    <button class="filter-btn active" data-category="all">All Tools</button>
+                    <button class="filter-btn" data-category="development">Development</button>
+                    <button class="filter-btn" data-category="creative">Creative</button>
+                    <button class="filter-btn" data-category="productivity">Productivity</button>
+                    <button class="filter-btn" data-category="enterprise">Enterprise</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Grid -->
+        <section class="tools-detailed">
+            <div class="container">
+                <div class="tools-grid">
+                    <!-- OpenAI GPT -->
+                    <article class="tool-card detailed" data-category="productivity enterprise">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <img src="../../assets/images/tools/openai-logo.svg" alt="OpenAI Logo">
+                            </div>
+                            <div class="tool-meta">
+                                <h3 class="tool-title">OpenAI GPT</h3>
+                                <p class="tool-category">Productivity • Enterprise</p>
+                            </div>
+                        </div>
+                        <p class="tool-description">
+                            Advanced language model platform offering custom instances, projects, and Codex integration 
+                            for AI-powered development and content creation. Explored extensively for its versatility 
+                            in enterprise applications.
+                        </p>
+                        <div class="tool-features">
+                            <span class="feature">Custom GPTs</span>
+                            <span class="feature">Projects</span>
+                            <span class="feature">Codex Integration</span>
+                            <span class="feature">API Access</span>
+                        </div>
+                        <div class="tool-details">
+                            <div class="detail-item">
+                                <strong>Use Cases:</strong>
+                                <ul>
+                                    <li>Code generation and debugging</li>
+                                    <li>Content creation and editing</li>
+                                    <li>Data analysis and insights</li>
+                                    <li>Automated documentation</li>
+                                </ul>
+                            </div>
+                            <div class="detail-item">
+                                <strong>Key Benefits:</strong>
+                                <ul>
+                                    <li>Highly customizable for specific tasks</li>
+                                    <li>Extensive API ecosystem</li>
+                                    <li>Strong enterprise support</li>
+                                    <li>Continuous model improvements</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tool-actions">
+                            <a href="https://openai.com" class="btn btn-primary" target="_blank">Visit OpenAI</a>
+                            <a href="https://platform.openai.com/docs" class="btn btn-secondary" target="_blank">Documentation</a>
+                        </div>
+                    </article>
+
+                    <!-- Google Gemini -->
+                    <article class="tool-card detailed" data-category="productivity enterprise">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <img src="../../assets/images/tools/gemini-logo.svg" alt="Google Gemini Logo">
+                            </div>
+                            <div class="tool-meta">
+                                <h3 class="tool-title">Google Gemini</h3>
+                                <p class="tool-category">Productivity • Enterprise</p>
+                            </div>
+                        </div>
+                        <p class="tool-description">
+                            Google's advanced AI platform featuring Gems, scheduled actions, and dynamic context 
+                            for intelligent automation and assistance. Particularly strong in multimodal capabilities 
+                            and integration with Google Workspace.
+                        </p>
+                        <div class="tool-features">
+                            <span class="feature">Gems</span>
+                            <span class="feature">Scheduled Actions</span>
+                            <span class="feature">Dynamic Context</span>
+                            <span class="feature">Multimodal</span>
+                        </div>
+                        <div class="tool-details">
+                            <div class="detail-item">
+                                <strong>Unique Features:</strong>
+                                <ul>
+                                    <li>Advanced scheduling and automation</li>
+                                    <li>Seamless Google Workspace integration</li>
+                                    <li>Superior image and video understanding</li>
+                                    <li>Real-time information access</li>
+                                </ul>
+                            </div>
+                            <div class="detail-item">
+                                <strong>Best For:</strong>
+                                <ul>
+                                    <li>Automated workflow management</li>
+                                    <li>Content analysis and summarization</li>
+                                    <li>Research and information gathering</li>
+                                    <li>Creative brainstorming sessions</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tool-actions">
+                            <a href="https://gemini.google.com" class="btn btn-primary" target="_blank">Try Gemini</a>
+                            <a href="https://ai.google.dev" class="btn btn-secondary" target="_blank">Developer Docs</a>
+                        </div>
+                    </article>
+
+                    <!-- WindSurf -->
+                    <article class="tool-card detailed" data-category="development">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <img src="../../assets/images/tools/windsurf-logo.svg" alt="WindSurf Logo">
+                            </div>
+                            <div class="tool-meta">
+                                <h3 class="tool-title">WindSurf</h3>
+                                <p class="tool-category">Development</p>
+                            </div>
+                        </div>
+                        <p class="tool-description">
+                            Revolutionary AI-powered coding tool that enables non-developers to create sophisticated 
+                            applications. Successfully demonstrated by our team member Nino, showcasing the 
+                            democratization of software development.
+                        </p>
+                        <div class="tool-features">
+                            <span class="feature">AI Coding</span>
+                            <span class="feature">No-Code Approach</span>
+                            <span class="feature">Rapid Development</span>
+                            <span class="feature">Beginner Friendly</span>
+                        </div>
+                        <div class="tool-details">
+                            <div class="detail-item">
+                                <strong>Demo Highlights:</strong>
+                                <ul>
+                                    <li>Non-developer created full applications</li>
+                                    <li>Intuitive natural language interface</li>
+                                    <li>Real-time code generation and debugging</li>
+                                    <li>Professional-quality output</li>
+                                </ul>
+                            </div>
+                            <div class="detail-item">
+                                <strong>Impact:</strong>
+                                <ul>
+                                    <li>Breaks down technical barriers</li>
+                                    <li>Accelerates prototyping process</li>
+                                    <li>Enables rapid idea validation</li>
+                                    <li>Democratizes software creation</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tool-actions">
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                            <a href="../meetings/" class="btn btn-secondary">View Demo</a>
+                        </div>
+                    </article>
+
+                    <!-- Eva 2.0 -->
+                    <article class="tool-card detailed" data-category="enterprise productivity">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <img src="../../assets/images/tools/eva-logo.svg" alt="Eva 2.0 Logo">
+                            </div>
+                            <div class="tool-meta">
+                                <h3 class="tool-title">Eva 2.0</h3>
+                                <p class="tool-category">Enterprise • Productivity</p>
+                            </div>
+                        </div>
+                        <p class="tool-description">
+                            Trane's advanced corporate AI assistant built on GPT-4.1 for workplace productivity 
+                            and automation. Features Canvas integration and enterprise-grade security for 
+                            professional environments.
+                        </p>
+                        <div class="tool-features">
+                            <span class="feature">Corporate AI</span>
+                            <span class="feature">GPT-4.1 Powered</span>
+                            <span class="feature">Canvas Integration</span>
+                            <span class="feature">Enterprise Security</span>
+                        </div>
+                        <div class="tool-details">
+                            <div class="detail-item">
+                                <strong>Enterprise Features:</strong>
+                                <ul>
+                                    <li>Advanced workplace productivity tools</li>
+                                    <li>Collaborative Canvas workspace</li>
+                                    <li>Enterprise security and compliance</li>
+                                    <li>Custom workflow automation</li>
+                                </ul>
+                            </div>
+                            <div class="detail-item">
+                                <strong>Business Value:</strong>
+                                <ul>
+                                    <li>Streamlined business processes</li>
+                                    <li>Enhanced team collaboration</li>
+                                    <li>Improved decision-making support</li>
+                                    <li>Reduced operational overhead</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tool-actions">
+                            <a href="#" class="btn btn-primary">Access Eva</a>
+                            <a href="../meetings/" class="btn btn-secondary">View Features</a>
+                        </div>
+                    </article>
+
+                    <!-- Sapient HRM -->
+                    <article class="tool-card detailed" data-category="development enterprise">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <img src="../../assets/images/tools/sapient-logo.svg" alt="Sapient Logo">
+                            </div>
+                            <div class="tool-meta">
+                                <h3 class="tool-title">Sapient HRM</h3>
+                                <p class="tool-category">Development • Enterprise</p>
+                            </div>
+                        </div>
+                        <p class="tool-description">
+                            Revolutionary Hierarchical Reasoning Model representing a breakthrough in AI architecture. 
+                            Open-source model with self-evolving capabilities that pushes the boundaries of 
+                            artificial intelligence.
+                        </p>
+                        <div class="tool-features">
+                            <span class="feature">Open Source</span>
+                            <span class="feature">HRM Architecture</span>
+                            <span class="feature">Self-Evolving</span>
+                            <span class="feature">Breakthrough Tech</span>
+                        </div>
+                        <div class="tool-details">
+                            <div class="detail-item">
+                                <strong>Technical Innovation:</strong>
+                                <ul>
+                                    <li>Hierarchical reasoning capabilities</li>
+                                    <li>Self-improving architecture</li>
+                                    <li>Advanced problem-solving approach</li>
+                                    <li>Open-source accessibility</li>
+                                </ul>
+                            </div>
+                            <div class="detail-item">
+                                <strong>Research Impact:</strong>
+                                <ul>
+                                    <li>Advances AI reasoning methods</li>
+                                    <li>Enables complex problem solving</li>
+                                    <li>Supports research community</li>
+                                    <li>Pushes architectural boundaries</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tool-actions">
+                            <a href="https://huggingface.co/sapientinc/HRM-checkpoint-ARC-2" class="btn btn-primary" target="_blank">Test Model</a>
+                            <a href="https://github.com/sapientinc" class="btn btn-secondary" target="_blank">GitHub</a>
+                        </div>
+                    </article>
+
+                    <!-- Google Nano Banana -->
+                    <article class="tool-card detailed" data-category="creative">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <img src="../../assets/images/tools/nano-banana-logo.svg" alt="Nano Banana Logo">
+                            </div>
+                            <div class="tool-meta">
+                                <h3 class="tool-title">Google Nano Banana</h3>
+                                <p class="tool-category">Creative</p>
+                            </div>
+                        </div>
+                        <p class="tool-description">
+                            Hyper-efficient image generation tool that's revolutionizing creative workflows and design. 
+                            Features seamless Adobe integration and optimized performance for professional 
+                            creative environments.
+                        </p>
+                        <div class="tool-features">
+                            <span class="feature">Image Generation</span>
+                            <span class="feature">Adobe Integration</span>
+                            <span class="feature">Hyper-Efficient</span>
+                            <span class="feature">Creative Workflows</span>
+                        </div>
+                        <div class="tool-details">
+                            <div class="detail-item">
+                                <strong>Creative Capabilities:</strong>
+                                <ul>
+                                    <li>High-quality image generation</li>
+                                    <li>Seamless Adobe Creative Suite integration</li>
+                                    <li>Optimized creative workflows</li>
+                                    <li>Professional design support</li>
+                                </ul>
+                            </div>
+                            <div class="detail-item">
+                                <strong>Workflow Benefits:</strong>
+                                <ul>
+                                    <li>Accelerated design processes</li>
+                                    <li>Enhanced creative possibilities</li>
+                                    <li>Streamlined asset creation</li>
+                                    <li>Professional quality output</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tool-actions">
+                            <a href="#" class="btn btn-primary">Discover Tool</a>
+                            <a href="../meetings/" class="btn btn-secondary">View Demo</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tool Statistics -->
+        <section class="tool-stats">
+            <div class="container">
+                <h2 class="section-title">Our AI Tool Journey</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Tools Explored</div>
+                        <div class="stat-description">Comprehensive evaluation of cutting-edge AI tools</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">8+</div>
+                        <div class="stat-label">Live Demonstrations</div>
+                        <div class="stat-description">Hands-on sessions with real-world applications</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">Categories</div>
+                        <div class="stat-description">Development, Creative, Productivity, and Enterprise tools</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">Active</div>
+                        <div class="stat-label">Community</div>
+                        <div class="stat-description">Growing community of AI enthusiasts and practitioners</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title">Explore AI Tools with Us</h2>
+                    <p class="cta-description">
+                        Join the Nuvolo & Trane AI Cafe community and discover the latest AI tools and technologies. 
+                        Share your experiences and learn from fellow AI enthusiasts.
+                    </p>
+                    <div class="cta-actions">
+                        <a href="../meetings/" class="btn btn-primary btn-large">View Meetings</a>
+                        <a href="../../index.html#team" class="btn btn-secondary btn-large">Contact Team</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">AI Cafe</h3>
+                    <p class="footer-description">
+                        Nuvolo & Trane AI Learning Initiative - Advancing artificial intelligence knowledge 
+                        through community collaboration and hands-on exploration.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../index.html#meetings">Meetings</a></li>
+                        <li><a href="../../index.html#tools">Tools</a></li>
+                        <li><a href="../../index.html#team">Team</a></li>
+                        <li><a href="../resources/">Resources</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Community</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../CONTRIBUTING.md">Contributing</a></li>
+                        <li><a href="../../CODE_OF_CONDUCT.md">Code of Conduct</a></li>
+                        <li><a href="#">Teams Channel</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="../news/">AI News</a></li>
+                        <li><a href="#">Learning Paths</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="../../SECURITY.md">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    &copy; 2024 AI Cafe Community - Nuvolo & Trane. 
+                    <a href="../../LICENSE">MIT License</a>
+                </p>
+                <p class="footer-attribution">
+                    Built with ❤️ by the AI Cafe Community
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/components.js"></script>
+</body>
+</html>

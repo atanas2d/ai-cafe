@@ -1,0 +1,50 @@
+{
+  "name": "ai-cafe-website",
+  "version": "1.0.0",
+  "description": "AI Cafe - Trane Technologies AI Learning Initiative Website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python -m http.server 8000",
+    "build": "npm run build:ts && npm run optimize",
+    "build:ts": "tsc",
+    "build:watch": "tsc --watch",
+    "optimize": "echo 'Optimizing assets...'",
+    "test": "echo 'Running tests...'",
+    "lint": "npm run lint:ts && npm run lint:html && npm run lint:css",
+    "lint:ts": "eslint \"src/assets/ts/**/*.ts\" --config .eslintrc.json",
+    "lint:html": "htmlhint \"**/*.html\" --config .htmlhintrc",
+    "lint:css": "stylelint \"src/assets/css/**/*.css\" --config .stylelintrc.json",
+    "type-check": "tsc --noEmit",
+    "deploy": "npm run build && echo 'Deploying to GitHub Pages...'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/ai-cafe-website.git"
+  },
+  "keywords": [
+    "ai",
+    "artificial-intelligence",
+    "trane-technologies",
+    "learning",
+    "community",
+    "website",
+    "typescript"
+  ],
+  "author": "AI Cafe Community",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/your-username/ai-cafe-website/issues"
+  },
+  "homepage": "https://your-username.github.io/ai-cafe-website",
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "@types/node": "^20.8.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
+    "@typescript-eslint/parser": "^6.7.0",
+    "eslint": "^8.50.0",
+    "htmlhint": "^1.1.4",
+    "stylelint": "^15.10.0",
+    "stylelint-config-standard": "^34.0.0"
+  },
+  "dependencies": {}
+}

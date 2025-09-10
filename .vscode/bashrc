@@ -1,0 +1,73 @@
+# Workspace-specific Bash setup for VS Code
+
+# 1) Preserve your existing environment when possible
+[[ -f ~/.bashrc ]] && source ~/.bashrc
+
+# 2) Quality-of-life shell options
+shopt -s checkwinsize histappend cmdhist autocd cdspell 2>/dev/null
+export PROMPT_DIRTRIM=3
+export CLICOLOR=1
+alias ls='ls -G'
+alias ll='ls -lah'
+alias la='ls -A'
+alias grep='grep --color=auto'
+export LESS='-R'
+
+# 3) Colors
+ESC="\[\e"
+RESET="$ESC[0m\]"
+BOLD="$ESC[1m\]"
+DIM="$ESC[2m\]"
+RED="$ESC[31m\]"
+GREEN="$ESC[32m\]"
+YELLOW="$ESC[33m\]"
+BLUE="$ESC[34m\]"
+MAGENTA="$ESC[35m\]"
+CYAN="$ESC[36m\]"
+GRAY="$ESC[90m\]"
+
+# 4) Fast Git branch + dirty indicator
+__git_branch() {
+  local ref
+  ref=$(git symbolic-ref --quiet --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null) || return 1
+  printf "%s" "$ref"
+}
+
+__git_dirty() {
+  git diff --quiet --ignore-submodules HEAD 2>/dev/null || printf "*"
+}
+
+# 5) Prompt builder with last-exit, path, git
+__prompt_command() {
+  local exit_code=$?
+  local status symbol
+  if [[ $exit_code -eq 0 ]]; then
+    status="${GREEN}✔${RESET}"
+  else
+    status="${RED}✗${RESET}${DIM}${exit_code}${RESET}"
+  fi
+
+  local git_part=""
+  if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    local br=$(__git_branch)
+    if [[ -n $br ]]; then
+      local dirty=$(__git_dirty)
+      if [[ -n $dirty ]]; then
+        git_part=" ${MAGENTA}(${br}* )${RESET}"
+      else
+        git_part=" ${MAGENTA}(${br})${RESET}"
+      fi
+    fi
+  fi
+
+  # Window title to folder name
+  echo -ne "\033]0;$(basename "$PWD")\007"
+
+  PS1="${GRAY}\A${RESET} ${CYAN}\u@\h${RESET} ${YELLOW}\w${RESET}${git_part}\n${status} $ "
+
+  # Write new history lines immediately
+  history -a
+}
+
+PROMPT_COMMAND=__prompt_command
+

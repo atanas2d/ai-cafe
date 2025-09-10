@@ -1,0 +1,10 @@
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Official Nuvolo logo inspired by nuvolo.com -->
+  <g>
+    <!-- Cloud icon -->
+    <path d="M8 20c0-4.4 3.6-8 8-8 1.4 0 2.7 0.4 3.8 1.1C21.2 10.4 24.4 8 28 8c5.5 0 10 4.5 10 10 0 0.3 0 0.6-0.1 0.9C39.7 19.6 41 21.2 41 23c0 2.2-1.8 4-4 4H12c-2.2 0-4-1.8-4-4 0-1.8 1.2-3.4 2.9-3.9C8.3 18.7 8 17.4 8 16z" fill="#4A90E2"/>
+    
+    <!-- nuvolo text -->
+    <text x="50" y="26" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#2C5282">nuvolo</text>
+  </g>
+</svg>

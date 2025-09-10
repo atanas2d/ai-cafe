@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Cafe - Nuvolo & Trane Technologies AI Learning Initiative. Join our community exploring artificial intelligence tools, sharing knowledge, and advancing AI literacy in the workplace.">
+    <meta name="keywords" content="AI, artificial intelligence, Nuvolo, Trane Technologies, learning, community, OpenAI, Gemini, WindSurf, Eva 2.0">
+    <meta name="author" content="AI Cafe Community">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-username.github.io/ai-cafe-website/">
+    <meta property="og:title" content="AI Cafe - Nuvolo & Trane Technologies AI Learning Initiative">
+    <meta property="og:description" content="Join our community exploring artificial intelligence tools, sharing knowledge, and advancing AI literacy in the workplace.">
+    <meta property="og:image" content="https://your-username.github.io/ai-cafe-website/src/assets/images/ai-cafe-og.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://your-username.github.io/ai-cafe-website/">
+    <meta property="twitter:title" content="AI Cafe - Nuvolo & Trane Technologies AI Learning Initiative">
+    <meta property="twitter:description" content="Join our community exploring artificial intelligence tools, sharing knowledge, and advancing AI literacy in the workplace.">
+    <meta property="twitter:image" content="https://your-username.github.io/ai-cafe-website/src/assets/images/ai-cafe-og.jpg">
+
+    <title>AI Cafe - Nuvolo & Trane Technologies AI Learning Initiative</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="src/assets/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="src/assets/images/apple-touch-icon.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="src/assets/css/main.css">
+    <link rel="stylesheet" href="src/assets/css/components.css">
+    <link rel="stylesheet" href="src/assets/css/responsive.css">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="src/assets/css/main.css" as="style">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="header" role="banner">
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <a href="#" class="brand-link" aria-label="AI Cafe Home">
+                        <img src="src/assets/images/ai-cafe-logo.svg" alt="AI Cafe Logo" class="brand-logo">
+                        <span class="brand-text">AI Cafe</span>
+                    </a>
+                </div>
+                
+                <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+                
+                <ul class="nav-menu" role="menubar">
+                    <li class="nav-item" role="none">
+                        <a href="#home" class="nav-link" role="menuitem">Home</a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="#meetings" class="nav-link" role="menuitem">Meetings</a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="#tools" class="nav-link" role="menuitem">Tools</a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="#team" class="nav-link" role="menuitem">Team</a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="#news" class="nav-link" role="menuitem">AI News</a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="#resources" class="nav-link" role="menuitem">Resources</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <!-- Hero Section -->
+        <section id="home" class="hero" aria-labelledby="hero-title">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 id="hero-title" class="hero-title">
+                        Welcome to <span class="highlight">AI Cafe</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Nuvolo & Trane Technologies AI Learning Initiative
+                    </p>
+                    <p class="hero-description">
+                        Join our community of AI enthusiasts exploring cutting-edge tools, sharing knowledge, 
+                        and advancing artificial intelligence literacy in the workplace.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">8+</span>
+                            <span class="stat-label">Meetings</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Tools Explored</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">Active</span>
+                            <span class="stat-label">Community</span>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="#meetings" class="btn btn-primary">View Meetings</a>
+                        <a href="#tools" class="btn btn-secondary">Explore Tools</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-graphic">
+                        <div class="ai-nodes">
+                            <div class="node node-1"></div>
+                            <div class="node node-2"></div>
+                            <div class="node node-3"></div>
+                            <div class="node node-4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Highlights Section -->
+        <section class="highlights" aria-labelledby="highlights-title">
+            <div class="container">
+                <h2 id="highlights-title" class="section-title">Latest Highlights</h2>
+                <div class="highlights-grid">
+                    <article class="highlight-card">
+                        <div class="card-icon">🧠</div>
+                        <h3 class="card-title">Sapient AI Breakthrough</h3>
+                        <p class="card-description">
+                            Explored the revolutionary Hierarchical Reasoning Model (HRM) - a major breakthrough in AI architecture.
+                        </p>
+                        <a href="#meetings" class="card-link">Learn More</a>
+                    </article>
+                    
+                    <article class="highlight-card">
+                        <div class="card-icon">🎨</div>
+                        <h3 class="card-title">Google Nano Banana</h3>
+                        <p class="card-description">
+                            Discovered Google's hyper-efficient image generation tool that's revolutionizing creative workflows.
+                        </p>
+                        <a href="#tools" class="card-link">Explore Tool</a>
+                    </article>
+                    
+                    <article class="highlight-card">
+                        <div class="card-icon">🤖</div>
+                        <h3 class="card-title">Eva 2.0 Integration</h3>
+                        <p class="card-description">
+                            Deep dive into Nuvolo & Trane Technologies' corporate AI assistant and its advanced features for workplace productivity.
+                        </p>
+                        <a href="#team" class="card-link">View Demo</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Meeting Timeline Section -->
+        <section id="meetings" class="meetings" aria-labelledby="meetings-title">
+            <div class="container">
+                <h2 id="meetings-title" class="section-title">Meeting Timeline</h2>
+                <p class="section-subtitle">
+                    Explore our journey through AI tools and technologies
+                </p>
+                
+                <div class="timeline">
+                    <article class="timeline-item">
+                        <div class="timeline-marker">
+                            <span class="timeline-number">8</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Sapient AI & Google Nano Banana</h3>
+                            <p class="timeline-date">Recent Meeting</p>
+                            <p class="timeline-description">
+                                Breakthrough AI architecture exploration and advanced image generation tools demonstration.
+                            </p>
+                            <div class="timeline-tags">
+                                <span class="tag">Sapient HRM</span>
+                                <span class="tag">Google Nano Banana</span>
+                                <span class="tag">Google Translate</span>
+                            </div>
+                            <p class="timeline-presenter">Presented by: Atanas Rusev</p>
+                        </div>
+                    </article>
+                    
+                    <article class="timeline-item">
+                        <div class="timeline-marker">
+                            <span class="timeline-number">7</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Eva 2.0 Beta Features</h3>
+                            <p class="timeline-date">Previous Meeting</p>
+                            <p class="timeline-description">
+                                Comprehensive overview of Eva 2.0 Beta and its corporate AI functionalities.
+                            </p>
+                            <div class="timeline-tags">
+                                <span class="tag">Eva 2.0</span>
+                                <span class="tag">Corporate AI</span>
+                                <span class="tag">GPT-4.1</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="timeline-item">
+                        <div class="timeline-marker">
+                            <span class="timeline-number">6</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Gemini vs GPT Tasks</h3>
+                            <p class="timeline-date">Previous Meeting</p>
+                            <p class="timeline-description">
+                                Comparison between Gemini Scheduled Actions and GPT Tasks with auto-generated news website demo.
+                            </p>
+                            <div class="timeline-tags">
+                                <span class="tag">Gemini</span>
+                                <span class="tag">GPT Tasks</span>
+                                <span class="tag">Automation</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="timeline-item">
+                        <div class="timeline-marker">
+                            <span class="timeline-number">2</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">WindSurf Coding Tool</h3>
+                            <p class="timeline-date">Early Meeting</p>
+                            <p class="timeline-description">
+                                Successful demonstration of WindSurf AI-powered coding tool by non-developer colleague.
+                            </p>
+                            <div class="timeline-tags">
+                                <span class="tag">WindSurf</span>
+                                <span class="tag">Coding</span>
+                                <span class="tag">AI Development</span>
+                            </div>
+                            <p class="timeline-presenter">Presented by: Nino</p>
+                        </div>
+                    </article>
+                    
+                    <article class="timeline-item">
+                        <div class="timeline-marker">
+                            <span class="timeline-number">1</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">AI Infrastructure Introduction</h3>
+                            <p class="timeline-date">First Meeting</p>
+                            <p class="timeline-description">
+                                Introduction to Gemini and OpenAI GPT infrastructure, laying the foundation for our AI journey.
+                            </p>
+                            <div class="timeline-tags">
+                                <span class="tag">Gemini</span>
+                                <span class="tag">OpenAI GPT</span>
+                                <span class="tag">Introduction</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="section-actions">
+                    <a href="src/pages/meetings/" class="btn btn-primary">View All Meetings</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Showcase Section -->
+        <section id="tools" class="tools" aria-labelledby="tools-title">
+            <div class="container">
+                <h2 id="tools-title" class="section-title">AI Tools Showcase</h2>
+                <p class="section-subtitle">
+                    Discover the cutting-edge tools we've explored and demonstrated
+                </p>
+                
+                <div class="tools-grid">
+                    <article class="tool-card">
+                        <div class="tool-icon">
+                            <img src="src/assets/images/tools/openai-logo.svg" alt="OpenAI Logo">
+                        </div>
+                        <h3 class="tool-title">OpenAI GPT</h3>
+                        <p class="tool-description">
+                            Custom instances, projects, and Codex integration for advanced AI-powered development.
+                        </p>
+                        <div class="tool-features">
+                            <span class="feature">Custom GPTs</span>
+                            <span class="feature">Projects</span>
+                            <span class="feature">Codex</span>
+                        </div>
+                        <a href="#" class="tool-link">Learn More</a>
+                    </article>
+                    
+                    <article class="tool-card">
+                        <div class="tool-icon">
+                            <img src="src/assets/images/tools/gemini-logo.svg" alt="Google Gemini Logo">
+                        </div>
+                        <h3 class="tool-title">Google Gemini</h3>
+                        <p class="tool-description">
+                            Gems, scheduled actions, and dynamic context for intelligent automation and assistance.
+                        </p>
+                        <div class="tool-features">
+                            <span class="feature">Gems</span>
+                            <span class="feature">Scheduled Actions</span>
+                            <span class="feature">Dynamic Context</span>
+                        </div>
+                        <a href="#" class="tool-link">Explore</a>
+                    </article>
+                    
+                    <article class="tool-card">
+                        <div class="tool-icon">
+                            <img src="src/assets/images/tools/windsurf-logo.svg" alt="WindSurf Logo">
+                        </div>
+                        <h3 class="tool-title">WindSurf</h3>
+                        <p class="tool-description">
+                            AI-powered coding tool that enables non-developers to create sophisticated applications.
+                        </p>
+                        <div class="tool-features">
+                            <span class="feature">AI Coding</span>
+                            <span class="feature">No-Code</span>
+                            <span class="feature">Rapid Development</span>
+                        </div>
+                        <a href="#" class="tool-link">Try It</a>
+                    </article>
+                    
+                    <article class="tool-card">
+                        <div class="tool-icon">
+                            <img src="src/assets/images/tools/eva-logo.svg" alt="Eva 2.0 Logo">
+                        </div>
+                        <h3 class="tool-title">Eva 2.0</h3>
+                        <p class="tool-description">
+                            Nuvolo & Trane Technologies' corporate AI assistant built on GPT-4.1 for workplace productivity and automation.
+                        </p>
+                        <div class="tool-features">
+                            <span class="feature">Corporate AI</span>
+                            <span class="feature">GPT-4.1</span>
+                            <span class="feature">Canvas</span>
+                        </div>
+                        <a href="#" class="tool-link">Access</a>
+                    </article>
+                    
+                    <article class="tool-card">
+                        <div class="tool-icon">
+                            <img src="src/assets/images/tools/sapient-logo.svg" alt="Sapient Logo">
+                        </div>
+                        <h3 class="tool-title">Sapient HRM</h3>
+                        <p class="tool-description">
+                            Revolutionary Hierarchical Reasoning Model representing a breakthrough in AI architecture.
+                        </p>
+                        <div class="tool-features">
+                            <span class="feature">Open Source</span>
+                            <span class="feature">HRM Architecture</span>
+                            <span class="feature">Self-Evolving</span>
+                        </div>
+                        <a href="https://huggingface.co/sapientinc/HRM-checkpoint-ARC-2" class="tool-link" target="_blank">Test Model</a>
+                    </article>
+                    
+                    <article class="tool-card">
+                        <div class="tool-icon">
+                            <img src="src/assets/images/tools/nano-banana-logo.svg" alt="Nano Banana Logo">
+                        </div>
+                        <h3 class="tool-title">Google Nano Banana</h3>
+                        <p class="tool-description">
+                            Hyper-efficient image generation tool that's revolutionizing creative workflows and design.
+                        </p>
+                        <div class="tool-features">
+                            <span class="feature">Image Generation</span>
+                            <span class="feature">Adobe Integration</span>
+                            <span class="feature">Efficient</span>
+                        </div>
+                        <a href="#" class="tool-link">Discover</a>
+                    </article>
+                </div>
+                
+                <div class="section-actions">
+                    <a href="src/pages/tools/" class="btn btn-primary">View All Tools</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="team" aria-labelledby="team-title">
+            <div class="container">
+                <h2 id="team-title" class="section-title">Our Community</h2>
+                <p class="section-subtitle">
+                    Meet the passionate individuals driving AI innovation at Nuvolo & Trane Technologies
+                </p>
+                
+                <div class="team-grid">
+                    <article class="team-card">
+                        <div class="team-avatar">
+                            <img src="src/assets/images/team/nino-avatar.jpg" alt="Nino's Avatar">
+                        </div>
+                        <h3 class="team-name">Nino</h3>
+                        <p class="team-role">AI Enthusiast & Presenter</p>
+                        <p class="team-description">
+                            Non-developer who successfully demonstrated WindSurf coding tool and OpenAI agent capabilities, 
+                            inspiring the community with practical AI applications.
+                        </p>
+                        <div class="team-contributions">
+                            <span class="contribution">WindSurf Demo</span>
+                            <span class="contribution">OpenAI Agents</span>
+                            <span class="contribution">Community Leader</span>
+                        </div>
+                    </article>
+                    
+                    <article class="team-card">
+                        <div class="team-avatar">
+                            <img src="src/assets/images/team/plamen-avatar.jpg" alt="Plamen Tanev's Avatar">
+                        </div>
+                        <h3 class="team-name">Plamen Tanev</h3>
+                        <p class="team-role">QA Automation Specialist</p>
+                        <p class="team-description">
+                            Inspired by Nino's presentations, developed automated testing solutions for websites using AI tools, 
+                            achieving excellent QA results.
+                        </p>
+                        <div class="team-contributions">
+                            <span class="contribution">QA Automation</span>
+                            <span class="contribution">AI Testing</span>
+                            <span class="contribution">Innovation</span>
+                        </div>
+                    </article>
+                    
+                    <article class="team-card">
+                        <div class="team-avatar">
+                            <img src="src/assets/images/team/atanas-avatar.jpg" alt="Atanas Yanev's Avatar">
+                        </div>
+                        <h3 class="team-name">Atanas Yanev</h3>
+                        <p class="team-role">Technical Lead & AI Researcher</p>
+                        <p class="team-description">
+                            Technical expert running local AI models and providing in-depth demonstrations of cutting-edge 
+                            AI technologies and architectures.
+                        </p>
+                        <div class="team-contributions">
+                            <span class="contribution">Local Models</span>
+                            <span class="contribution">Technical Demos</span>
+                            <span class="contribution">AI Research</span>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="community-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">Active</span>
+                        <span class="stat-label">Community</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">8+</span>
+                        <span class="stat-label">Meetings</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">15+</span>
+                        <span class="stat-label">Tools Explored</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">Growing</span>
+                        <span class="stat-label">Knowledge Base</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="cta" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 id="cta-title" class="cta-title">Join the AI Revolution</h2>
+                    <p class="cta-description">
+                        Be part of Nuvolo & Trane Technologies' AI learning community. Explore cutting-edge tools,
+                        share knowledge, and advance your AI skills with fellow enthusiasts.
+                    </p>
+                    <div class="cta-actions">
+                        <a href="#" class="btn btn-primary btn-large">Join Next Meeting</a>
+                        <a href="src/pages/resources/" class="btn btn-secondary btn-large">Explore Resources</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">AI Cafe</h3>
+                    <p class="footer-description">
+                        Nuvolo & Trane Technologies AI Learning Initiative - Advancing artificial intelligence knowledge
+                        through community collaboration and hands-on exploration.
+                    </p>
+                    <div class="company-logos" style="margin-top: 1rem; display: flex; gap: 1rem; align-items: center; justify-content: flex-start;">
+                        <img src="src/assets/images/nuvolo-logo.svg" alt="Nuvolo Logo" style="height: 40px;">
+                        <img src="src/assets/images/trane-logo.svg" alt="Trane Technologies Logo" style="height: 40px;">
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#meetings">Meetings</a></li>
+                        <li><a href="#tools">Tools</a></li>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="src/pages/resources/">Resources</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Community</h4>
+                    <ul class="footer-links">
+                        <li><a href="CONTRIBUTING.md">Contributing</a></li>
+                        <li><a href="CODE_OF_CONDUCT.md">Code of Conduct</a></li>
+                        <li><a href="https://github.com/your-username/ai-cafe-website">GitHub</a></li>
+                        <li><a href="#">Teams Channel</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="src/pages/news/">AI News</a></li>
+                        <li><a href="#">Learning Paths</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="SECURITY.md">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    &copy; 2024 AI Cafe Community - Nuvolo & Trane Technologies.
+                    <a href="LICENSE">MIT License</a>
+                </p>
+                <p class="footer-attribution">
+                    Built with ❤️ by the AI Cafe Community
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="src/assets/js/main.js"></script>
+    <script src="src/assets/js/components.js"></script>
+</body>
+</html>
