@@ -27,13 +27,32 @@
     <link rel="icon" type="image/x-icon" href="src/assets/images/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="src/assets/images/apple-touch-icon.png">
     
-    <!-- Stylesheets -->
+    <!-- Custom CSS for specific styling -->
     <link rel="stylesheet" href="src/assets/css/main.css">
     <link rel="stylesheet" href="src/assets/css/components.css">
     <link rel="stylesheet" href="src/assets/css/responsive.css">
     
-    <!-- Preload critical resources -->
-    <link rel="preload" href="src/assets/css/main.css" as="style">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            corePlugins: {
+                preflight: false, // Disable Tailwind's CSS reset to preserve existing styles
+            },
+            theme: {
+                extend: {
+                    colors: {
+                        'nuvolo-blue': '#1E3A8A',
+                        'nuvolo-light': '#3B82F6',
+                        'nuvolo-orange': '#F97316',
+                        'nuvolo-green': '#10B981',
+                        'trane-blue': '#0066CC',
+                        'trane-red': '#E53E3E',
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -47,7 +66,7 @@
         <nav class="nav" role="navigation" aria-label="Main navigation">
             <div class="nav-container">
                 <div class="nav-brand">
-                    <a href="#" class="brand-link" aria-label="AI Cafe Home">
+                    <a href="index.html" class="brand-link" aria-label="AI Cafe Home">
                         <img src="src/assets/images/ai-cafe-logo.svg" alt="AI Cafe Logo" class="brand-logo">
                         <span class="brand-text">AI Cafe</span>
                     </a>
@@ -64,19 +83,19 @@
                         <a href="#home" class="nav-link" role="menuitem">Home</a>
                     </li>
                     <li class="nav-item" role="none">
-                        <a href="#meetings" class="nav-link" role="menuitem">Meetings</a>
+                        <a href="src/pages/meetings/" class="nav-link" role="menuitem">Meetings</a>
                     </li>
                     <li class="nav-item" role="none">
-                        <a href="#tools" class="nav-link" role="menuitem">Tools</a>
+                        <a href="src/pages/tools/" class="nav-link" role="menuitem">Tools</a>
                     </li>
                     <li class="nav-item" role="none">
                         <a href="#team" class="nav-link" role="menuitem">Team</a>
                     </li>
                     <li class="nav-item" role="none">
-                        <a href="#news" class="nav-link" role="menuitem">AI News</a>
+                        <a href="src/pages/news/" class="nav-link" role="menuitem">AI News</a>
                     </li>
                     <li class="nav-item" role="none">
-                        <a href="#resources" class="nav-link" role="menuitem">Resources</a>
+                        <a href="src/pages/resources/" class="nav-link" role="menuitem">Resources</a>
                     </li>
                 </ul>
             </div>
@@ -89,11 +108,11 @@
         <section id="home" class="hero" aria-labelledby="hero-title">
             <div class="hero-container">
                 <div class="hero-content">
-                    <h1 id="hero-title" class="hero-title">
-                        Welcome to <span class="highlight">AI Cafe</span>
+                    <h1 id="hero-title" class="hero-title playful-accent">
+                        Welcome to <span class="text-nuvolo-orange">AI Cafe</span>
                     </h1>
                     <p class="hero-subtitle">
-                        Nuvolo & Trane Technologies AI Learning Initiative
+                        <span class="text-nuvolo-blue font-semibold">Nuvolo</span> & <span class="text-trane-red font-semibold">Trane Technologies</span> AI Learning Initiative
                     </p>
                     <p class="hero-description">
                         Join our community of AI enthusiasts exploring cutting-edge tools, sharing knowledge, 
@@ -113,19 +132,33 @@
                             <span class="stat-label">Community</span>
                         </div>
                     </div>
-                    <div class="hero-actions">
-                        <a href="#meetings" class="btn btn-primary">View Meetings</a>
-                        <a href="#tools" class="btn btn-secondary">Explore Tools</a>
+                    <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center lg:justify-start justify-center">
+                        <a href="#meetings" class="bg-nuvolo-blue hover:bg-nuvolo-light text-white hover:text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 min-w-[120px] text-center">View Meetings</a>
+                        <a href="#tools" class="bg-white hover:bg-gray-50 text-gray-700 hover:text-gray-800 font-medium py-3 px-6 rounded-lg border border-gray-300 hover:border-gray-400 transition-colors duration-200 min-w-[120px] text-center">Explore Tools</a>
                     </div>
                 </div>
                 <div class="hero-visual">
                     <div class="hero-graphic">
-                        <div class="ai-nodes">
-                            <div class="node node-1"></div>
-                            <div class="node node-2"></div>
-                            <div class="node node-3"></div>
-                            <div class="node node-4"></div>
-                        </div>
+                        <svg class="ai-network" viewBox="0 0 300 300" role="img" aria-label="Animated neural network">
+                            <defs>
+                                <linearGradient id="nnGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#1E3A8A"/>
+                                    <stop offset="100%" stop-color="#10B981"/>
+                                </linearGradient>
+                            </defs>
+                            <g stroke="url(#nnGradient)" stroke-width="2" fill="none" stroke-linecap="round">
+                                <path class="pulse" d="M60 60 L150 90 L240 60 M60 150 L150 150 L240 150 M60 240 L150 210 L240 240"/>
+                                <circle class="node" cx="60" cy="60" r="8"/>
+                                <circle class="node" cx="150" cy="90" r="8"/>
+                                <circle class="node" cx="240" cy="60" r="8"/>
+                                <circle class="node" cx="60" cy="150" r="8"/>
+                                <circle class="node" cx="150" cy="150" r="10"/>
+                                <circle class="node" cx="240" cy="150" r="8"/>
+                                <circle class="node" cx="60" cy="240" r="8"/>
+                                <circle class="node" cx="150" cy="210" r="8"/>
+                                <circle class="node" cx="240" cy="240" r="8"/>
+                            </g>
+                        </svg>
                     </div>
                 </div>
             </div>
@@ -134,7 +167,7 @@
         <!-- Latest Highlights Section -->
         <section class="highlights" aria-labelledby="highlights-title">
             <div class="container">
-                <h2 id="highlights-title" class="section-title">Latest Highlights</h2>
+                <h2 id="highlights-title" class="section-title playful-accent">Latest Highlights</h2>
                 <div class="highlights-grid">
                     <article class="highlight-card">
                         <div class="card-icon">🧠</div>
@@ -142,7 +175,7 @@
                         <p class="card-description">
                             Explored the revolutionary Hierarchical Reasoning Model (HRM) - a major breakthrough in AI architecture.
                         </p>
-                        <a href="#meetings" class="card-link">Learn More</a>
+                        <a href="src/pages/meetings/" class="card-link">Learn More</a>
                     </article>
                     
                     <article class="highlight-card">
@@ -151,7 +184,7 @@
                         <p class="card-description">
                             Discovered Google's hyper-efficient image generation tool that's revolutionizing creative workflows.
                         </p>
-                        <a href="#tools" class="card-link">Explore Tool</a>
+                        <a href="src/pages/tools/" class="card-link">Explore Tool</a>
                     </article>
                     
                     <article class="highlight-card">
@@ -169,19 +202,20 @@
         <!-- Meeting Timeline Section -->
         <section id="meetings" class="meetings" aria-labelledby="meetings-title">
             <div class="container">
-                <h2 id="meetings-title" class="section-title">Meeting Timeline</h2>
+                <h2 id="meetings-title" class="section-title playful-accent">Meeting Timeline</h2>
                 <p class="section-subtitle">
                     Explore our journey through AI tools and technologies
                 </p>
                 
                 <div class="timeline">
+                    <!-- Show only last 3 meetings -->
                     <article class="timeline-item">
                         <div class="timeline-marker">
                             <span class="timeline-number">8</span>
                         </div>
                         <div class="timeline-content">
                             <h3 class="timeline-title">Sapient AI & Google Nano Banana</h3>
-                            <p class="timeline-date">Recent Meeting</p>
+                            <p class="timeline-date">Recent Meeting - December 2024</p>
                             <p class="timeline-description">
                                 Breakthrough AI architecture exploration and advanced image generation tools demonstration.
                             </p>
@@ -190,7 +224,7 @@
                                 <span class="tag">Google Nano Banana</span>
                                 <span class="tag">Google Translate</span>
                             </div>
-                            <p class="timeline-presenter">Presented by: Atanas Rusev</p>
+                            <p class="timeline-presenter">Presented by: Atanas Dimitrov</p>
                         </div>
                     </article>
                     
@@ -200,7 +234,7 @@
                         </div>
                         <div class="timeline-content">
                             <h3 class="timeline-title">Eva 2.0 Beta Features</h3>
-                            <p class="timeline-date">Previous Meeting</p>
+                            <p class="timeline-date">November 2024</p>
                             <p class="timeline-description">
                                 Comprehensive overview of Eva 2.0 Beta and its corporate AI functionalities.
                             </p>
@@ -209,6 +243,7 @@
                                 <span class="tag">Corporate AI</span>
                                 <span class="tag">GPT-4.1</span>
                             </div>
+                            <p class="timeline-presenter">Presented by: Atanas Dimitrov</p>
                         </div>
                     </article>
                     
@@ -218,7 +253,7 @@
                         </div>
                         <div class="timeline-content">
                             <h3 class="timeline-title">Gemini vs GPT Tasks</h3>
-                            <p class="timeline-date">Previous Meeting</p>
+                            <p class="timeline-date">October 2024</p>
                             <p class="timeline-description">
                                 Comparison between Gemini Scheduled Actions and GPT Tasks with auto-generated news website demo.
                             </p>
@@ -227,49 +262,13 @@
                                 <span class="tag">GPT Tasks</span>
                                 <span class="tag">Automation</span>
                             </div>
-                        </div>
-                    </article>
-                    
-                    <article class="timeline-item">
-                        <div class="timeline-marker">
-                            <span class="timeline-number">2</span>
-                        </div>
-                        <div class="timeline-content">
-                            <h3 class="timeline-title">WindSurf Coding Tool</h3>
-                            <p class="timeline-date">Early Meeting</p>
-                            <p class="timeline-description">
-                                Successful demonstration of WindSurf AI-powered coding tool by non-developer colleague.
-                            </p>
-                            <div class="timeline-tags">
-                                <span class="tag">WindSurf</span>
-                                <span class="tag">Coding</span>
-                                <span class="tag">AI Development</span>
-                            </div>
-                            <p class="timeline-presenter">Presented by: Nino</p>
-                        </div>
-                    </article>
-                    
-                    <article class="timeline-item">
-                        <div class="timeline-marker">
-                            <span class="timeline-number">1</span>
-                        </div>
-                        <div class="timeline-content">
-                            <h3 class="timeline-title">AI Infrastructure Introduction</h3>
-                            <p class="timeline-date">First Meeting</p>
-                            <p class="timeline-description">
-                                Introduction to Gemini and OpenAI GPT infrastructure, laying the foundation for our AI journey.
-                            </p>
-                            <div class="timeline-tags">
-                                <span class="tag">Gemini</span>
-                                <span class="tag">OpenAI GPT</span>
-                                <span class="tag">Introduction</span>
-                            </div>
+                            <p class="timeline-presenter">Presented by: Atanas Dimitrov</p>
                         </div>
                     </article>
                 </div>
                 
-                <div class="section-actions">
-                    <a href="src/pages/meetings/" class="btn btn-primary">View All Meetings</a>
+                <div class="text-center mt-12">
+                    <a href="src/pages/meetings/" class="bg-nuvolo-blue hover:bg-nuvolo-light text-white hover:text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 min-w-[120px] inline-block">View All Meetings</a>
                 </div>
             </div>
         </section>
@@ -277,7 +276,7 @@
         <!-- Tools Showcase Section -->
         <section id="tools" class="tools" aria-labelledby="tools-title">
             <div class="container">
-                <h2 id="tools-title" class="section-title">AI Tools Showcase</h2>
+                <h2 id="tools-title" class="section-title playful-accent">AI Tools Showcase</h2>
                 <p class="section-subtitle">
                     Discover the cutting-edge tools we've explored and demonstrated
                 </p>
@@ -296,7 +295,7 @@
                             <span class="feature">Projects</span>
                             <span class="feature">Codex</span>
                         </div>
-                        <a href="#" class="tool-link">Learn More</a>
+                        <a href="src/pages/tools/" class="tool-link">Learn More</a>
                     </article>
                     
                     <article class="tool-card">
@@ -312,7 +311,7 @@
                             <span class="feature">Scheduled Actions</span>
                             <span class="feature">Dynamic Context</span>
                         </div>
-                        <a href="#" class="tool-link">Explore</a>
+                        <a href="src/pages/tools/" class="tool-link">Explore</a>
                     </article>
                     
                     <article class="tool-card">
@@ -328,7 +327,7 @@
                             <span class="feature">No-Code</span>
                             <span class="feature">Rapid Development</span>
                         </div>
-                        <a href="#" class="tool-link">Try It</a>
+                        <a href="https://codeium.com/windsurf" class="tool-link" target="_blank" rel="noopener noreferrer">Try It</a>
                     </article>
                     
                     <article class="tool-card">
@@ -344,7 +343,7 @@
                             <span class="feature">GPT-4.1</span>
                             <span class="feature">Canvas</span>
                         </div>
-                        <a href="#" class="tool-link">Access</a>
+                        <a href="src/pages/tools/" class="tool-link">Access</a>
                     </article>
                     
                     <article class="tool-card">
@@ -376,12 +375,12 @@
                             <span class="feature">Adobe Integration</span>
                             <span class="feature">Efficient</span>
                         </div>
-                        <a href="#" class="tool-link">Discover</a>
+                        <a href="https://ai.google.dev" class="tool-link" target="_blank" rel="noopener noreferrer">Discover</a>
                     </article>
                 </div>
                 
-                <div class="section-actions">
-                    <a href="src/pages/tools/" class="btn btn-primary">View All Tools</a>
+                <div class="text-center mt-12">
+                    <a href="src/pages/tools/" class="bg-nuvolo-blue hover:bg-nuvolo-light text-white hover:text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 min-w-[120px] inline-block">View All Tools</a>
                 </div>
             </div>
         </section>
@@ -389,7 +388,7 @@
         <!-- Team Section -->
         <section id="team" class="team" aria-labelledby="team-title">
             <div class="container">
-                <h2 id="team-title" class="section-title">Our Community</h2>
+                <h2 id="team-title" class="section-title playful-accent">Our Community</h2>
                 <p class="section-subtitle">
                     Meet the passionate individuals driving AI innovation at Nuvolo & Trane Technologies
                 </p>
@@ -472,14 +471,14 @@
         <section class="cta" aria-labelledby="cta-title">
             <div class="container">
                 <div class="cta-content">
-                    <h2 id="cta-title" class="cta-title">Join the AI Revolution</h2>
+                    <h2 id="cta-title" class="cta-title playful-accent">Join the AI Revolution</h2>
                     <p class="cta-description">
                         Be part of Nuvolo & Trane Technologies' AI learning community. Explore cutting-edge tools,
                         share knowledge, and advance your AI skills with fellow enthusiasts.
                     </p>
-                    <div class="cta-actions">
-                        <a href="#" class="btn btn-primary btn-large">Join Next Meeting</a>
-                        <a href="src/pages/resources/" class="btn btn-secondary btn-large">Explore Resources</a>
+                    <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center justify-center">
+                        <a href="src/pages/meetings/" class="bg-white hover:bg-gray-100 text-nuvolo-blue hover:text-nuvolo-blue font-medium py-4 px-8 rounded-lg transition-colors duration-200 min-w-[160px] text-center">Join Next Meeting</a>
+                        <a href="src/pages/resources/" class="bg-transparent hover:bg-white hover:text-nuvolo-blue text-white font-medium py-4 px-8 rounded-lg border border-white transition-colors duration-200 min-w-[160px] text-center">Explore Resources</a>
                     </div>
                 </div>
             </div>
@@ -491,7 +490,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3 class="footer-title">AI Cafe</h3>
+                    <h3 class="footer-title playful-accent">AI Cafe</h3>
                     <p class="footer-description">
                         Nuvolo & Trane Technologies AI Learning Initiative - Advancing artificial intelligence knowledge
                         through community collaboration and hands-on exploration.
@@ -505,8 +504,8 @@
                 <div class="footer-section">
                     <h4 class="footer-heading">Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="#meetings">Meetings</a></li>
-                        <li><a href="#tools">Tools</a></li>
+                        <li><a href="src/pages/meetings/">Meetings</a></li>
+                        <li><a href="src/pages/tools/">Tools</a></li>
                         <li><a href="#team">Team</a></li>
                         <li><a href="src/pages/resources/">Resources</a></li>
                     </ul>
@@ -526,8 +525,8 @@
                     <h4 class="footer-heading">Resources</h4>
                     <ul class="footer-links">
                         <li><a href="src/pages/news/">AI News</a></li>
-                        <li><a href="#">Learning Paths</a></li>
-                        <li><a href="#">Documentation</a></li>
+                        <li><a href="src/pages/resources/">Learning Paths</a></li>
+                        <li><a href="src/pages/resources/">Documentation</a></li>
                         <li><a href="SECURITY.md">Security</a></li>
                     </ul>
                 </div>

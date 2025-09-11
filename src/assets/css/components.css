@@ -688,4 +688,182 @@
   .loading {
     animation: none;
   }
+/* Playful Timeline Elements */
+.timeline-marker {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); box-shadow: var(--shadow-lg); }
+  50% { transform: scale(1.1); box-shadow: var(--shadow-xl); }
+}
+
+.timeline-number {
+  font-weight: var(--font-weight-bold);
+  position: relative;
+}
+
+.timeline-number::after {
+  content: "⭐";
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  font-size: 0.8em;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.timeline-item:hover .timeline-number::after {
+  opacity: 1;
+}
+
+/* Playful Tool Card Elements */
+.tool-icon {
+  position: relative;
+}
+
+.tool-icon::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 15px;
+  height: 15px;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.tool-card:hover .tool-icon::before {
+  opacity: 1;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* Playful Team Card Elements */
+.team-avatar {
+  position: relative;
+}
+
+.team-avatar::after {
+  content: "👋";
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  font-size: 1.2em;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.team-card:hover .team-avatar::after {
+  opacity: 1;
+  animation: wave 0.5s ease-in-out;
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(10deg); }
+  50% { transform: rotate(-10deg); }
+  75% { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Playful Tag Elements */
+.tag {
+  transition: all 0.2s ease-in-out;
+  position: relative;
+}
+
+.tag:hover {
+  transform: scale(1.1) rotate(3deg);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.tag::after {
+  content: "📌";
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  font-size: 0.6em;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.tag:hover::after {
+  opacity: 1;
+}
+
+/* Playful Feature Elements */
+.feature {
+  transition: all 0.2s ease-in-out;
+}
+
+.feature:hover {
+  transform: scale(1.1) rotate(-3deg);
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+/* Playful Contribution Elements */
+.contribution {
+  transition: all 0.2s ease-in-out;
+}
+
+.contribution:hover {
+  transform: scale(1.1) rotate(5deg);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* Playful Stat Item Elements */
+.stat-item {
+  transition: all 0.3s ease-in-out;
+}
+
+.stat-item:hover {
+  transform: scale(1.05);
+}
+
+.stat-value {
+  transition: all 0.3s ease-in-out;
+}
+
+.stat-item:hover .stat-value {
+  color: var(--color-accent);
+  text-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+}
+
+/* Playful Footer Elements */
+.footer-links a {
+  transition: all 0.2s ease-in-out;
+}
+
+.footer-links a:hover {
+  transform: translateX(5px);
+}
+
+.footer-title {
+  position: relative;
+}
+
+.footer-title::before {
+  content: "🏢";
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.footer-title:hover::before {
+  opacity: 1;
+  left: -35px;
+}
 }

@@ -14,6 +14,26 @@
     <link rel="stylesheet" href="../../assets/css/components.css">
     <link rel="stylesheet" href="../../assets/css/responsive.css">
     
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            corePlugins: {
+                preflight: false, // Disable Tailwind's CSS reset to preserve existing styles
+            },
+            theme: {
+                extend: {
+                    colors: {
+                        'nuvolo-blue': '#1E3A8A',
+                        'nuvolo-light': '#3B82F6',
+                        'trane-blue': '#0066CC',
+                        'accent-green': '#10B981',
+                    }
+                }
+            }
+        }
+    </script>
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +45,7 @@
         <nav class="nav" role="navigation" aria-label="Main navigation">
             <div class="nav-container">
                 <div class="nav-brand">
-                    <a href="../../index.html" class="brand-link" aria-label="AI Cafe Home">
+                    <a href="../../../index.html" class="brand-link" aria-label="AI Cafe Home">
                         <img src="../../assets/images/ai-cafe-logo.svg" alt="AI Cafe Logo" class="brand-logo">
                         <span class="brand-text">AI Cafe</span>
                     </a>
@@ -39,16 +59,16 @@
                 
                 <ul class="nav-menu" role="menubar">
                     <li class="nav-item" role="none">
-                        <a href="../../index.html#home" class="nav-link" role="menuitem">Home</a>
+                        <a href="../../../index.html#home" class="nav-link" role="menuitem">Home</a>
                     </li>
                     <li class="nav-item" role="none">
-                        <a href="../../index.html#meetings" class="nav-link" role="menuitem">Meetings</a>
+                        <a href="../../../index.html#meetings" class="nav-link" role="menuitem">Meetings</a>
                     </li>
                     <li class="nav-item" role="none">
-                        <a href="../../index.html#tools" class="nav-link active" role="menuitem">Tools</a>
+                        <a href="../../../index.html#tools" class="nav-link active" role="menuitem">Tools</a>
                     </li>
                     <li class="nav-item" role="none">
-                        <a href="../../index.html#team" class="nav-link" role="menuitem">Team</a>
+                        <a href="../../../index.html#team" class="nav-link" role="menuitem">Team</a>
                     </li>
                     <li class="nav-item" role="none">
                         <a href="../news/" class="nav-link" role="menuitem">AI News</a>
@@ -66,13 +86,13 @@
         <!-- Page Header -->
         <section class="page-header">
             <div class="container">
-                <h1 class="page-title">AI Tools Showcase</h1>
+                <h1 class="page-title playful-accent">AI Tools Showcase</h1>
                 <p class="page-subtitle">
                     Discover the cutting-edge AI tools we've explored and demonstrated at Nuvolo & Trane Technologies
                 </p>
                 <nav aria-label="Breadcrumb">
                     <ol class="breadcrumb">
-                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../../index.html">Home</a></li>
                         <li aria-current="page">Tools</li>
                     </ol>
                 </nav>
@@ -235,7 +255,7 @@
                             </div>
                         </div>
                         <div class="tool-actions">
-                            <a href="#" class="btn btn-primary">Learn More</a>
+                            <a href="https://codeium.com/windsurf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Learn More</a>
                             <a href="../meetings/" class="btn btn-secondary">View Demo</a>
                         </div>
                     </article>
@@ -283,7 +303,7 @@
                             </div>
                         </div>
                         <div class="tool-actions">
-                            <a href="#" class="btn btn-primary">Access Eva</a>
+                            <a href="../meetings/" class="btn btn-primary">Access Eva</a>
                             <a href="../meetings/" class="btn btn-secondary">View Features</a>
                         </div>
                     </article>
@@ -379,7 +399,7 @@
                             </div>
                         </div>
                         <div class="tool-actions">
-                            <a href="#" class="btn btn-primary">Discover Tool</a>
+                            <a href="https://ai.google.dev" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Discover Tool</a>
                             <a href="../meetings/" class="btn btn-secondary">View Demo</a>
                         </div>
                     </article>
@@ -422,12 +442,12 @@
                 <div class="cta-content">
                     <h2 class="cta-title">Explore AI Tools with Us</h2>
                     <p class="cta-description">
-                        Join the Nuvolo & Trane AI Cafe community and discover the latest AI tools and technologies. 
+                        Join the Nuvolo & Trane Technologies AI Cafe community and discover the latest AI tools and technologies.
                         Share your experiences and learn from fellow AI enthusiasts.
                     </p>
                     <div class="cta-actions">
                         <a href="../meetings/" class="btn btn-primary btn-large">View Meetings</a>
-                        <a href="../../index.html#team" class="btn btn-secondary btn-large">Contact Team</a>
+                        <a href="../../../index.html#team" class="btn btn-secondary btn-large">Contact Team</a>
                     </div>
                 </div>
             </div>
@@ -441,7 +461,7 @@
                 <div class="footer-section">
                     <h3 class="footer-title">AI Cafe</h3>
                     <p class="footer-description">
-                        Nuvolo & Trane AI Learning Initiative - Advancing artificial intelligence knowledge 
+                        Nuvolo & Trane Technologies AI Learning Initiative - Advancing artificial intelligence knowledge
                         through community collaboration and hands-on exploration.
                     </p>
                 </div>
@@ -449,9 +469,9 @@
                 <div class="footer-section">
                     <h4 class="footer-heading">Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="../../index.html#meetings">Meetings</a></li>
-                        <li><a href="../../index.html#tools">Tools</a></li>
-                        <li><a href="../../index.html#team">Team</a></li>
+                        <li><a href="../../../index.html#meetings">Meetings</a></li>
+                        <li><a href="../../../index.html#tools">Tools</a></li>
+                        <li><a href="../../../index.html#team">Team</a></li>
                         <li><a href="../resources/">Resources</a></li>
                     </ul>
                 </div>
@@ -478,7 +498,7 @@
             
             <div class="footer-bottom">
                 <p class="footer-copyright">
-                    &copy; 2024 AI Cafe Community - Nuvolo & Trane. 
+                    &copy; 2024 AI Cafe Community - Nuvolo & Trane Technologies.
                     <a href="../../LICENSE">MIT License</a>
                 </p>
                 <p class="footer-attribution">

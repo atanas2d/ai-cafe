@@ -335,24 +335,30 @@ const Performance = {
   },
 
   preloadCriticalResources() {
-    // Preload critical CSS and fonts
-    const criticalResources = [
-      { href: 'src/assets/css/main.css', as: 'style' },
+    // Avoid path issues on nested pages by NOT preloading CSS with a relative path.
+    // Stylesheets are already included via <link rel="stylesheet"> on every page.
+    // We only optimize fonts here and gracefully noop if the URL fails.
+    const resources = [
       { href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap', as: 'style' }
     ];
 
-    criticalResources.forEach(resource => {
-      const link = document.createElement('link');
-      link.rel = 'preload';
-      link.href = resource.href;
-      link.as = resource.as;
-      if (resource.as === 'style') {
-        link.onload = function() {
-          this.onload = null;
-          this.rel = 'stylesheet';
-        };
+    resources.forEach(resource => {
+      try {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.href = resource.href;
+        link.as = resource.as;
+        if (resource.as === 'style') {
+          link.onload = function() {
+            this.onload = null;
+            this.rel = 'stylesheet';
+          };
+        }
+        document.head.appendChild(link);
+      } catch (e) {
+        // Silently ignore preload errors
+        console.warn('Preload skipped:', resource.href, e);
       }
-      document.head.appendChild(link);
     });
   }
 };

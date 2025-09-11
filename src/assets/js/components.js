@@ -11,8 +11,8 @@ const MeetingData = {
       id: 8,
       date: "2024-09-01",
       title: "Sapient AI & Google Nano Banana",
-      participants: ["Atanas Rusev", "Team"],
-      presenter: "Atanas Rusev",
+      participants: ["Atanas Dimitrov", "Team"],
+      presenter: "Atanas Dimitrov",
       topics: [
         "Sapient - Self-Evolving Machine Intelligence",
         "Google Nano Banana image generation",
