@@ -1,6 +1,6 @@
 # AI Cafe - Trane Technologies AI Learning Initiative
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://your-username.github.io/ai-cafe-website)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://atanas2d.github.io/ai-cafe)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 
@@ -54,8 +54,8 @@ Our community has explored and demonstrated various AI tools and platforms:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/ai-cafe-website.git
-   cd ai-cafe-website
+   git clone https://github.com/atanas2d/ai-cafe.git
+   cd ai-cafe
    ```
 
 2. **Install dependencies**
@@ -81,13 +81,13 @@ Our community has explored and demonstrated various AI tools and platforms:
 ### For Contributors
 
 1. Read our [Contributing Guidelines](./CONTRIBUTING.md)
-2. Check out [open issues](https://github.com/your-username/ai-cafe-website/issues)
+2. Check out [open issues](https://github.com/atanas2d/ai-cafe/issues)
 3. Submit meeting recaps using our [template](./.github/ISSUE_TEMPLATE/meeting_recap.md)
 
 ## 📁 Project Structure
 
 ```
-ai-cafe-website/
+ai-cafe/
 ├── src/
 │   ├── assets/          # CSS, JS, images
 │   ├── components/      # Reusable UI components
@@ -131,7 +131,7 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 
 ## 🔗 Links
 
-- **Live Website**: [AI Cafe Website](https://your-username.github.io/ai-cafe-website)
+- **Live Website**: [AI Cafe Website](https://atanas2d.github.io/ai-cafe)
 - **Meeting Schedule**: [Trane Technologies Teams](https://teams.microsoft.com)
 - **AI News Archive**: [Weekly AI Updates](./src/pages/news/)
 - **Learning Resources**: [AI Learning Hub](./src/pages/resources/)
@@ -141,8 +141,8 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 For questions about AI Cafe or this website:
 
 - **Teams Channel**: AI Cafe - Trane Technologies
-- **Issues**: [GitHub Issues](https://github.com/your-username/ai-cafe-website/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/your-username/ai-cafe-website/discussions)
+- **Issues**: [GitHub Issues](https://github.com/atanas2d/ai-cafe/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/atanas2d/ai-cafe/discussions)
 
 ---
 

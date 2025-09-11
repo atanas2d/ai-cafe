@@ -31,7 +31,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Compile TypeScript
         run: npm run build:ts
@@ -59,8 +59,10 @@ jobs:
       - name: Build website
         run: |
           echo "Building AI Cafe website..."
+          rm -rf dist
           mkdir -p dist
-          cp -r * dist/ 2>/dev/null || :
+          cp -r src dist/
+          cp -f index.html dist/
           echo "Build completed successfully"
 
       - name: Setup Pages
@@ -69,7 +71,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./
+          path: ./dist
 
   # Deployment job
   deploy:

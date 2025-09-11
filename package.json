@@ -1,5 +1,5 @@
 {
-  "name": "ai-cafe-website",
+  "name": "ai-cafe",
   "version": "1.0.0",
   "description": "AI Cafe - Trane Technologies AI Learning Initiative Website",
   "main": "index.html",
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-username/ai-cafe-website.git"
+    "url": "git+https://github.com/atanas2d/ai-cafe.git"
   },
   "keywords": [
     "ai",
@@ -33,9 +33,9 @@
   "author": "AI Cafe Community",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/your-username/ai-cafe-website/issues"
+    "url": "https://github.com/atanas2d/ai-cafe/issues"
   },
-  "homepage": "https://your-username.github.io/ai-cafe-website",
+  "homepage": "https://atanas2d.github.io/ai-cafe",
   "devDependencies": {
     "typescript": "^5.2.2",
     "@types/node": "^20.8.0",
