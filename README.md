@@ -39,7 +39,7 @@ Our community has explored and demonstrated various AI tools and platforms:
 - **Meeting #6**: Gemini Scheduled Actions vs GPT Tasks comparison
 - **Meeting #5**: OpenAI Custom Instances and Projects deep dive
 
-[View all meeting recaps →](./docs/meetings/)
+[View all meeting recaps →](./src/pages/meetings/)
 
 ## 🌟 Key Contributors
 
@@ -82,20 +82,22 @@ Our community has explored and demonstrated various AI tools and platforms:
 
 1. Read our [Contributing Guidelines](./CONTRIBUTING.md)
 2. Check out [open issues](https://github.com/atanas2d/ai-cafe/issues)
-3. Submit meeting recaps using our [template](./.github/ISSUE_TEMPLATE/meeting_recap.md)
+3. Submit meeting recaps by adding/updating pages under `src/pages/meetings/`
 
 ## 📁 Project Structure
 
 ```
 ai-cafe/
 ├── src/
-│   ├── assets/          # CSS, JS, images
-│   ├── components/      # Reusable UI components
-│   ├── pages/          # Individual page content
-│   └── data/           # Meeting data, tool info
-├── docs/               # Documentation
-├── .github/            # GitHub workflows and templates
-└── tests/              # Test files
+│   ├── assets/          # CSS, JS, images, TypeScript
+│   ├── pages/           # Meetings, News, Resources, Tools
+│   └── types/           # Shared TypeScript types
+├── .github/             # GitHub workflows
+├── index.html           # Landing page
+├── package.json         # Scripts and metadata
+├── tsconfig.json        # TypeScript config
+├── README.md            # Project docs
+└── LICENSE              # MIT license
 ```
 
 ## 🔧 Technology Stack
