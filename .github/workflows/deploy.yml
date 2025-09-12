@@ -65,7 +65,7 @@ jobs:
           cp -f index.html dist/
           # Include root banner candidates in the served images directory
           mkdir -p dist/src/assets/images
-          cp -f "unnamed"*.jpg dist/src/assets/images/ 2>/dev/null || true
+          cp -f unnamed*.jpg dist/src/assets/images/ 2>/dev/null || true
           echo "Build completed successfully"
 
       - name: Setup Pages

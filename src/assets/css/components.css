@@ -8,6 +8,12 @@
   margin: 0 auto;
 }
 
+/* Single-item timeline (homepage latest meeting) */
+.timeline.timeline--single::before { display: none; }
+.timeline.timeline--single .timeline-item { flex-direction: row; }
+.timeline.timeline--single .timeline-marker { display: none; }
+.timeline.timeline--single .timeline-content { max-width: 720px; margin: 0 auto; }
+
 .timeline::before {
   content: '';
   position: absolute;
@@ -316,7 +322,7 @@
 
 /* News filters alignment */
 .news-filters {
-  padding: var(--space-8) 0;
+  padding: var(--space-6) 0 var(--space-4);
 }
 
 .news-filters .filter-buttons {

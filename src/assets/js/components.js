@@ -512,6 +512,25 @@ const InteractiveComponents = {
 
 // Data Rendering Functions
 const DataRenderer = {
+  resolveToolLink(name) {
+    const mapping = {
+      'OpenAI GPT': 'https://openai.com',
+      'Google Gemini': 'https://ai.google.dev',
+      'WindSurf': 'https://codeium.com/windsurf',
+      'Eva 2.0': 'https://trane.com/eva',
+      'Sapient HRM': 'https://huggingface.co/sapientinc/HRM-checkpoint-ARC-2',
+      'Google Nano Banana': 'https://ai.google.dev/explore',
+      'Google Translate': 'https://blog.google/products/translate/'
+    };
+    if (mapping[name]) return mapping[name];
+    try {
+      if (typeof ToolsData !== 'undefined') {
+        const tool = ToolsData.getAllTools().find(t => t.name.toLowerCase().includes(name.toLowerCase()));
+        if (tool && tool.website) return tool.website;
+      }
+    } catch (_) {}
+    return 'src/pages/tools/';
+  },
   renderMeetingCard(meeting) {
     return `
       <article class="timeline-item" data-meeting-id="${meeting.id}" data-searchable="${meeting.title} ${meeting.summary} ${meeting.topics.join(' ')}">
@@ -523,7 +542,10 @@ const DataRenderer = {
           <p class="timeline-date">${this.formatDate(meeting.date)}</p>
           <p class="timeline-description">${meeting.summary}</p>
           <div class="timeline-tags">
-            ${meeting.tools_demonstrated.map(tool => `<span class="tag">${tool}</span>`).join('')}
+            ${meeting.tools_demonstrated.map(tool => {
+              const href = this.resolveToolLink(tool);
+              return `<a class=\"tag\" href=\"${href}\" target=\"_blank\" rel=\"noopener noreferrer\">${tool}</a>`;
+            }).join('')}
           </div>
           ${meeting.presenter ? `<p class="timeline-presenter">Presented by: ${meeting.presenter}</p>` : ''}
         </div>
