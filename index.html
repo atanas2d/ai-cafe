@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,26 +33,8 @@
     <link rel="stylesheet" href="src/assets/css/responsive.css">
     
     <!-- Tailwind CSS -->
+    <script src="src/assets/js/tailwind-config.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            corePlugins: {
-                preflight: false, // Disable Tailwind's CSS reset to preserve existing styles
-            },
-            theme: {
-                extend: {
-                    colors: {
-                        'nuvolo-blue': '#1E3A8A',
-                        'nuvolo-light': '#3B82F6',
-                        'nuvolo-orange': '#F97316',
-                        'nuvolo-green': '#10B981',
-                        'trane-blue': '#0066CC',
-                        'trane-red': '#E53E3E',
-                    }
-                }
-            }
-        }
-    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -77,6 +59,7 @@
                     <span class="hamburger"></span>
                     <span class="hamburger"></span>
                 </button>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
                 
                 <ul class="nav-menu" role="menubar">
                     <li class="nav-item" role="none">
@@ -519,45 +502,9 @@
     </footer>
 
     <!-- JavaScript -->
+    <script src="src/assets/js/theme.js"></script>
     <script src="src/assets/js/main.js"></script>
     <script src="src/assets/js/components.js"></script>
-    <script>
-      // Render only the most recent meeting on the homepage timeline
-      document.addEventListener('DOMContentLoaded', function () {
-        try {
-          if (typeof MeetingData !== 'undefined' && typeof DataRenderer !== 'undefined') {
-            var all = MeetingData.getAllMeetings();
-            if (all && all.length) {
-              var latest = all[0];
-              var container = document.getElementById('latest-timeline');
-              if (container) container.innerHTML = DataRenderer.renderMeetingCard(latest);
-            }
-          }
-        } catch (e) {
-          console.warn('Failed to render latest meeting:', e);
-        }
-
-        // Banner picker logic
-        var section = document.getElementById('home');
-        var chips = document.querySelectorAll('.banner-chip');
-        function applyBannerFrom(btn){
-          var url = btn ? btn.getAttribute('data-src') : 'src/assets/images/AICafeBanner.png';
-          if (section) section.style.setProperty('--hero-bg', 'url("' + url + '")');
-          chips.forEach(function(c){ c.setAttribute('aria-pressed', String(c === btn)); });
-          try { localStorage.setItem('aicafe_banner_src', url); } catch(_) {}
-        }
-
-        // init from saved preference
-        var saved = null; try { saved = localStorage.getItem('aicafe_banner_src'); } catch(_) {}
-        if (saved) {
-          if (section) section.style.setProperty('--hero-bg', 'url("' + saved + '")');
-          chips.forEach(function(c){ c.setAttribute('aria-pressed', String(c.getAttribute('data-src') === saved)); });
-        }
-
-        chips.forEach(function(btn){
-          btn.addEventListener('click', function(){ applyBannerFrom(btn); });
-        });
-      });
-    </script>
+    <script src="src/assets/js/home.js"></script>
 </body>
 </html>
