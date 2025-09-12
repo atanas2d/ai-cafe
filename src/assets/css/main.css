@@ -558,6 +558,8 @@ a:focus {
   min-width: 120px;
   height: auto;
   box-sizing: border-box;
+  position: relative;           /* keep click effects contained */
+  overflow: hidden;             /* prevent ripple from resizing */
 }
 
 .btn-primary {
@@ -926,6 +928,20 @@ section {
 @keyframes loading {
   0% { left: -100%; }
   100% { left: 100%; }
+}
+
+/* Click ripple (fixes button growth on click) */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.12);
+  transform: scale(0);
+  animation: ripple .6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple {
+  to { transform: scale(2); opacity: 0; }
 }
 
 /* Playful footer elements */
