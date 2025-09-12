@@ -524,10 +524,15 @@ a:focus {
   opacity: 0.6;
 }
 
-.ai-network .node:not(.logo-node) {
-  fill: url(#nnGradient);
+/* Base node visuals/animation (gradient fill is page-scoped below) */
+.ai-network .node {
   filter: drop-shadow(0 6px 12px rgba(30, 58, 138, 0.22));
   animation: nodePulse 5s ease-in-out infinite;
+}
+
+/* Home page neural network uses a shared gradient id `#nnGradient` */
+.page-home .ai-network .node:not(.logo-node) {
+  fill: url(#nnGradient);
 }
 
 @keyframes dashMove {
