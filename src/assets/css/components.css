@@ -151,7 +151,8 @@
 
 .tools-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: stretch;
   gap: var(--space-8);
 }
 
@@ -178,6 +179,50 @@
   overflow: hidden;
 }
 
+/* Condensed layout for detailed tool tiles on Tools page */
+.tool-card.detailed {
+  text-align: left;
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.tool-card.detailed .tool-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-2);
+}
+
+.tool-card.detailed .tool-meta .tool-title {
+  margin: 0;
+}
+
+.tool-card.detailed .tool-category {
+  color: var(--color-gray-500);
+  font-size: var(--font-size-sm);
+}
+
+.tool-card.detailed .tool-description {
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.tool-card.detailed .tool-details {
+  display: none; /* Hide verbose bullet sections to keep tiles compact */
+}
+
+.tool-card.detailed .tool-actions {
+  margin-top: auto;
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
 .tool-card::before {
   content: '';
   position: absolute;
@@ -201,8 +246,8 @@
 }
 
 .tool-icon {
-  width: 64px;
-  height: 64px;
+  width: 56px;
+  height: 56px;
   margin: 0 auto var(--space-6);
   display: flex;
   align-items: center;
@@ -229,7 +274,7 @@
 }
 
 .tool-title {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-lg);
   font-weight: var(--font-weight-semibold);
   color: var(--color-gray-900);
   margin-bottom: var(--space-4);
@@ -238,7 +283,7 @@
 .tool-description {
   color: var(--color-gray-600);
   line-height: var(--line-height-relaxed);
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-4);
 }
 
 .tool-features {
@@ -267,6 +312,22 @@
   transition: all var(--transition-fast);
   padding: var(--space-2) var(--space-4);
   border-radius: var(--radius-md);
+}
+
+/* News filters alignment */
+.news-filters {
+  padding: var(--space-8) 0;
+}
+
+.news-filters .filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.featured-news {
+  padding-top: var(--space-8);
 }
 
 .tool-link:hover,
