@@ -522,11 +522,12 @@
 
         var hero = document.getElementById('home');
         if (hero) {
+          var bannerOptions = ['banner-option-1', 'banner-option-2', 'banner-option-3', 'banner-option-4'];
           var thumbs = document.querySelectorAll('.banner-thumb');
           thumbs.forEach(function (btn) {
             btn.addEventListener('click', function () {
+              hero.classList.remove(...bannerOptions);
               var opt = this.getAttribute('data-banner');
-              hero.classList.remove('banner-option-1','banner-option-2','banner-option-3','banner-option-4');
               hero.classList.add('banner-option-' + opt);
               thumbs.forEach(function (b) { b.classList.remove('active'); });
               this.classList.add('active');
