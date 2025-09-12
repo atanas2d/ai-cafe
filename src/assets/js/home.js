@@ -34,7 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function applySrcFrom(btn?: HTMLButtonElement) {
     const url = btn ? (btn.getAttribute('data-src') || 'src/assets/images/AICafeBanner.png') : 'src/assets/images/AICafeBanner.png';
-    hero.style.setProperty('--hero-bg', `url("${url}")`);
+    // CSS uses --banner-image for background; update that var
+    hero.style.setProperty('--banner-image', `url("${url}")`);
     chips.forEach((c) => c.setAttribute('aria-pressed', String(c === btn)));
     try { localStorage.setItem(BANNER_SRC_KEY, url); } catch {}
   }
