@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Cafe – Animation Variants</title>
+  <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.ico">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/responsive.css">
+  <style>
+    .demo-wrap { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+    .variant-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+    @media (min-width: 900px) { .variant-grid { grid-template-columns: repeat(3, 1fr); } }
+    .variant-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 16px; padding: 1rem 1rem 1.5rem; box-shadow: var(--shadow-sm); display:flex; flex-direction:column; align-items:center; }
+    .variant-title { font-weight: 600; margin: .5rem 0 .75rem; color: #0F172A; }
+    .variant-desc { color:#64748B; font-size: .95rem; text-align:center; min-height: 3.5em; }
+    .stage { width: 100%; max-width: 320px; height: 320px; display:flex; align-items:center; justify-content:center; }
+    .ai-network { width: 100%; height: 100%; }
+  </style>
+  <!-- Tailwind only for base tokens present across site; preflight is disabled in main -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script> tailwind.config = { corePlugins: { preflight: false } } </script>
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <a href="../../../index.html" class="brand-link">
+            <img src="../../assets/images/AICafeLogo.png" class="brand-logo" alt="AI Cafe" />
+            <span class="brand-text">AI Cafe</span>
+          </a>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="../../../index.html#home" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="../meetings/" class="nav-link">Meetings</a></li>
+          <li class="nav-item"><a href="../tools/" class="nav-link">Tools</a></li>
+          <li class="nav-item"><a href="../news/" class="nav-link">AI News</a></li>
+          <li class="nav-item"><a href="../resources/" class="nav-link">Resources</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero compact" aria-labelledby="variants-title">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 id="variants-title" class="hero-title playful-accent">Animation Variants</h1>
+        </div>
+      </div>
+    </section>
+
+    <div class="demo-wrap">
+      <div class="variant-grid">
+        <!-- Variant A: Brand Gradient (classic) -->
+        <article class="variant-card">
+          <h3 class="variant-title">A. Brand Gradient</h3>
+          <p class="variant-desc">Animated lines + pulsing nodes using Nuvolo → Trane gradient.</p>
+          <div class="stage">
+            <svg class="ai-network" viewBox="0 0 300 300" role="img" aria-label="Brand gradient network">
+              <defs>
+                <linearGradient id="nnGradientA" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#1E3A8A"/>
+                  <stop offset="100%" stop-color="#E53E3E"/>
+                </linearGradient>
+              </defs>
+              <g stroke="url(#nnGradientA)" stroke-width="2" fill="none" stroke-linecap="round">
+                <path class="pulse" d="M60 60 L150 90 L240 60 M60 150 L150 150 L240 150 M60 240 L150 210 L240 240"/>
+                <circle class="node" cx="60" cy="60" r="8"/>
+                <circle class="node" cx="150" cy="90" r="8"/>
+                <circle class="node" cx="240" cy="60" r="8"/>
+                <circle class="node" cx="60" cy="150" r="8"/>
+                <circle class="node" cx="150" cy="150" r="10"/>
+                <circle class="node" cx="240" cy="150" r="8"/>
+                <circle class="node" cx="60" cy="240" r="8"/>
+                <circle class="node" cx="150" cy="210" r="8"/>
+                <circle class="node" cx="240" cy="240" r="8"/>
+              </g>
+            </svg>
+          </div>
+        </article>
+
+        <!-- Variant B: Logo Endpoints -->
+        <article class="variant-card">
+          <h3 class="variant-title">B. Logo Endpoints</h3>
+          <p class="variant-desc">Same as A, but two end nodes carry Nuvolo / Trane logos.</p>
+          <div class="stage">
+            <svg class="ai-network" viewBox="0 0 300 300" role="img" aria-label="Logo endpoints network">
+              <defs>
+                <linearGradient id="nnGradientB" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#1E3A8A"/>
+                  <stop offset="100%" stop-color="#E53E3E"/>
+                </linearGradient>
+                <pattern id="nuvoloPatternB" patternUnits="userSpaceOnUse" width="16" height="16">
+                  <image href="../../assets/images/nuvolo-logo.svg" x="0" y="0" width="16" height="16" preserveAspectRatio="xMidYMid slice" />
+                </pattern>
+                <pattern id="tranePatternB" patternUnits="userSpaceOnUse" width="16" height="16">
+                  <image href="../../assets/images/trane-logo.svg" x="0" y="0" width="16" height="16" preserveAspectRatio="xMidYMid slice" />
+                </pattern>
+              </defs>
+              <g stroke="url(#nnGradientB)" stroke-width="2" fill="none" stroke-linecap="round">
+                <path class="pulse" d="M60 60 L150 90 L240 60 M60 150 L150 150 L240 150 M60 240 L150 210 L240 240"/>
+                <circle class="node logo-node" cx="60" cy="60" r="8" fill="url(#nuvoloPatternB)" stroke="#1E3A8A" stroke-width="1"/>
+                <circle class="node" cx="150" cy="90" r="8"/>
+                <circle class="node logo-node" cx="240" cy="60" r="8" fill="url(#tranePatternB)" stroke="#E53E3E" stroke-width="1"/>
+                <circle class="node" cx="60" cy="150" r="8"/>
+                <circle class="node" cx="150" cy="150" r="10"/>
+                <circle class="node" cx="240" cy="150" r="8"/>
+                <circle class="node" cx="60" cy="240" r="8"/>
+                <circle class="node" cx="150" cy="210" r="8"/>
+                <circle class="node" cx="240" cy="240" r="8"/>
+              </g>
+            </svg>
+          </div>
+        </article>
+
+        <!-- Variant C: Minimal Dots (no lines, subtle pulse) -->
+        <article class="variant-card">
+          <h3 class="variant-title">C. Minimal Dots</h3>
+          <p class="variant-desc">No connecting lines. Subtle pulse only on nodes.</p>
+          <div class="stage">
+            <svg class="ai-network" viewBox="0 0 300 300" role="img" aria-label="Minimal dots network">
+              <defs>
+                <linearGradient id="nnGradientC" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#1E3A8A"/>
+                  <stop offset="100%" stop-color="#10B981"/>
+                </linearGradient>
+              </defs>
+              <g fill="url(#nnGradientC)">
+                <circle class="node" cx="60" cy="60" r="8"/>
+                <circle class="node" cx="150" cy="90" r="8"/>
+                <circle class="node" cx="240" cy="60" r="8"/>
+                <circle class="node" cx="60" cy="150" r="8"/>
+                <circle class="node" cx="150" cy="150" r="10"/>
+                <circle class="node" cx="240" cy="150" r="8"/>
+                <circle class="node" cx="60" cy="240" r="8"/>
+                <circle class="node" cx="150" cy="210" r="8"/>
+                <circle class="node" cx="240" cy="240" r="8"/>
+              </g>
+            </svg>
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p class="footer-attribution">© AI Cafe Community</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+
