@@ -452,15 +452,15 @@ a:focus {
 }
 
 .ai-network .pulse {
-  stroke-dasharray: 6 10;
-  animation: dashMove 4s linear infinite;
-  opacity: 0.9;
+  stroke-dasharray: 4 14;
+  animation: dashMove 6s linear infinite;
+  opacity: 0.6;
 }
 
 .ai-network .node {
   fill: url(#nnGradient);
-  filter: drop-shadow(0 6px 12px rgba(30, 58, 138, 0.25));
-  animation: nodePulse 3s ease-in-out infinite;
+  filter: drop-shadow(0 6px 12px rgba(30, 58, 138, 0.22));
+  animation: nodePulse 5s ease-in-out infinite;
 }
 
 @keyframes dashMove {
@@ -471,7 +471,7 @@ a:focus {
 
 @keyframes nodePulse {
   0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.12); }
+  50% { transform: scale(1.06); }
 }
 
 /* Button Styles */
@@ -789,18 +789,19 @@ section {
 }
 
 .highlight-card:hover, .tool-card:hover, .team-card:hover {
-  transform: translateY(-5px) rotate(1deg);
+  transform: translateY(-3px);
   transition: all 0.3s ease-in-out;
 }
 
 /* Playful button hover effects */
 .btn-primary:hover {
-  transform: scale(1.05) rotate(-2deg);
+  /* keep size stable on hover */
+  transform: none;
   transition: all 0.2s ease-in-out;
 }
 
 .btn-secondary:hover {
-  transform: scale(1.05) rotate(2deg);
+  transform: none;
   transition: all 0.2s ease-in-out;
 }
 
@@ -899,7 +900,7 @@ section {
 }
 
 .brand-link:hover .brand-text {
-  transform: scale(1.05) rotate(-2deg);
+  transform: none;
   color: var(--color-accent);
 }
 
