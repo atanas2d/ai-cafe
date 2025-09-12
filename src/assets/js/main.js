@@ -20,9 +20,8 @@ class Utils {
     static throttle(func, limit) {
         let inThrottle;
         return function (...args) {
-            const context = this;
             if (!inThrottle) {
-                func.apply(context, args);
+                func.apply(this, args);
                 inThrottle = true;
                 setTimeout(() => inThrottle = false, limit);
             }
@@ -259,9 +258,9 @@ class Animations {
                 const size = Math.max(rect.width, rect.height);
                 const x = e.clientX - rect.left - size / 2;
                 const y = e.clientY - rect.top - size / 2;
-                ripple.style.width = ripple.style.height = size + 'px';
-                ripple.style.left = x + 'px';
-                ripple.style.top = y + 'px';
+                ripple.style.width = ripple.style.height = `${size}px`;
+                ripple.style.left = `${x}px`;
+                ripple.style.top = `${y}px`;
                 ripple.classList.add('ripple');
                 this.appendChild(ripple);
                 setTimeout(() => {

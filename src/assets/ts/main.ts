@@ -14,8 +14,8 @@ import type {
 // Utility Functions
 class Utils {
   // Debounce function for performance optimization
-  static debounce<T extends (...args: any[]) => any>(
-    func: T, 
+  static debounce<T extends(...args: any[]) => any>(
+    func: T,
     wait: number
   ): (...args: Parameters<T>) => void {
     let timeout: ReturnType<typeof setTimeout>;
@@ -30,15 +30,14 @@ class Utils {
   }
 
   // Throttle function for scroll events
-  static throttle<T extends (...args: any[]) => any>(
-    func: T, 
+  static throttle<T extends(...args: any[]) => any>(
+    func: T,
     limit: number
   ): (...args: Parameters<T>) => void {
     let inThrottle: boolean;
     return function(this: any, ...args: Parameters<T>): void {
-      const context = this;
       if (!inThrottle) {
-        func.apply(context, args);
+        func.apply(this, args);
         inThrottle = true;
         setTimeout(() => inThrottle = false, limit);
       }
@@ -75,7 +74,7 @@ class Utils {
 
   // Type-safe query selector
   static querySelector<T extends Element = Element>(
-    selector: string, 
+    selector: string,
     parent: Document | Element = document
   ): T | null {
     return parent.querySelector<T>(selector);
@@ -83,7 +82,7 @@ class Utils {
 
   // Type-safe query selector all
   static querySelectorAll<T extends Element = Element>(
-    selector: string, 
+    selector: string,
     parent: Document | Element = document
   ): NodeListOf<T> {
     return parent.querySelectorAll<T>(selector);
@@ -107,7 +106,7 @@ class Navigation {
   private setupMobileMenu(): void {
     this.navToggle = Utils.querySelector<HTMLButtonElement>('.nav-toggle');
     this.navMenu = Utils.querySelector<HTMLElement>('.nav-menu');
-    
+
     if (!this.navToggle || !this.navMenu) return;
 
     this.navToggle.addEventListener('click', this.handleToggleClick.bind(this));
@@ -129,11 +128,11 @@ class Navigation {
     if (!this.navToggle || !this.navMenu) return;
 
     const isExpanded = this.navToggle.getAttribute('aria-expanded') === 'true';
-    
+
     this.navToggle.setAttribute('aria-expanded', (!isExpanded).toString());
     this.navToggle.classList.toggle('active');
     this.navMenu.classList.toggle('active');
-    
+
     // Prevent body scroll when menu is open
     document.body.style.overflow = !isExpanded ? 'hidden' : '';
   }
@@ -150,7 +149,7 @@ class Navigation {
   private handleOutsideClick(e: Event): void {
     const target = e.target as Element;
     if (!this.navToggle || !this.navMenu) return;
-    
+
     if (!this.navToggle.contains(target) && !this.navMenu.contains(target)) {
       this.closeMenu();
     }
@@ -165,14 +164,14 @@ class Navigation {
 
   private setupSmoothScrolling(): void {
     const navLinks = Utils.querySelectorAll<HTMLAnchorElement>('a[href^="#"]');
-    
+
     navLinks.forEach(link => {
       link.addEventListener('click', (e: Event) => {
         e.preventDefault();
-        
+
         const targetId = link.getAttribute('href')?.substring(1);
         if (!targetId) return;
-        
+
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
           const headerHeight = Utils.getHeaderHeight();
@@ -185,23 +184,23 @@ class Navigation {
   private setupActiveNavigation(): void {
     this.sections = Utils.querySelectorAll<HTMLElement>('section[id]');
     this.navLinks = Utils.querySelectorAll<HTMLAnchorElement>('.nav-link');
-    
+
     if (this.sections.length === 0 || !this.navLinks || this.navLinks.length === 0) return;
 
     const updateActiveNav = Utils.throttle(() => {
       const scrollPosition = window.scrollY + Utils.getHeaderHeight() + 100;
-      
+
       let currentSection = '';
-      
+
       this.sections?.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.offsetHeight;
-        
+
         if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
           currentSection = section.getAttribute('id') || '';
         }
       });
-      
+
       this.navLinks?.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === `#${currentSection}`) {
@@ -243,7 +242,7 @@ class Animations {
 
   private setupScrollAnimations(): void {
     this.animatedElements = Utils.querySelectorAll('.highlight-card, .tool-card, .team-card, .timeline-item');
-    
+
     if (this.animatedElements.length === 0) return;
 
     const observerOptions: IntersectionObserverInit = {
@@ -268,25 +267,25 @@ class Animations {
 
   private setupCounterAnimations(): void {
     this.counters = Utils.querySelectorAll('.stat-number, .stat-value');
-    
+
     if (this.counters.length === 0) return;
 
     const animateCounter = (element: Element): void => {
       const target = element.textContent || '';
       const isNumeric = /^\d+\+?$/.test(target);
-      
+
       if (!isNumeric) return;
-      
+
       const finalNumber = parseInt(target.replace('+', ''));
       const hasPlus = target.includes('+');
       const duration = 2000;
       const steps = 60;
       const increment = finalNumber / steps;
       const stepDuration = duration / steps;
-      
+
       let current = 0;
       element.textContent = '0';
-      
+
       const timer = setInterval(() => {
         current += increment;
         if (current >= finalNumber) {
@@ -315,7 +314,7 @@ class Animations {
   private setupHoverEffects(): void {
     // Add ripple effect to buttons
     const buttons = Utils.querySelectorAll<HTMLButtonElement>('.btn');
-    
+
     buttons.forEach(button => {
       button.addEventListener('click', function(this: HTMLButtonElement, e: MouseEvent) {
         const ripple = document.createElement('span');
@@ -323,14 +322,14 @@ class Animations {
         const size = Math.max(rect.width, rect.height);
         const x = e.clientX - rect.left - size / 2;
         const y = e.clientY - rect.top - size / 2;
-        
-        ripple.style.width = ripple.style.height = size + 'px';
-        ripple.style.left = x + 'px';
-        ripple.style.top = y + 'px';
+
+        ripple.style.width = ripple.style.height = `${size  }px`;
+        ripple.style.left = `${x  }px`;
+        ripple.style.top = `${y  }px`;
         ripple.classList.add('ripple');
-        
+
         this.appendChild(ripple);
-        
+
         setTimeout(() => {
           ripple.remove();
         }, 600);
@@ -356,7 +355,7 @@ class Performance {
 
   private setupLazyLoading(): void {
     const images = Utils.querySelectorAll<HTMLImageElement>('img[data-src]');
-    
+
     if (images.length === 0) return;
 
     const imageObserver = new IntersectionObserver((entries) => {
@@ -383,7 +382,7 @@ class Performance {
     // Add loading="lazy" to images below the fold
     const images = Utils.querySelectorAll<HTMLImageElement>('img:not([loading])');
     const heroSection = Utils.querySelector('.hero');
-    
+
     images.forEach(img => {
       if (heroSection && !heroSection.contains(img)) {
         img.setAttribute('loading', 'lazy');
@@ -418,7 +417,7 @@ class Performance {
     window.addEventListener('load', () => {
       const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
       this.metrics.loadTime = navigation.loadEventEnd - navigation.fetchStart;
-      
+
       // Log performance metrics in development
       // Log performance metrics in development
       console.log('Performance Metrics:', this.metrics);
@@ -442,13 +441,13 @@ class Accessibility {
   private setupKeyboardNavigation(): void {
     // Handle keyboard navigation for custom components
     const cards = Utils.querySelectorAll('.highlight-card, .tool-card, .team-card');
-    
+
     cards.forEach(card => {
       const link = card.querySelector('a');
       if (link) {
         card.setAttribute('tabindex', '0');
         card.setAttribute('role', 'button');
-        
+
         card.addEventListener('keydown', (e: Event) => {
           const keyEvent = e as KeyboardEvent;
           if (keyEvent.key === 'Enter' || keyEvent.key === ' ') {
@@ -465,12 +464,12 @@ class Accessibility {
     const focusableElements = Utils.querySelectorAll<HTMLElement>(
       'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])'
     );
-    
+
     focusableElements.forEach(element => {
       element.addEventListener('focus', () => {
         element.classList.add('focused');
       });
-      
+
       element.addEventListener('blur', () => {
         element.classList.remove('focused');
       });
@@ -481,13 +480,13 @@ class Accessibility {
     // Update ARIA labels dynamically
     const navToggle = Utils.querySelector<HTMLButtonElement>('.nav-toggle');
     const navMenu = Utils.querySelector<HTMLElement>('.nav-menu');
-    
+
     if (navToggle && navMenu) {
       const observer = new MutationObserver(() => {
         const isOpen = navMenu.classList.contains('active');
         navToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
       });
-      
+
       observer.observe(navMenu, { attributes: true, attributeFilter: ['class'] });
     }
   }
@@ -495,7 +494,7 @@ class Accessibility {
   private setupReducedMotion(): void {
     // Respect user's motion preferences
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    
+
     const handleMotionPreference = (mediaQuery: MediaQueryList): void => {
       if (mediaQuery.matches) {
         document.body.classList.add('reduce-motion');
@@ -503,7 +502,7 @@ class Accessibility {
         document.body.classList.remove('reduce-motion');
       }
     };
-    
+
     handleMotionPreference(prefersReducedMotion);
     prefersReducedMotion.addEventListener('change', (e) => {
       handleMotionPreference(e.target as MediaQueryList);
@@ -534,7 +533,7 @@ class ErrorHandling {
 
   private setupImageErrorHandling(): void {
     const images = Utils.querySelectorAll<HTMLImageElement>('img');
-    
+
     images.forEach(img => {
       img.addEventListener('error', () => {
         // Replace with placeholder or hide broken images
@@ -586,7 +585,7 @@ class AICafeApp {
       this.performance.init();
       this.accessibility.init();
       this.errorHandling.init();
-      
+
       console.log('AI Cafe website initialized successfully');
     } catch (error) {
       console.error('Error initializing AI Cafe website:', error);
