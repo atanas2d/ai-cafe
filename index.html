@@ -146,25 +146,29 @@
                                     <stop offset="0%" stop-color="#1E3A8A"/>
                                     <stop offset="100%" stop-color="#E53E3E"/>
                                 </linearGradient>
-                                <!-- Logo patterns for two nodes -->
-                                <pattern id="nuvoloPattern" patternUnits="userSpaceOnUse" width="16" height="16">
-                                    <image href="src/assets/images/nuvolo-logo.svg" x="0" y="0" width="16" height="16" preserveAspectRatio="xMidYMid slice" />
-                                </pattern>
-                                <pattern id="tranePattern" patternUnits="userSpaceOnUse" width="16" height="16">
-                                    <image href="src/assets/images/trane-logo.svg" x="0" y="0" width="16" height="16" preserveAspectRatio="xMidYMid slice" />
-                                </pattern>
+                                <!-- Clip paths for crisp circular logo cropping (slightly inset so the ring stays visible) -->
+                                <clipPath id="clipNuvolo" clipPathUnits="userSpaceOnUse">
+                                    <circle cx="60" cy="60" r="9.2" />
+                                </clipPath>
+                                <clipPath id="clipTrane" clipPathUnits="userSpaceOnUse">
+                                    <circle cx="240" cy="60" r="9.2" />
+                                </clipPath>
                             </defs>
                             <g stroke="url(#nnGradient)" stroke-width="2" fill="none" stroke-linecap="round">
                                 <path class="pulse" d="M60 60 L150 90 L240 60 M60 150 L150 150 L240 150 M60 240 L150 210 L240 240"/>
-                                <circle class="node logo-node" cx="60" cy="60" r="8" fill="url(#nuvoloPattern)" stroke="#1E3A8A" stroke-width="1"/>
+                                <!-- Logo endpoints: larger nodes with inner logo clipped to circle -->
+                                <circle class="node logo-node" cx="60" cy="60" r="10" fill="#fff" stroke="#1E3A8A" stroke-width="2"/>
                                 <circle class="node" cx="150" cy="90" r="8"/>
-                                <circle class="node logo-node" cx="240" cy="60" r="8" fill="url(#tranePattern)" stroke="#E53E3E" stroke-width="1"/>
+                                <circle class="node logo-node" cx="240" cy="60" r="10" fill="#fff" stroke="#E53E3E" stroke-width="2"/>
                                 <circle class="node" cx="60" cy="150" r="8"/>
                                 <circle class="node" cx="150" cy="150" r="10"/>
                                 <circle class="node" cx="240" cy="150" r="8"/>
                                 <circle class="node" cx="60" cy="240" r="8"/>
                                 <circle class="node" cx="150" cy="210" r="8"/>
                                 <circle class="node" cx="240" cy="240" r="8"/>
+                                <!-- Overlay logos (zoomed slightly to reduce padding) -->
+                                <image href="src/assets/images/nuvolo-logo.svg" x="48" y="48" width="24" height="24" preserveAspectRatio="xMidYMid slice" clip-path="url(#clipNuvolo)" style="pointer-events:none"/>
+                                <image href="src/assets/images/trane-logo.svg" x="228" y="48" width="24" height="24" preserveAspectRatio="xMidYMid slice" clip-path="url(#clipTrane)" style="pointer-events:none"/>
                             </g>
                         </svg>
                     </div>
@@ -521,43 +525,6 @@
     <!-- JavaScript -->
     <script src="src/assets/js/main.js"></script>
     <script src="src/assets/js/components.js"></script>
-    <script>
-      // Render only the most recent meeting on the homepage timeline
-      document.addEventListener('DOMContentLoaded', function () {
-        try {
-          if (typeof MeetingData !== 'undefined' && typeof DataRenderer !== 'undefined') {
-            var all = MeetingData.getAllMeetings();
-            if (all && all.length) {
-              var latest = all[0];
-              var container = document.getElementById('latest-timeline');
-              if (container) container.innerHTML = DataRenderer.renderMeetingCard(latest);
-            }
-          }
-        } catch (e) {
-          console.warn('Failed to render latest meeting:', e);
-        }
-
-        // Banner picker logic
-        var section = document.getElementById('home');
-        var chips = document.querySelectorAll('.banner-chip');
-        function applyBannerFrom(btn){
-          var url = btn ? btn.getAttribute('data-src') : 'src/assets/images/AICafeBanner.png';
-          if (section) section.style.setProperty('--hero-bg', 'url("' + url + '")');
-          chips.forEach(function(c){ c.setAttribute('aria-pressed', String(c === btn)); });
-          try { localStorage.setItem('aicafe_banner_src', url); } catch(_) {}
-        }
-
-        // init from saved preference
-        var saved = null; try { saved = localStorage.getItem('aicafe_banner_src'); } catch(_) {}
-        if (saved) {
-          if (section) section.style.setProperty('--hero-bg', 'url("' + saved + '")');
-          chips.forEach(function(c){ c.setAttribute('aria-pressed', String(c.getAttribute('data-src') === saved)); });
-        }
-
-        chips.forEach(function(btn){
-          btn.addEventListener('click', function(){ applyBannerFrom(btn); });
-        });
-      });
-    </script>
+    <script src="src/assets/js/assets/ts/pages/home.js"></script>
 </body>
 </html>

@@ -8,29 +8,7 @@
   <link rel="stylesheet" href="../../assets/css/main.css">
   <link rel="stylesheet" href="../../assets/css/components.css?v=2">
   <link rel="stylesheet" href="../../assets/css/responsive.css?v=2">
-  <style>
-    .demo-wrap { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem 4rem; }
-    .variant-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
-    @media (min-width: 900px) { .variant-grid { grid-template-columns: repeat(3, 1fr); } }
-    .variant-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 16px; padding: 1rem 1rem 1.5rem; box-shadow: var(--shadow-sm); display:flex; flex-direction:column; align-items:center; }
-    .variant-title { font-weight: 600; margin: .5rem 0 .75rem; color: #0F172A; }
-    .variant-desc { color:#64748B; font-size: .95rem; text-align:center; min-height: 3.5em; }
-    .stage { width: 100%; max-width: 320px; height: 320px; display:flex; align-items:center; justify-content:center; }
-    .ai-network { width: 100%; height: 100%; }
-
-    /* Visual refinements for the demo variants */
-    .variant-card .ai-network .pulse { stroke-dasharray: 6 10; animation: dashMove 5.5s linear infinite; opacity: 0.75; }
-    .variant-card .ai-network .node { stroke-width: 2; }
-    /* Fill nodes with the matching gradient for A/B; preserve logo fills */
-    .variant-grid > article:nth-child(1) .ai-network .node:not(.logo-node) { fill: url(#nnGradientA); }
-    .variant-grid > article:nth-child(2) .ai-network .node:not(.logo-node) { fill: url(#nnGradientB); }
-    /* Variant C already supplies fill on the <g>, keep it subtle */
-    .variant-grid > article:nth-child(3) .ai-network .node { filter: drop-shadow(0 2px 6px rgba(30,58,138,0.15)); animation: nodePulse 6s ease-in-out infinite; }
-
-    @media (prefers-reduced-motion: reduce) {
-      .variant-card .ai-network .pulse, .variant-card .ai-network .node { animation: none !important; }
-    }
-  </style>
+  <link rel="stylesheet" href="../../assets/css/animations.css?v=3">
   <!-- Tailwind only for base tokens present across site; preflight is disabled in main -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script> tailwind.config = { corePlugins: { preflight: false } } </script>
@@ -106,24 +84,28 @@
                   <stop offset="0%" stop-color="#1E3A8A"/>
                   <stop offset="100%" stop-color="#E53E3E"/>
                 </linearGradient>
-                <pattern id="nuvoloPatternB" patternUnits="userSpaceOnUse" width="16" height="16">
-                  <image href="../../assets/images/nuvolo-logo.svg" x="0" y="0" width="16" height="16" preserveAspectRatio="xMidYMid slice" />
-                </pattern>
-                <pattern id="tranePatternB" patternUnits="userSpaceOnUse" width="16" height="16">
-                  <image href="../../assets/images/trane-logo.svg" x="0" y="0" width="16" height="16" preserveAspectRatio="xMidYMid slice" />
-                </pattern>
+                <!-- Clip paths for larger crisp logos inside the endpoint circles -->
+                <clipPath id="clipNuvoloB" clipPathUnits="userSpaceOnUse">
+                  <circle cx="60" cy="60" r="9.2" />
+                </clipPath>
+                <clipPath id="clipTraneB" clipPathUnits="userSpaceOnUse">
+                  <circle cx="240" cy="60" r="9.2" />
+                </clipPath>
               </defs>
               <g stroke="url(#nnGradientB)" stroke-width="2" fill="none" stroke-linecap="round">
                 <path class="pulse" d="M60 60 L150 90 L240 60 M60 150 L150 150 L240 150 M60 240 L150 210 L240 240"/>
-                <circle class="node logo-node" cx="60" cy="60" r="8" fill="url(#nuvoloPatternB)" stroke="#1E3A8A" stroke-width="1"/>
+                <circle class="node logo-node" cx="60" cy="60" r="10" fill="#fff" stroke="#1E3A8A" stroke-width="2"/>
                 <circle class="node" cx="150" cy="90" r="8"/>
-                <circle class="node logo-node" cx="240" cy="60" r="8" fill="url(#tranePatternB)" stroke="#E53E3E" stroke-width="1"/>
+                <circle class="node logo-node" cx="240" cy="60" r="10" fill="#fff" stroke="#E53E3E" stroke-width="2"/>
                 <circle class="node" cx="60" cy="150" r="8"/>
                 <circle class="node" cx="150" cy="150" r="10"/>
                 <circle class="node" cx="240" cy="150" r="8"/>
                 <circle class="node" cx="60" cy="240" r="8"/>
                 <circle class="node" cx="150" cy="210" r="8"/>
                 <circle class="node" cx="240" cy="240" r="8"/>
+                <!-- Overlay logos (zoomed to reduce padding) -->
+                <image href="../../assets/images/nuvolo-logo.svg" x="48" y="48" width="24" height="24" preserveAspectRatio="xMidYMid slice" clip-path="url(#clipNuvoloB)" style="pointer-events:none"/>
+                <image href="../../assets/images/trane-logo.svg" x="228" y="48" width="24" height="24" preserveAspectRatio="xMidYMid slice" clip-path="url(#clipTraneB)" style="pointer-events:none"/>
               </g>
             </svg>
           </div>

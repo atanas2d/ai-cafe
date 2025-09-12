@@ -94,28 +94,7 @@
             </div>
         </section>
 
-        <script>
-        // Simple client-side filter for tool tiles
-        (function(){
-          const buttons = document.querySelectorAll('.filter-btn');
-          const cards = document.querySelectorAll('.tool-card');
-          function apply(cat){
-            cards.forEach(c=>{
-              const list = (c.getAttribute('data-category')||'').split(/\s+/);
-              const show = cat==='all' || list.includes(cat);
-              c.style.display = show? 'block':'none';
-            });
-          }
-          buttons.forEach(b=>{
-            b.addEventListener('click', ()=>{
-              buttons.forEach(x=>x.classList.remove('active'));
-              b.classList.add('active');
-              apply(b.dataset.category);
-            });
-          });
-          apply('all');
-        })();
-        </script>
+        <!-- Page filter logic moved to TypeScript -->
 
         <!-- Tools Categories -->
         <section class="tools-categories">
@@ -676,5 +655,6 @@
     <!-- JavaScript -->
     <script src="../../assets/js/main.js"></script>
     <script src="../../assets/js/components.js"></script>
-</body>
-</html>
+    <script src="../../assets/js/assets/ts/pages/tools.js"></script>
+  </body>
+  </html>
