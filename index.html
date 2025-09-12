@@ -213,6 +213,14 @@
                 <div class="text-center mt-12">
                     <a href="src/pages/meetings/" class="bg-nuvolo-blue hover:bg-nuvolo-light text-white hover:text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 min-w-[120px] inline-block">View All Meetings</a>
                 </div>
+
+                <!-- Small banner picker to compare header images -->
+                <div class="banner-selector" role="group" aria-label="Compare header images">
+                    <button class="banner-chip" title="AI Cafe" aria-pressed="true" data-banner="cafe" style="background-image:url('src/assets/images/AICafeBanner.png');"></button>
+                    <button class="banner-chip" title="Alt 1" aria-pressed="false" data-banner="alt1" style="background-image:url('src/assets/images/unnamed.jpg');"></button>
+                    <button class="banner-chip" title="Alt 2" aria-pressed="false" data-banner="alt2" style="background-image:url('src/assets/images/unnamed (1).jpg');"></button>
+                    <button class="banner-chip" title="Alt 3" aria-pressed="false" data-banner="alt3" style="background-image:url('src/assets/images/unnamed (2).jpg');"></button>
+                </div>
             </div>
         </section>
 
@@ -494,17 +502,42 @@
       // Render only the most recent meeting on the homepage timeline
       document.addEventListener('DOMContentLoaded', function () {
         try {
-          if (window.MeetingData && window.DataRenderer) {
-            var all = window.MeetingData.getAllMeetings();
+          if (typeof MeetingData !== 'undefined' && typeof DataRenderer !== 'undefined') {
+            var all = MeetingData.getAllMeetings();
             if (all && all.length) {
               var latest = all[0];
               var container = document.getElementById('latest-timeline');
-              if (container) container.innerHTML = window.DataRenderer.renderMeetingCard(latest);
+              if (container) container.innerHTML = DataRenderer.renderMeetingCard(latest);
             }
           }
         } catch (e) {
           console.warn('Failed to render latest meeting:', e);
         }
+
+        // Banner picker logic
+        var section = document.getElementById('home');
+        var chips = document.querySelectorAll('.banner-chip');
+        var map = {
+          cafe: "src/assets/images/AICafeBanner.png",
+          alt1: "src/assets/images/unnamed.jpg",
+          alt2: "src/assets/images/unnamed (1).jpg",
+          alt3: "src/assets/images/unnamed (2).jpg"
+        };
+
+        function applyBanner(key) {
+          var url = map[key] || map.cafe;
+          if (section) section.style.setProperty('--hero-bg', 'url("' + url + '")');
+          chips.forEach(function(c){ c.setAttribute('aria-pressed', String(c.dataset.banner === key)); });
+          try { localStorage.setItem('aicafe_banner', key); } catch(_) {}
+        }
+
+        // init from saved preference
+        var saved = null; try { saved = localStorage.getItem('aicafe_banner'); } catch(_) {}
+        if (saved && map[saved]) applyBanner(saved);
+
+        chips.forEach(function(btn){
+          btn.addEventListener('click', function(){ applyBanner(btn.dataset.banner); });
+        });
       });
     </script>
 </body>
