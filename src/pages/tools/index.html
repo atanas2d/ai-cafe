@@ -94,6 +94,29 @@
             </div>
         </section>
 
+        <script>
+        // Simple client-side filter for tool tiles
+        (function(){
+          const buttons = document.querySelectorAll('.filter-btn');
+          const cards = document.querySelectorAll('.tool-card');
+          function apply(cat){
+            cards.forEach(c=>{
+              const list = (c.getAttribute('data-category')||'').split(/\s+/);
+              const show = cat==='all' || list.includes(cat);
+              c.style.display = show? 'block':'none';
+            });
+          }
+          buttons.forEach(b=>{
+            b.addEventListener('click', ()=>{
+              buttons.forEach(x=>x.classList.remove('active'));
+              b.classList.add('active');
+              apply(b.dataset.category);
+            });
+          });
+          apply('all');
+        })();
+        </script>
+
         <!-- Tools Categories -->
         <section class="tools-categories">
             <div class="container">
@@ -298,7 +321,7 @@
                             </div>
                         </div>
                         <div class="tool-actions">
-                            <a href="../meetings/" class="btn btn-primary">Access Eva</a>
+                            <a href="../contact/" class="btn btn-primary">Request Access</a>
                             <a href="../meetings/" class="btn btn-secondary">View Features</a>
                         </div>
                     </article>
@@ -589,7 +612,7 @@
                     </p>
                     <div class="cta-actions">
                         <a href="../meetings/" class="btn btn-primary btn-large">View Meetings</a>
-                        <a href="../../../index.html#team" class="btn btn-secondary btn-large">Contact Team</a>
+                        <a href="../contact/" class="btn btn-secondary btn-large">Contact Team</a>
                     </div>
                 </div>
             </div>

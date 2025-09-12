@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – AI Cafe</title>
+  <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.ico">
+  <link rel="stylesheet" href="../../assets/css/main.css" />
+  <link rel="stylesheet" href="../../assets/css/components.css" />
+  <link rel="stylesheet" href="../../assets/css/responsive.css" />
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <a href="../../../index.html" class="brand-link">
+            <img src="../../assets/images/AICafeLogo.png" class="brand-logo" alt="AI Cafe" />
+            <span class="brand-text">AI Cafe</span>
+          </a>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="../../../index.html#home" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="../meetings/" class="nav-link">Meetings</a></li>
+          <li class="nav-item"><a href="../tools/" class="nav-link">Tools</a></li>
+          <li class="nav-item"><a href="../news/" class="nav-link">AI News</a></li>
+          <li class="nav-item"><a href="../resources/" class="nav-link">Resources</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero compact" aria-labelledby="contact-title">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 id="contact-title" class="hero-title playful-accent">Contact AI Cafe</h1>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding: 2rem 0 4rem;">
+      <div class="container" style="max-width: 800px;">
+        <p class="section-subtitle" style="margin-bottom:1.5rem;">Reach out about meetings, collaboration, or resources.</p>
+        <form action="mailto:atanas2d@gmail.com" method="post" enctype="text/plain" style="background:#fff; padding:1.5rem; border:1px solid #E2E8F0; border-radius:12px; box-shadow: var(--shadow-sm);">
+          <div style="display:grid; grid-template-columns:1fr; gap:1rem;">
+            <div>
+              <label for="name" style="display:block; font-weight:600; margin-bottom:6px;">Name</label>
+              <input id="name" name="Name" type="text" required style="width:100%; padding:.75rem 1rem; border:1px solid #CBD5E1; border-radius:10px;" />
+            </div>
+            <div>
+              <label for="email" style="display:block; font-weight:600; margin-bottom:6px;">Email</label>
+              <input id="email" name="Email" type="email" required style="width:100%; padding:.75rem 1rem; border:1px solid #CBD5E1; border-radius:10px;" />
+            </div>
+            <div>
+              <label for="subject" style="display:block; font-weight:600; margin-bottom:6px;">Subject</label>
+              <input id="subject" name="Subject" type="text" placeholder="Meeting request / Collaboration / Resource" style="width:100%; padding:.75rem 1rem; border:1px solid #CBD5E1; border-radius:10px;" />
+            </div>
+            <div>
+              <label for="message" style="display:block; font-weight:600; margin-bottom:6px;">Message</label>
+              <textarea id="message" name="Message" rows="6" required style="width:100%; padding:.75rem 1rem; border:1px solid #CBD5E1; border-radius:10px;"></textarea>
+            </div>
+            <div style="display:flex; gap:12px;">
+              <button type="submit" class="btn btn-primary">Send</button>
+              <a class="btn btn-secondary" href="mailto:atanas2d@gmail.com?subject=AI%20Cafe%20Contact">Email Directly</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p class="footer-attribution">© AI Cafe Community</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+
