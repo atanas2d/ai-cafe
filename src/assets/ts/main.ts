@@ -18,7 +18,7 @@ class Utils {
     func: T, 
     wait: number
   ): (...args: Parameters<T>) => void {
-    let timeout: number;
+    let timeout: ReturnType<typeof setTimeout>;
     return function executedFunction(...args: Parameters<T>): void {
       const later = (): void => {
         clearTimeout(timeout);

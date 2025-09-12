@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +10,8 @@
   <link rel="stylesheet" href="../../assets/css/responsive.css?v=2">
   <link rel="stylesheet" href="../../assets/css/animations.css?v=3">
   <!-- Tailwind only for base tokens present across site; preflight is disabled in main -->
+  <script src="../../assets/js/tailwind-config.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script> tailwind.config = { corePlugins: { preflight: false } } </script>
 </head>
 <body>
   <header class="header">
@@ -30,6 +30,7 @@
           <li class="nav-item"><a href="../news/" class="nav-link">AI News</a></li>
           <li class="nav-item"><a href="../resources/" class="nav-link">Resources</a></li>
         </ul>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
       </div>
     </nav>
   </header>
@@ -148,5 +149,8 @@
       </div>
     </div>
   </footer>
+  <script src="../../assets/js/theme.js"></script>
+  <script src="../../assets/js/main.js"></script>
+  <script src="../../assets/js/components.js"></script>
 </body>
 </html>

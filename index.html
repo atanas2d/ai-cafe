@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,26 +33,8 @@
     <link rel="stylesheet" href="src/assets/css/responsive.css">
     
     <!-- Tailwind CSS -->
+    <script src="src/assets/js/tailwind-config.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            corePlugins: {
-                preflight: false, // Disable Tailwind's CSS reset to preserve existing styles
-            },
-            theme: {
-                extend: {
-                    colors: {
-                        'nuvolo-blue': '#1E3A8A',
-                        'nuvolo-light': '#3B82F6',
-                        'nuvolo-orange': '#F97316',
-                        'nuvolo-green': '#10B981',
-                        'trane-blue': '#0066CC',
-                        'trane-red': '#E53E3E',
-                    }
-                }
-            }
-        }
-    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -77,6 +59,7 @@
                     <span class="hamburger"></span>
                     <span class="hamburger"></span>
                 </button>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
                 
                 <ul class="nav-menu" role="menubar">
                     <li class="nav-item" role="none">
@@ -133,8 +116,8 @@
                         </div>
                     </div>
                     <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center lg:justify-start justify-center">
-                        <a href="#meetings" class="bg-nuvolo-blue hover:bg-nuvolo-light text-white hover:text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 min-w-[120px] text-center">View Meetings</a>
-                        <a href="#tools" class="bg-white hover:bg-gray-50 text-gray-700 hover:text-gray-800 font-medium py-3 px-6 rounded-lg border border-gray-300 hover:border-gray-400 transition-colors duration-200 min-w-[120px] text-center">Explore Tools</a>
+                        <a href="#meetings" class="btn-primary">View Meetings</a>
+                        <a href="#tools" class="btn-secondary">Explore Tools</a>
                     </div>
                 </div>
                 <div class="hero-visual">
@@ -222,7 +205,7 @@
                 <div class="timeline timeline--single" id="latest-timeline"></div>
                 
                 <div class="text-center mt-12">
-                    <a href="src/pages/meetings/" class="bg-nuvolo-blue hover:bg-nuvolo-light text-white hover:text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 min-w-[120px] inline-block">View All Meetings</a>
+                    <a href="src/pages/meetings/" class="btn-primary">View All Meetings</a>
                 </div>
 
                 <!-- Small banner picker to compare header images -->
@@ -342,7 +325,7 @@
                 </div>
                 
                 <div class="text-center mt-12">
-                    <a href="src/pages/tools/" class="bg-nuvolo-blue hover:bg-nuvolo-light text-white hover:text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 min-w-[120px] inline-block">View All Tools</a>
+                    <a href="src/pages/tools/" class="btn-primary">View All Tools</a>
                 </div>
             </div>
         </section>
@@ -455,8 +438,8 @@
                         share knowledge, and advance your AI skills with fellow enthusiasts.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center justify-center">
-                        <a href="src/pages/meetings/" class="bg-white hover:bg-gray-100 text-nuvolo-blue hover:text-nuvolo-blue font-medium py-4 px-8 rounded-lg transition-colors duration-200 min-w-[160px] text-center">Join Next Meeting</a>
-                        <a href="src/pages/resources/" class="bg-transparent hover:bg-white hover:text-nuvolo-blue text-white font-medium py-4 px-8 rounded-lg border border-white transition-colors duration-200 min-w-[160px] text-center">Explore Resources</a>
+                        <a href="src/pages/meetings/" class="btn-secondary" style="min-width: 160px; padding: 16px 32px;">Join Next Meeting</a>
+                        <a href="src/pages/resources/" class="btn-secondary" style="min-width: 160px; padding: 16px 32px; background: transparent; color: white; border-color: white;">Explore Resources</a>
                     </div>
                 </div>
             </div>
@@ -523,8 +506,9 @@
     </footer>
 
     <!-- JavaScript -->
+    <script src="src/assets/js/theme.js"></script>
     <script src="src/assets/js/main.js"></script>
     <script src="src/assets/js/components.js"></script>
-    <script src="src/assets/js/assets/ts/pages/home.js"></script>
+    <script src="src/assets/js/home.js"></script>
 </body>
 </html>

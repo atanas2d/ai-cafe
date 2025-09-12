@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,24 +15,8 @@
     <link rel="stylesheet" href="../../assets/css/responsive.css">
     
     <!-- Tailwind CSS -->
+    <script src="../../assets/js/tailwind-config.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            corePlugins: {
-                preflight: false, // Disable Tailwind's CSS reset to preserve existing styles
-            },
-            theme: {
-                extend: {
-                    colors: {
-                        'nuvolo-blue': '#1E3A8A',
-                        'nuvolo-light': '#3B82F6',
-                        'trane-blue': '#0066CC',
-                        'accent-green': '#10B981',
-                    }
-                }
-            }
-        }
-    </script>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,6 +40,7 @@
                     <span class="hamburger"></span>
                     <span class="hamburger"></span>
                 </button>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
                 
                 <ul class="nav-menu" role="menubar">
                     <li class="nav-item" role="none">
@@ -653,8 +638,9 @@
     </footer>
 
     <!-- JavaScript -->
+    <script src="../../assets/js/theme.js"></script>
     <script src="../../assets/js/main.js"></script>
     <script src="../../assets/js/components.js"></script>
-    <script src="../../assets/js/assets/ts/pages/tools.js"></script>
-  </body>
-  </html>
+    <script src="../../assets/js/tools.js"></script>
+</body>
+</html>
