@@ -11,36 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   } catch (e) {
-    console.warn('Failed to render latest meeting:', e);
-  }
-
-  const section = document.getElementById('home');
-  const chips = document.querySelectorAll<HTMLButtonElement>('.banner-chip');
-
-  function applyBannerFrom(btn?: HTMLButtonElement): void {
-    const url = btn ? btn.getAttribute('data-src') : 'src/assets/images/AICafeBanner.png';
-    if (section) section.style.setProperty('--hero-bg', `url("${url}")`);
-    chips.forEach(c => c.setAttribute('aria-pressed', String(c === btn)));
-    try {
-      localStorage.setItem('aicafe_banner_src', url || '');
-    } catch {
-      // Storage not available
+    if (process.env.NODE_ENV === 'development') {
+      console.warn('Failed to render latest meeting:', e);
     }
   }
-
-  let saved: string | null = null;
-  try {
-    saved = localStorage.getItem('aicafe_banner_src');
-  } catch {
-    // Storage not available
-  }
-  if (saved) {
-    if (section) section.style.setProperty('--hero-bg', `url("${saved}")`);
-    chips.forEach(c => c.setAttribute('aria-pressed', String(c.getAttribute('data-src') === saved)));
-  }
-
-  chips.forEach(btn => {
-    btn.addEventListener('click', () => applyBannerFrom(btn));
-  });
 });
 export {};
