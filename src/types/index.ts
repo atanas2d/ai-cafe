@@ -11,7 +11,7 @@ export interface Meeting {
   participants: string[];
   presenter?: string;
   topics: string[];
-  tools_demonstrated: string[];
+  toolsDemonstrated: string[];
   resources?: Resource[];
   summary: string;
   highlights?: string[];
@@ -32,7 +32,7 @@ export interface Tool {
   logo: string;
   website: string;
   documentation: string;
-  meetings_featured: number[];
+  meetingsFeatured: number[];
   status: ToolStatus;
 }
 
@@ -54,7 +54,7 @@ export interface TeamMember {
   avatar: string;
   description: string;
   contributions: string[];
-  meetings_presented: number[];
+  meetingsPresented: number[];
   specialties: string[];
   achievements: string[];
 }
