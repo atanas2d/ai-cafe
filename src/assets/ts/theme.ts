@@ -2,7 +2,11 @@ const STORAGE_KEY = 'aicafe_theme';
 
 function applyTheme(theme: 'light' | 'dark'): void {
   document.documentElement.setAttribute('data-theme', theme);
-  try { localStorage.setItem(STORAGE_KEY, theme); } catch (_) {}
+  try {
+    localStorage.setItem(STORAGE_KEY, theme);
+  } catch {
+    // Storage not available
+  }
   const toggle = document.getElementById('theme-toggle');
   if (toggle) {
     toggle.textContent = theme === 'light' ? '🌙' : '☀️';
@@ -11,7 +15,11 @@ function applyTheme(theme: 'light' | 'dark'): void {
 
 function initTheme(): void {
   let saved: 'light' | 'dark' | null = null;
-  try { saved = localStorage.getItem(STORAGE_KEY) as 'light' | 'dark' | null; } catch (_) {}
+  try {
+    saved = localStorage.getItem(STORAGE_KEY) as 'light' | 'dark' | null;
+  } catch {
+    // Storage not available
+  }
   const initial = saved || 'dark';
   applyTheme(initial);
   const toggle = document.getElementById('theme-toggle');

@@ -1,7 +1,20 @@
-const tailwind = (window as any).tailwind || {};
+interface TailwindConfig {
+  config?: {
+    corePlugins?: {
+      preflight?: boolean;
+    };
+    theme?: {
+      extend?: {
+        colors?: Record<string, string>;
+      };
+    };
+  };
+}
+
+const tailwind = (window as unknown as { tailwind?: TailwindConfig }).tailwind || {};
 tailwind.config = {
   corePlugins: {
-    preflight: false,
+    preflight: false
   },
   theme: {
     extend: {
@@ -14,5 +27,5 @@ tailwind.config = {
     }
   }
 };
-(window as any).tailwind = tailwind;
+(window as unknown as { tailwind: TailwindConfig }).tailwind = tailwind;
 export {};

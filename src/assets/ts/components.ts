@@ -35,7 +35,8 @@ class MeetingDataManager {
           url: 'https://youtube.com/watch?v=example'
         }
       ],
-      summary: 'Exploration of breakthrough AI architecture and advanced image generation tools that are revolutionizing creative workflows.',
+      summary: 'Exploration of breakthrough AI architecture and advanced image generation tools ' +
+        'that are revolutionizing creative workflows.',
       highlights: [
         'Open source breakthrough in AI architecture',
         'Adobe integration with Nano Banana',
@@ -54,7 +55,8 @@ class MeetingDataManager {
         'Prompt templates for company use'
       ],
       toolsDemonstrated: ['Eva 2.0', 'GPT-4.1', 'Canvas'],
-      summary: 'Comprehensive overview of Eva 2.0 Beta and its corporate AI functionalities for workplace productivity.',
+      summary: 'Comprehensive overview of Eva 2.0 Beta and its corporate AI ' +
+        'functionalities for workplace productivity.',
       highlights: [
         'File upload capabilities',
         'Specialized agents beyond Eva',
@@ -101,7 +103,8 @@ class MeetingDataManager {
         'GPT-5 preview'
       ],
       toolsDemonstrated: ['OpenAI GPT', 'Custom GPTs', 'OpenAI Projects', 'Codex'],
-      summary: 'Advanced exploration of OpenAI\'s ecosystem including custom instances, projects, and development tools.',
+      summary: 'Advanced exploration of OpenAI\'s ecosystem including custom instances, ' +
+        'projects, and development tools.',
       highlights: [
         'Private repository integration',
         'Code quality analysis',
@@ -178,7 +181,8 @@ class MeetingDataManager {
         'Foundation for AI journey'
       ],
       toolsDemonstrated: ['Google Gemini', 'OpenAI GPT'],
-      summary: 'Foundational meeting introducing core AI platforms and establishing the basis for our learning journey.',
+      summary: 'Foundational meeting introducing core AI platforms and establishing ' +
+        'the basis for our learning journey.',
       highlights: [
         'First AI Cafe meeting',
         'Platform introductions',
@@ -221,7 +225,8 @@ class ToolsDataManager {
       id: 'openai-gpt',
       name: 'OpenAI GPT',
       category: 'Language Models',
-      description: 'Advanced language model with custom instances, projects, and Codex integration for AI-powered development.',
+      description: 'Advanced language model with custom instances, projects, and Codex ' +
+        'integration for AI-powered development.',
       features: ['Custom GPTs', 'Projects', 'Codex', 'API Integration'],
       logo: 'src/assets/images/tools/openai-logo.svg',
       website: 'https://openai.com',
@@ -320,7 +325,8 @@ class TeamDataManager {
       name: 'Nino',
       role: 'AI Enthusiast & Presenter',
       avatar: 'src/assets/images/team/nino-avatar.jpg',
-      description: 'Non-developer who successfully demonstrated WindSurf coding tool and OpenAI agent capabilities, inspiring the community with practical AI applications.',
+      description: 'Non-developer who successfully demonstrated WindSurf coding tool and OpenAI agent ' +
+        'capabilities, inspiring the community with practical AI applications.',
       contributions: ['WindSurf Demo', 'OpenAI Agents', 'Community Leadership'],
       meetingsPresented: [2, 3],
       specialties: ['AI Tools', 'Practical Applications', 'Community Engagement'],
@@ -335,7 +341,8 @@ class TeamDataManager {
       name: 'Plamen Tanev',
       role: 'QA Automation Specialist',
       avatar: 'src/assets/images/team/plamen-avatar.jpg',
-      description: 'Inspired by Nino\'s presentations, developed automated testing solutions for websites using AI tools, achieving excellent QA results.',
+      description: 'Inspired by Nino\'s presentations, developed automated testing solutions ' +
+        'for websites using AI tools, achieving excellent QA results.',
       contributions: ['QA Automation', 'AI Testing', 'Innovation'],
       meetingsPresented: [],
       specialties: ['Quality Assurance', 'Test Automation', 'AI Integration'],
@@ -350,7 +357,8 @@ class TeamDataManager {
       name: 'Atanas Yanev',
       role: 'Technical Lead & AI Researcher',
       avatar: 'src/assets/images/team/atanas-avatar.jpg',
-      description: 'Technical expert running local AI models and providing in-depth demonstrations of cutting-edge AI technologies and architectures.',
+      description: 'Technical expert running local AI models and providing in-depth ' +
+        'demonstrations of cutting-edge AI technologies and architectures.',
       contributions: ['Local Models', 'Technical Demos', 'AI Research'],
       meetingsPresented: [8],
       specialties: ['AI Research', 'Local Models', 'Technical Architecture'],
@@ -506,7 +514,9 @@ class InteractiveComponents {
           document.body.style.overflow = 'hidden';
 
           // Focus management
-          const firstFocusable = modal.querySelector<HTMLElement>('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+          const firstFocusable = modal.querySelector<HTMLElement>(
+            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+          );
           if (firstFocusable) {
             firstFocusable.focus();
           }
@@ -588,7 +598,8 @@ class DataRenderer {
       : '';
 
     return `
-      <article class="timeline-item" data-meeting-id="${meeting.id}" data-searchable="${meeting.title} ${meeting.summary} ${meeting.topics.join(' ')}">
+      <article class="timeline-item" data-meeting-id="${meeting.id}" 
+               data-searchable="${meeting.title} ${meeting.summary} ${meeting.topics.join(' ')}">
         <div class="timeline-marker">
           <span class="timeline-number">${meeting.id}</span>
         </div>
@@ -611,7 +622,8 @@ class DataRenderer {
       .join('');
 
     return `
-      <article class="tool-card" data-tool-category="${tool.category}" data-searchable="${tool.name} ${tool.description} ${tool.features.join(' ')}">
+      <article class="tool-card" data-tool-category="${tool.category}" 
+               data-searchable="${tool.name} ${tool.description} ${tool.features.join(' ')}">
         <div class="tool-icon">
           <img src="${tool.logo}" alt="${tool.name} Logo" loading="lazy">
         </div>
@@ -681,9 +693,12 @@ export {
 // Global instances for debugging
 declare global {
   interface Window {
-    MeetingData: MeetingDataManager;
-    ToolsData: ToolsDataManager;
-    TeamData: TeamDataManager;
+    MeetingData?: MeetingDataManager;
+    ToolsData?: ToolsDataManager;
+    TeamData?: TeamDataManager;
+    DataRenderer?: {
+      renderMeetingCard(meeting: unknown): string;
+    };
   }
 }
 

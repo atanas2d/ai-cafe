@@ -4,17 +4,13 @@
  */
 
 import type {
-  EventHandler,
-  ElementPosition,
-  ScrollPosition,
-  AnimationConfig,
   PerformanceMetrics
 } from '../../types/index';
 
 // Utility Functions
 class Utils {
   // Debounce function for performance optimization
-  static debounce<T extends(...args: any[]) => any>(
+  static debounce<T extends(...args: unknown[]) => unknown>(
     func: T,
     wait: number
   ): (...args: Parameters<T>) => void {
@@ -30,12 +26,12 @@ class Utils {
   }
 
   // Throttle function for scroll events
-  static throttle<T extends(...args: any[]) => any>(
+  static throttle<T extends(...args: unknown[]) => unknown>(
     func: T,
     limit: number
   ): (...args: Parameters<T>) => void {
     let inThrottle: boolean;
-    return function(this: any, ...args: Parameters<T>): void {
+    return function(this: unknown, ...args: Parameters<T>): void {
       if (!inThrottle) {
         func.apply(this, args);
         inThrottle = true;
@@ -419,8 +415,9 @@ class Performance {
       this.metrics.loadTime = navigation.loadEventEnd - navigation.fetchStart;
 
       // Log performance metrics in development
-      // Log performance metrics in development
-      console.log('Performance Metrics:', this.metrics);
+      if (process.env.NODE_ENV === 'development') {
+        console.log('Performance Metrics:', this.metrics);
+      }
     });
   }
 
@@ -538,14 +535,16 @@ class ErrorHandling {
       img.addEventListener('error', () => {
         // Replace with placeholder or hide broken images
         img.style.display = 'none';
-        console.warn('Failed to load image:', img.src);
+        // Image failed to load - handled gracefully
       });
     });
   }
 
   private logError(error: Error): void {
     this.errors.push(error);
-    console.error('Application error:', error);
+    if (process.env.NODE_ENV === 'development') {
+      console.error('Application error:', error);
+    }
   }
 
   getErrors(): Error[] {
@@ -586,9 +585,11 @@ class AICafeApp {
       this.accessibility.init();
       this.errorHandling.init();
 
-      console.log('AI Cafe website initialized successfully');
+      // Website initialized successfully
     } catch (error) {
-      console.error('Error initializing AI Cafe website:', error);
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Error initializing AI Cafe website:', error);
+      }
     }
   }
 

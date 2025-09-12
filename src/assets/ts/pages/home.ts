@@ -1,12 +1,5 @@
 // Home page behaviors extracted from inline script
 
-declare global {
-  interface Window {
-    MeetingData?: any;
-    DataRenderer?: any;
-  }
-}
-
 document.addEventListener('DOMContentLoaded', () => {
   // Render only the most recent meeting on the homepage timeline
   try {
@@ -21,7 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   } catch (e) {
-    console.warn('Failed to render latest meeting:', e);
+    if (process.env.NODE_ENV === 'development') {
+      console.warn('Failed to render latest meeting:', e);
+    }
   }
 
   // Banner picker logic
@@ -29,7 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const chips = document.querySelectorAll<HTMLButtonElement>('.banner-chip');
 
   function applyBannerFrom(btn?: HTMLButtonElement): void {
-    const url = btn ? btn.getAttribute('data-src') || 'src/assets/images/AICafeBanner.png' : 'src/assets/images/AICafeBanner.png';
+    const defaultUrl = 'src/assets/images/AICafeBanner.png';
+    const url = btn ? btn.getAttribute('data-src') || defaultUrl : defaultUrl;
     if (section) section.style.setProperty('--hero-bg', `url("${url}")`);
     chips.forEach((c) => c.setAttribute('aria-pressed', String(c === btn)));
     try { localStorage.setItem('aicafe_banner_src', url); } catch { /* ignore */ }
