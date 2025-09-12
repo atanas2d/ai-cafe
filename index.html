@@ -216,10 +216,10 @@
 
                 <!-- Small banner picker to compare header images -->
                 <div class="banner-selector" role="group" aria-label="Compare header images">
-                    <button class="banner-chip" title="AI Cafe" aria-pressed="true" data-banner="cafe" style="background-image:url('src/assets/images/AICafeBanner.png');"></button>
-                    <button class="banner-chip" title="Alt 1" aria-pressed="false" data-banner="alt1" style="background-image:url('src/assets/images/unnamed.jpg');"></button>
-                    <button class="banner-chip" title="Alt 2" aria-pressed="false" data-banner="alt2" style="background-image:url('src/assets/images/unnamed (1).jpg');"></button>
-                    <button class="banner-chip" title="Alt 3" aria-pressed="false" data-banner="alt3" style="background-image:url('src/assets/images/unnamed (2).jpg');"></button>
+                    <button class="banner-chip" title="AI Cafe" aria-pressed="true" data-banner="cafe" data-src="src/assets/images/AICafeBanner.png"><img src="src/assets/images/AICafeBanner.png" alt="AI Cafe banner"></button>
+                    <button class="banner-chip" title="Alt 1" aria-pressed="false" data-banner="alt1" data-src="src/assets/images/unnamed.jpg"><img src="src/assets/images/unnamed.jpg" alt="Alt banner 1"></button>
+                    <button class="banner-chip" title="Alt 2" aria-pressed="false" data-banner="alt2" data-src="src/assets/images/unnamed (1).jpg"><img src="src/assets/images/unnamed (1).jpg" alt="Alt banner 2"></button>
+                    <button class="banner-chip" title="Alt 3" aria-pressed="false" data-banner="alt3" data-src="src/assets/images/unnamed (2).jpg"><img src="src/assets/images/unnamed (2).jpg" alt="Alt banner 3"></button>
                 </div>
             </div>
         </section>
@@ -517,26 +517,22 @@
         // Banner picker logic
         var section = document.getElementById('home');
         var chips = document.querySelectorAll('.banner-chip');
-        var map = {
-          cafe: "src/assets/images/AICafeBanner.png",
-          alt1: "src/assets/images/unnamed.jpg",
-          alt2: "src/assets/images/unnamed (1).jpg",
-          alt3: "src/assets/images/unnamed (2).jpg"
-        };
-
-        function applyBanner(key) {
-          var url = map[key] || map.cafe;
+        function applyBannerFrom(btn){
+          var url = btn ? btn.getAttribute('data-src') : 'src/assets/images/AICafeBanner.png';
           if (section) section.style.setProperty('--hero-bg', 'url("' + url + '")');
-          chips.forEach(function(c){ c.setAttribute('aria-pressed', String(c.dataset.banner === key)); });
-          try { localStorage.setItem('aicafe_banner', key); } catch(_) {}
+          chips.forEach(function(c){ c.setAttribute('aria-pressed', String(c === btn)); });
+          try { localStorage.setItem('aicafe_banner_src', url); } catch(_) {}
         }
 
         // init from saved preference
-        var saved = null; try { saved = localStorage.getItem('aicafe_banner'); } catch(_) {}
-        if (saved && map[saved]) applyBanner(saved);
+        var saved = null; try { saved = localStorage.getItem('aicafe_banner_src'); } catch(_) {}
+        if (saved) {
+          if (section) section.style.setProperty('--hero-bg', 'url("' + saved + '")');
+          chips.forEach(function(c){ c.setAttribute('aria-pressed', String(c.getAttribute('data-src') === saved)); });
+        }
 
         chips.forEach(function(btn){
-          btn.addEventListener('click', function(){ applyBanner(btn.dataset.banner); });
+          btn.addEventListener('click', function(){ applyBannerFrom(btn); });
         });
       });
     </script>
