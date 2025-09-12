@@ -105,7 +105,7 @@
     <!-- Main Content -->
     <main id="main-content" role="main">
         <!-- Hero Section -->
-        <section id="home" class="hero hero-banner" aria-labelledby="hero-title">
+        <section id="home" class="hero hero-banner banner-option-1" aria-labelledby="hero-title">
             <div class="hero-container">
                 <div class="hero-content">
                     <h1 id="hero-title" class="hero-title playful-accent">
@@ -162,6 +162,20 @@
                         </svg>
                     </div>
                 </div>
+            </div>
+            <div class="banner-selector" aria-label="Select banner">
+                <button type="button" class="banner-thumb active" data-banner="1">
+                    <img src="src/assets/images/AICafeBanner.png" alt="Banner option 1">
+                </button>
+                <button type="button" class="banner-thumb" data-banner="2">
+                    <img src="src/assets/images/BannerAlt1.jpg" alt="Banner option 2">
+                </button>
+                <button type="button" class="banner-thumb" data-banner="3">
+                    <img src="src/assets/images/BannerAlt2.jpg" alt="Banner option 3">
+                </button>
+                <button type="button" class="banner-thumb" data-banner="4">
+                    <img src="src/assets/images/BannerAlt3.jpg" alt="Banner option 4">
+                </button>
             </div>
         </section>
 
@@ -491,7 +505,7 @@
     <script src="src/assets/js/main.js"></script>
     <script src="src/assets/js/components.js"></script>
     <script>
-      // Render only the most recent meeting on the homepage timeline
+      // Render only the most recent meeting on the homepage timeline and enable banner selection
       document.addEventListener('DOMContentLoaded', function () {
         try {
           if (window.MeetingData && window.DataRenderer) {
@@ -504,6 +518,20 @@
           }
         } catch (e) {
           console.warn('Failed to render latest meeting:', e);
+        }
+
+        var hero = document.getElementById('home');
+        if (hero) {
+          var thumbs = document.querySelectorAll('.banner-thumb');
+          thumbs.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              var opt = this.getAttribute('data-banner');
+              hero.classList.remove('banner-option-1','banner-option-2','banner-option-3','banner-option-4');
+              hero.classList.add('banner-option-' + opt);
+              thumbs.forEach(function (b) { b.classList.remove('active'); });
+              this.classList.add('active');
+            });
+          });
         }
       });
     </script>
