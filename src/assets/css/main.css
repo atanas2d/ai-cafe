@@ -359,12 +359,18 @@ a:focus {
 
 /* Homepage hero banner background */
 .hero-banner {
+  --banner-image: url('src/assets/images/AICafeBanner.png');
   background-image:
-    linear-gradient(180deg, rgba(255,255,255,0.70) 0%, rgba(255,255,255,0.78) 25%, rgba(255,255,255,0.86) 50%, rgba(255,255,255,0.92) 70%, rgba(255,255,255,0.96) 85%, rgba(255,255,255,1) 100%),
-    var(--hero-bg, url('../images/AICafeBanner.png'));
+    linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.88) 20%, rgba(255,255,255,0.92) 40%, rgba(255,255,255,0.96) 60%, rgba(255,255,255,1) 100%),
+    var(--banner-image);
   background-size: cover;
   background-position: center;
 }
+
+.hero-banner.banner-option-1 { --banner-image: url('src/assets/images/AICafeBanner.png'); }
+.hero-banner.banner-option-2 { --banner-image: url('src/assets/images/BannerAlt1.jpg'); }
+.hero-banner.banner-option-3 { --banner-image: url('src/assets/images/BannerAlt2.jpg'); }
+.hero-banner.banner-option-4 { --banner-image: url('src/assets/images/BannerAlt3.jpg'); }
 
 .hero-container {
   max-width: 1200px;
@@ -526,35 +532,33 @@ a:focus {
   50% { transform: translateY(-8px) scale(1.02); }
 }
 
-/* Banner selector (dev aid) */
+/* Banner selector thumbnails */
 .banner-selector {
   position: absolute;
-  right: 16px;
-  bottom: 16px;
+  bottom: 12px;
+  right: 12px;
   display: flex;
   gap: 8px;
-  background: rgba(255,255,255,0.85);
-  border: 1px solid var(--color-gray-200);
-  backdrop-filter: blur(6px);
-  padding: 6px;
-  border-radius: 10px;
-  box-shadow: var(--shadow-md);
 }
 
-.banner-chip {
-  width: 34px;
-  height: 24px;
-  border-radius: 6px;
-  border: 1px solid var(--color-gray-300);
+.banner-thumb {
+  border: 2px solid #fff;
+  border-radius: 4px;
+  padding: 0;
+  background: transparent;
   cursor: pointer;
-  outline: none;
 }
 
-.banner-chip img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; display:block; }
+.banner-thumb img {
+  display: block;
+  width: 60px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 2px;
+}
 
-.banner-chip[aria-pressed="true"] {
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 2px rgba(30,58,138,0.2);
+.banner-thumb.active {
+  border-color: var(--color-nuvolo);
 }
 
 /* Neural-network SVG visual (topic-aligned) */
