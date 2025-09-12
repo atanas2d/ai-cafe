@@ -17,8 +17,8 @@ function initTheme() {
   let saved = null;
   try { saved = localStorage.getItem(STORAGE_KEY); } catch {}
 
-  // Default to light for readability if not set
-  const initial = saved || 'light';
+  // Default to dark theme to match initial HTML
+  const initial = saved || 'dark';
   applyTheme(initial);
 
   const toggle = document.getElementById('theme-toggle');

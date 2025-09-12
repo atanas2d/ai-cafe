@@ -277,9 +277,12 @@
     position: relative;
   }
   
+  .nav-controls {
+    order: 3;
+  }
+  
   .nav-toggle {
     display: flex;
-    order: 3;
   }
   
   .nav-menu {

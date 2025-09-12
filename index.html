@@ -49,27 +49,29 @@
             <div class="nav-container">
                 <div class="nav-brand">
                     <a href="index.html" class="brand-link" aria-label="AI Cafe Home">
-                        <img src="src/assets/images/AICafeLogo.png" alt="AI Cafe Logo" class="brand-logo">
+                        <img src="src/assets/images/AICafeLogo.png" alt="AI Cafe - Nuvolo & Trane Technologies AI Learning Initiative Logo" class="brand-logo">
                         <span class="brand-text">AI Cafe</span>
                     </a>
                 </div>
                 
-                <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                    <span class="hamburger"></span>
-                    <span class="hamburger"></span>
-                    <span class="hamburger"></span>
-                </button>
-                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+                <div class="nav-controls">
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+                    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                        <span class="hamburger"></span>
+                        <span class="hamburger"></span>
+                        <span class="hamburger"></span>
+                    </button>
+                </div>
                 
                 <ul class="nav-menu" role="menubar">
                     <li class="nav-item" role="none">
-                        <a href="#home" class="nav-link" role="menuitem">Home</a>
+                        <a href="#home" class="nav-link active" role="menuitem">Home</a>
                     </li>
                     <li class="nav-item" role="none">
-                        <a href="src/pages/meetings/" class="nav-link" role="menuitem">Meetings</a>
+                        <a href="#meetings" class="nav-link" role="menuitem">Meetings</a>
                     </li>
                     <li class="nav-item" role="none">
-                        <a href="src/pages/tools/" class="nav-link" role="menuitem">Tools</a>
+                        <a href="#tools" class="nav-link" role="menuitem">Tools</a>
                     </li>
                     <li class="nav-item" role="none">
                         <a href="#team" class="nav-link" role="menuitem">Team</a>
@@ -159,16 +161,16 @@
             </div>
             <div class="banner-selector" aria-label="Select banner">
                 <button type="button" class="banner-thumb active" data-banner="1" aria-label="Show AI Cafe main banner">
-                    <img src="src/assets/images/AICafeBanner.png" alt="AI Cafe main banner">
+                    <img src="src/assets/images/AICafeBanner.png" alt="AI Cafe main banner" loading="lazy">
                 </button>
                 <button type="button" class="banner-thumb" data-banner="2" aria-label="Show AI Cafe alternate banner 1">
-                    <img src="src/assets/images/BannerAlt1.jpg" alt="AI Cafe alternate banner 1">
+                    <img src="src/assets/images/AICafeBanner1.jpg" alt="AI Cafe banner 1" loading="lazy">
                 </button>
                 <button type="button" class="banner-thumb" data-banner="3" aria-label="Show AI Cafe alternate banner 2">
-                    <img src="src/assets/images/BannerAlt2.jpg" alt="AI Cafe alternate banner 2">
+                    <img src="src/assets/images/AICafeBanner2.jpg" alt="AI Cafe banner 2" loading="lazy">
                 </button>
                 <button type="button" class="banner-thumb" data-banner="4" aria-label="Show AI Cafe alternate banner 3">
-                    <img src="src/assets/images/BannerAlt3.jpg" alt="AI Cafe alternate banner 3">
+                    <img src="src/assets/images/AICafeBanner3.jpg" alt="AI Cafe banner 3" loading="lazy">
                 </button>
             </div>
         </section>
@@ -222,12 +224,12 @@
                     <a href="src/pages/meetings/" class="btn-primary">View All Meetings</a>
                 </div>
 
-                <!-- Small banner picker to compare header images -->
-                <div class="banner-selector" role="group" aria-label="Compare header images">
-                    <button class="banner-chip" title="AI Cafe" aria-pressed="true" data-banner="cafe" data-src="src/assets/images/AICafeBanner.png"><img src="src/assets/images/AICafeBanner.png" alt="AI Cafe banner"></button>
-                    <button class="banner-chip" title="Alt 1" aria-pressed="false" data-banner="alt1" data-src="src/assets/images/unnamed.jpg"><img src="src/assets/images/unnamed.jpg" alt="Alt banner 1"></button>
-                    <button class="banner-chip" title="Alt 2" aria-pressed="false" data-banner="alt2" data-src="src/assets/images/unnamed (1).jpg"><img src="src/assets/images/unnamed (1).jpg" alt="Alt banner 2"></button>
-                    <button class="banner-chip" title="Alt 3" aria-pressed="false" data-banner="alt3" data-src="src/assets/images/unnamed (2).jpg"><img src="src/assets/images/unnamed (2).jpg" alt="Alt banner 3"></button>
+                <!-- Banner picker to switch header background -->
+                <div class="banner-selector" role="group" aria-label="Switch header background">
+                    <button class="banner-chip" title="AI Cafe Main" aria-pressed="true" data-banner="cafe" data-src="src/assets/images/AICafeBanner.png"><img src="src/assets/images/AICafeBanner.png" alt="AI Cafe main banner" loading="lazy"></button>
+                    <button class="banner-chip" title="Banner Alt 1" aria-pressed="false" data-banner="alt1" data-src="src/assets/images/AICafeBanner1.jpg"><img src="src/assets/images/AICafeBanner1.jpg" alt="AI Cafe banner 1" loading="lazy"></button>
+                    <button class="banner-chip" title="Banner Alt 2" aria-pressed="false" data-banner="alt2" data-src="src/assets/images/AICafeBanner2.jpg"><img src="src/assets/images/AICafeBanner2.jpg" alt="AI Cafe banner 2" loading="lazy"></button>
+                    <button class="banner-chip" title="Banner Alt 3" aria-pressed="false" data-banner="alt3" data-src="src/assets/images/AICafeBanner3.jpg"><img src="src/assets/images/AICafeBanner3.jpg" alt="AI Cafe banner 3" loading="lazy"></button>
                 </div>
             </div>
         </section>
@@ -243,7 +245,7 @@
                 <div class="tools-grid">
                     <article class="tool-card">
                         <div class="tool-icon">
-                            <img src="src/assets/images/tools/openai-logo.svg" alt="OpenAI Logo">
+                            <img src="src/assets/images/tools/openai-logo.svg" alt="OpenAI GPT Logo" loading="lazy">
                         </div>
                         <h3 class="tool-title">OpenAI GPT</h3>
                         <p class="tool-description">
@@ -259,7 +261,7 @@
                     
                     <article class="tool-card">
                         <div class="tool-icon">
-                            <img src="src/assets/images/tools/gemini-logo.svg" alt="Google Gemini Logo">
+                            <img src="src/assets/images/tools/gemini-logo.svg" alt="Google Gemini AI Logo" loading="lazy">
                         </div>
                         <h3 class="tool-title">Google Gemini</h3>
                         <p class="tool-description">
@@ -275,7 +277,7 @@
                     
                     <article class="tool-card">
                         <div class="tool-icon">
-                            <img src="src/assets/images/tools/windsurf-logo.svg" alt="WindSurf Logo">
+                            <img src="src/assets/images/tools/windsurf-logo.svg" alt="WindSurf AI Coding Tool Logo" loading="lazy">
                         </div>
                         <h3 class="tool-title">WindSurf</h3>
                         <p class="tool-description">
@@ -291,7 +293,7 @@
                     
                     <article class="tool-card">
                         <div class="tool-icon">
-                            <img src="src/assets/images/tools/eva-logo.svg" alt="Eva 2.0 Logo">
+                            <img src="src/assets/images/tools/eva-logo.svg" alt="Eva 2.0 Corporate AI Assistant Logo" loading="lazy">
                         </div>
                         <h3 class="tool-title">Eva 2.0</h3>
                         <p class="tool-description">
@@ -307,7 +309,7 @@
                     
                     <article class="tool-card">
                         <div class="tool-icon">
-                            <img src="src/assets/images/tools/sapient-logo.svg" alt="Sapient Logo">
+                            <img src="src/assets/images/tools/sapient-logo.svg" alt="Sapient HRM AI Architecture Logo" loading="lazy">
                         </div>
                         <h3 class="tool-title">Sapient HRM</h3>
                         <p class="tool-description">
@@ -323,7 +325,7 @@
                     
                     <article class="tool-card">
                         <div class="tool-icon">
-                            <img src="src/assets/images/tools/nano-banana-logo.svg" alt="Nano Banana Logo">
+                            <img src="src/assets/images/tools/nano-banana-logo.svg" alt="Google Nano Banana Image Generation Logo" loading="lazy">
                         </div>
                         <h3 class="tool-title">Google Nano Banana</h3>
                         <p class="tool-description">
@@ -355,7 +357,7 @@
                 <div class="team-grid">
                     <article class="team-card">
                         <div class="team-avatar">
-                            <img src="src/assets/images/AICafeLogo.png" alt="Atanas Dimitrov avatar placeholder">
+                            <img src="src/assets/images/AICafeLogo.png" alt="Atanas Dimitrov - AI Cafe Founder and Organizer" loading="lazy">
                         </div>
                         <h3 class="team-name">Atanas Dimitrov (Bat Nas)</h3>
                         <p class="team-role">Founder & Organizer</p>
@@ -371,7 +373,7 @@
                     </article>
                     <article class="team-card">
                         <div class="team-avatar">
-                            <img src="src/assets/images/team/nino-avatar.jpg" alt="Nino's Avatar">
+                            <img src="src/assets/images/team/nino-avatar.jpg" alt="Nino - AI Enthusiast and Presenter" loading="lazy">
                         </div>
                         <h3 class="team-name">Nino</h3>
                         <p class="team-role">AI Enthusiast & Presenter</p>
@@ -388,7 +390,7 @@
                     
                     <article class="team-card">
                         <div class="team-avatar">
-                            <img src="src/assets/images/team/plamen-avatar.jpg" alt="Plamen Tanev's Avatar">
+                            <img src="src/assets/images/team/plamen-avatar.jpg" alt="Plamen Tanev - QA Automation Specialist" loading="lazy">
                         </div>
                         <h3 class="team-name">Plamen Tanev</h3>
                         <p class="team-role">QA Automation Specialist</p>
@@ -405,7 +407,7 @@
                     
                     <article class="team-card">
                         <div class="team-avatar">
-                            <img src="src/assets/images/team/atanas-avatar.jpg" alt="Atanas Yanev's Avatar">
+                            <img src="src/assets/images/team/atanas-avatar.jpg" alt="Atanas Yanev - Technical Lead and AI Researcher" loading="lazy">
                         </div>
                         <h3 class="team-name">Atanas Yanev</h3>
                         <p class="team-role">Technical Lead & AI Researcher</p>
@@ -471,8 +473,8 @@
                         through community collaboration and hands-on exploration.
                     </p>
                     <div class="company-logos" style="margin-top: 1rem; display: flex; gap: 1rem; align-items: center; justify-content: flex-start;">
-                        <img src="src/assets/images/nuvolo-logo.svg" alt="Nuvolo Logo" style="height: 40px;">
-                        <img src="src/assets/images/trane-logo.svg" alt="Trane Technologies Logo" style="height: 40px;">
+                        <img src="src/assets/images/nuvolo-logo.svg" alt="Nuvolo - Smart Building Technology Platform" style="height: 40px;" loading="lazy">
+                        <img src="src/assets/images/trane-logo.svg" alt="Trane Technologies - Climate Innovation Company" style="height: 40px;" loading="lazy">
                     </div>
                 </div>
                 
