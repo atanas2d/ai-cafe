@@ -312,6 +312,15 @@ a:focus {
   overflow: hidden;
 }
 
+/* Homepage hero banner background */
+.hero-banner {
+  background-image:
+    linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.88) 20%, rgba(255,255,255,0.92) 40%, rgba(255,255,255,0.96) 60%, rgba(255,255,255,1) 100%),
+    url('src/assets/images/AICafeBanner.png');
+  background-size: cover;
+  background-position: center;
+}
+
 .hero-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -443,6 +452,39 @@ a:focus {
   position: relative;
   width: 300px;
   height: 300px;
+}
+
+/* Subtle brand orbs behind the SVG to hint Nuvolo/Trane */
+.hero-graphic::before,
+.hero-graphic::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(30px);
+  opacity: 0.35;
+  animation: floatSlow 16s ease-in-out infinite;
+}
+
+.hero-graphic::before {
+  width: 180px;
+  height: 180px;
+  left: -20px;
+  top: 40px;
+  background: radial-gradient(circle at 30% 30%, #1E3A8A, transparent 60%);
+}
+
+.hero-graphic::after {
+  width: 160px;
+  height: 160px;
+  right: -10px;
+  bottom: 30px;
+  background: radial-gradient(circle at 70% 70%, #E53E3E, transparent 60%);
+  animation-delay: 4s;
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-8px) scale(1.02); }
 }
 
 /* Neural-network SVG visual (topic-aligned) */

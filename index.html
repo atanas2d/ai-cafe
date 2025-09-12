@@ -105,7 +105,7 @@
     <!-- Main Content -->
     <main id="main-content" role="main">
         <!-- Hero Section -->
-        <section id="home" class="hero" aria-labelledby="hero-title">
+        <section id="home" class="hero hero-banner" aria-labelledby="hero-title">
             <div class="hero-container">
                 <div class="hero-content">
                     <h1 id="hero-title" class="hero-title playful-accent">
@@ -208,65 +208,7 @@
                     Explore our journey through AI tools and technologies
                 </p>
                 
-                <div class="timeline">
-                    <!-- Show only last 3 meetings -->
-                    <article class="timeline-item">
-                        <div class="timeline-marker">
-                            <span class="timeline-number">8</span>
-                        </div>
-                        <div class="timeline-content">
-                            <h3 class="timeline-title">Sapient AI & Google Nano Banana</h3>
-                            <p class="timeline-date">Recent Meeting - December 2024</p>
-                            <p class="timeline-description">
-                                Breakthrough AI architecture exploration and advanced image generation tools demonstration.
-                            </p>
-                            <div class="timeline-tags">
-                                <span class="tag">Sapient HRM</span>
-                                <span class="tag">Google Nano Banana</span>
-                                <span class="tag">Google Translate</span>
-                            </div>
-                            <p class="timeline-presenter">Presented by: Atanas Dimitrov</p>
-                        </div>
-                    </article>
-                    
-                    <article class="timeline-item">
-                        <div class="timeline-marker">
-                            <span class="timeline-number">7</span>
-                        </div>
-                        <div class="timeline-content">
-                            <h3 class="timeline-title">Eva 2.0 Beta Features</h3>
-                            <p class="timeline-date">November 2024</p>
-                            <p class="timeline-description">
-                                Comprehensive overview of Eva 2.0 Beta and its corporate AI functionalities.
-                            </p>
-                            <div class="timeline-tags">
-                                <span class="tag">Eva 2.0</span>
-                                <span class="tag">Corporate AI</span>
-                                <span class="tag">GPT-4.1</span>
-                            </div>
-                            <p class="timeline-presenter">Presented by: Atanas Dimitrov</p>
-                        </div>
-                    </article>
-                    
-                    <article class="timeline-item">
-                        <div class="timeline-marker">
-                            <span class="timeline-number">6</span>
-                        </div>
-                        <div class="timeline-content">
-                            <h3 class="timeline-title">Gemini vs GPT Tasks</h3>
-                            <p class="timeline-date">October 2024</p>
-                            <p class="timeline-description">
-                                Comparison between Gemini Scheduled Actions and GPT Tasks with auto-generated news website demo.
-                            </p>
-                            <div class="timeline-tags">
-                                <span class="tag">Gemini</span>
-                                <span class="tag">GPT Tasks</span>
-                                <span class="tag">Automation</span>
-                            </div>
-                            <p class="timeline-presenter">Presented by: Atanas Dimitrov</p>
-                        </div>
-                    </article>
-                </div>
+                <div class="timeline" id="latest-timeline"></div>
                 
                 <div class="text-center mt-12">
                     <a href="src/pages/meetings/" class="bg-nuvolo-blue hover:bg-nuvolo-light text-white hover:text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 min-w-[120px] inline-block">View All Meetings</a>
@@ -548,5 +490,22 @@
     <!-- JavaScript -->
     <script src="src/assets/js/main.js"></script>
     <script src="src/assets/js/components.js"></script>
+    <script>
+      // Render only the most recent meeting on the homepage timeline
+      document.addEventListener('DOMContentLoaded', function () {
+        try {
+          if (window.MeetingData && window.DataRenderer) {
+            var all = window.MeetingData.getAllMeetings();
+            if (all && all.length) {
+              var latest = all[0];
+              var container = document.getElementById('latest-timeline');
+              if (container) container.innerHTML = window.DataRenderer.renderMeetingCard(latest);
+            }
+          }
+        } catch (e) {
+          console.warn('Failed to render latest meeting:', e);
+        }
+      });
+    </script>
 </body>
 </html>
