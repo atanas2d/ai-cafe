@@ -5,7 +5,7 @@
 import type { Meeting, Tool, TeamMember } from '../../types/index';
 declare class MeetingDataManager {
     private meetings;
-    getMeetingById(id: number): Meeting | undefined;
+    getMeetingById(id: string): Meeting | undefined;
     getRecentMeetings(count?: number): Meeting[];
     getAllMeetings(): Meeting[];
     getMeetingsByTool(toolName: string): Meeting[];

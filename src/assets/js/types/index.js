@@ -1,6 +1,6 @@
 /**
- * AI Cafe Website - Type Definitions
- * TypeScript interfaces and types for the application
+ * Central Type Exports
+ * Main entry point for all type definitions
  */
-export {};
+export { ToolCategory } from './Tool';
 //# sourceMappingURL=index.js.map

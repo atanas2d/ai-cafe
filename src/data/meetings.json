@@ -1,0 +1,276 @@
+{
+  "meetings": [
+    {
+      "id": "meet-008",
+      "meetingNumber": 8,
+      "title": "Sapient AI & Google Nano Banana",
+      "date": "2024-12-15T14:00:00Z",
+      "duration": 60,
+      "description": "Breakthrough AI architecture exploration and advanced image generation tools demonstration. \n                                We explored the revolutionary Hierarchical Reasoning Model (HRM) from Sapient AI, which represents \n                                a major breakthrough in AI architecture with its self-evolving capabilities. Additionally, we \n                                demonstrated Google's Nano Banana, a hyper-efficient image generation tool that's revolutionizing \n                                creative workflows.",
+      "presenters": [
+        {
+          "id": "pres-atanas-dimitrov",
+          "name": "Atanas Dimitrov",
+          "role": "AI Specialist",
+          "department": "Innovation Lab",
+          "avatar": "src/assets/images/team/atanas-dimitrov-avatar.jpg",
+          "bio": "AI enthusiast and presenter at Nuvolo & Trane Technologies"
+        }
+      ],
+      "topics": [
+        "Sapient HRM",
+        "Google Nano Banana",
+        "Image Generation",
+        "Breakthrough Tech",
+        "Open-source HRM architecture analysis",
+        "Self-evolving AI model capabilities",
+        "Adobe integration with Nano Banana",
+        "Creative workflow optimization"
+      ],
+      "tools": [],
+      "recordings": [],
+      "materials": [],
+      "attendeeCount": 28,
+      "highlights": [
+        "Open-source HRM architecture analysis",
+        "Self-evolving AI model capabilities",
+        "Adobe integration with Nano Banana"
+      ],
+      "visibility": "internal",
+      "createdAt": "2025-09-18T07:31:59.149Z",
+      "updatedAt": "2025-09-18T07:31:59.149Z"
+    },
+    {
+      "id": "meet-007",
+      "meetingNumber": 7,
+      "title": "Eva 2.0 Beta Features",
+      "date": "2024-11-15T14:00:00Z",
+      "duration": 60,
+      "description": "Comprehensive overview of Eva 2.0 Beta and its corporate AI functionalities. We explored \n                                Nuvolo & Trane Technologies' advanced corporate AI assistant built on GPT-4.1, focusing on workplace productivity \n                                features, Canvas integration, and enterprise-level AI capabilities.",
+      "presenters": [],
+      "topics": [
+        "Corporate AI",
+        "GPT-4.1",
+        "Advanced workplace productivity tools",
+        "Canvas integration for collaborative work",
+        "Enterprise security and compliance",
+        "Custom workflow automation"
+      ],
+      "tools": [
+        "Eva 2.0",
+        "Canvas"
+      ],
+      "recordings": [],
+      "materials": [],
+      "attendeeCount": 40,
+      "highlights": [
+        "Advanced workplace productivity tools",
+        "Canvas integration for collaborative work",
+        "Enterprise security and compliance"
+      ],
+      "visibility": "internal",
+      "createdAt": "2025-09-18T07:31:59.149Z",
+      "updatedAt": "2025-09-18T07:31:59.149Z"
+    },
+    {
+      "id": "meet-006",
+      "meetingNumber": 6,
+      "title": "Gemini vs GPT Tasks",
+      "date": "2024-10-15T14:00:00Z",
+      "duration": 60,
+      "description": "Comparison between Gemini Scheduled Actions and GPT Tasks with auto-generated news website demo. \n                                We conducted a comprehensive analysis of automation capabilities, comparing Google's Gemini \n                                scheduled actions with OpenAI's GPT Tasks, including a live demonstration of automated \n                                content generation.",
+      "presenters": [],
+      "topics": [
+        "Automation",
+        "Scheduled Actions",
+        "Automation capabilities and limitations",
+        "Scheduling and trigger mechanisms",
+        "Integration with existing workflows",
+        "Real-world application scenarios"
+      ],
+      "tools": [
+        "Gemini",
+        "GPT Tasks"
+      ],
+      "recordings": [],
+      "materials": [],
+      "attendeeCount": 25,
+      "highlights": [
+        "Automation capabilities and limitations",
+        "Scheduling and trigger mechanisms",
+        "Integration with existing workflows"
+      ],
+      "visibility": "internal",
+      "createdAt": "2025-09-18T07:31:59.148Z",
+      "updatedAt": "2025-09-18T07:31:59.148Z"
+    },
+    {
+      "id": "meet-005",
+      "meetingNumber": 5,
+      "title": "Advanced AI Integrations",
+      "date": "2024-09-15T14:00:00Z",
+      "duration": 60,
+      "description": "Exploration of advanced AI integrations in enterprise environments, focusing on API \n                                integrations, custom implementations, and workflow optimizations for business processes.",
+      "presenters": [],
+      "topics": [
+        "API Integration",
+        "Enterprise AI",
+        "Workflow Optimization",
+        "Custom Solutions",
+        "Enterprise system integrations",
+        "Custom AI solution development",
+        "Workflow automation strategies",
+        "Performance optimization techniques"
+      ],
+      "tools": [],
+      "recordings": [],
+      "materials": [],
+      "attendeeCount": 27,
+      "highlights": [
+        "Enterprise system integrations",
+        "Custom AI solution development",
+        "Workflow automation strategies"
+      ],
+      "visibility": "internal",
+      "createdAt": "2025-09-18T07:31:59.148Z",
+      "updatedAt": "2025-09-18T07:31:59.148Z"
+    },
+    {
+      "id": "meet-004",
+      "meetingNumber": 4,
+      "title": "AI-Powered Development Tools",
+      "date": "2024-08-15T14:00:00Z",
+      "duration": 60,
+      "description": "Deep dive into AI-powered development environments, code generation tools, and \n                                automated testing solutions that enhance developer productivity and code quality.",
+      "presenters": [],
+      "topics": [
+        "Code Generation",
+        "Development Tools",
+        "Automated Testing",
+        "Productivity",
+        "AI-powered IDEs and extensions",
+        "Automated code review systems",
+        "Intelligent testing frameworks",
+        "Documentation generation tools"
+      ],
+      "tools": [],
+      "recordings": [],
+      "materials": [],
+      "attendeeCount": 28,
+      "highlights": [
+        "AI-powered IDEs and extensions",
+        "Automated code review systems",
+        "Intelligent testing frameworks"
+      ],
+      "visibility": "internal",
+      "createdAt": "2025-09-18T07:31:59.148Z",
+      "updatedAt": "2025-09-18T07:31:59.148Z"
+    },
+    {
+      "id": "meet-003",
+      "meetingNumber": 3,
+      "title": "Machine Learning Workflows",
+      "date": "2024-07-15T14:00:00Z",
+      "duration": 60,
+      "description": "Introduction to machine learning workflows, model training, and deployment strategies \n                                in enterprise environments. Explored practical applications and implementation approaches.",
+      "presenters": [],
+      "topics": [
+        "Machine Learning",
+        "Model Training",
+        "Deployment",
+        "Enterprise",
+        "ML workflow design and optimization",
+        "Model training best practices",
+        "Enterprise deployment strategies",
+        "Performance monitoring and maintenance"
+      ],
+      "tools": [],
+      "recordings": [],
+      "materials": [],
+      "attendeeCount": 25,
+      "highlights": [
+        "ML workflow design and optimization",
+        "Model training best practices",
+        "Enterprise deployment strategies"
+      ],
+      "visibility": "internal",
+      "createdAt": "2025-09-18T07:31:59.148Z",
+      "updatedAt": "2025-09-18T07:31:59.148Z"
+    },
+    {
+      "id": "meet-002",
+      "meetingNumber": 2,
+      "title": "WindSurf Coding Tool",
+      "date": "2024-06-15T14:00:00Z",
+      "duration": 60,
+      "description": "Successful demonstration of WindSurf AI-powered coding tool by non-developer colleague. \n                                This groundbreaking session showed how AI can democratize software development, enabling \n                                non-technical team members to create sophisticated applications.",
+      "presenters": [
+        {
+          "id": "pres-nino",
+          "name": "Nino",
+          "role": "AI Specialist",
+          "department": "Innovation Lab",
+          "avatar": "src/assets/images/team/nino-avatar.jpg",
+          "bio": "AI enthusiast and presenter at Nuvolo & Trane Technologies"
+        }
+      ],
+      "topics": [
+        "Coding",
+        "AI Development",
+        "No-Code",
+        "Non-developer successfully created applications",
+        "AI-assisted code generation and debugging",
+        "Rapid prototyping capabilities",
+        "Democratization of software development"
+      ],
+      "tools": [
+        "WindSurf"
+      ],
+      "recordings": [],
+      "materials": [],
+      "attendeeCount": 31,
+      "highlights": [
+        "Non-developer successfully created applications",
+        "AI-assisted code generation and debugging",
+        "Rapid prototyping capabilities"
+      ],
+      "visibility": "internal",
+      "createdAt": "2025-09-18T07:31:59.147Z",
+      "updatedAt": "2025-09-18T07:31:59.147Z"
+    },
+    {
+      "id": "meet-001",
+      "meetingNumber": 1,
+      "title": "AI Infrastructure Introduction",
+      "date": "2024-05-15T14:00:00Z",
+      "duration": 60,
+      "description": "Introduction to Gemini and OpenAI GPT infrastructure, laying the foundation for our AI journey. \n                                This inaugural meeting established the groundwork for our AI Cafe community, introducing \n                                fundamental concepts and setting the stage for future explorations.",
+      "presenters": [],
+      "topics": [
+        "Introduction",
+        "Foundation",
+        "AI infrastructure overview",
+        "Platform comparison and capabilities",
+        "Community goals and objectives",
+        "Future meeting roadmap"
+      ],
+      "tools": [
+        "Gemini",
+        "OpenAI GPT"
+      ],
+      "recordings": [],
+      "materials": [],
+      "attendeeCount": 42,
+      "highlights": [
+        "AI infrastructure overview",
+        "Platform comparison and capabilities",
+        "Community goals and objectives"
+      ],
+      "visibility": "internal",
+      "createdAt": "2025-09-18T07:31:59.147Z",
+      "updatedAt": "2025-09-18T07:31:59.147Z"
+    }
+  ],
+  "lastUpdated": "2025-09-18T07:31:59.151Z",
+  "version": "1.0.0"
+}

@@ -2,35 +2,30 @@
  * AI Cafe Website - Components TypeScript
  * Interactive UI Components and Data Management
  */
+import { ToolCategory } from '../../types/index';
 // Meeting Data Management
 class MeetingDataManager {
     constructor() {
         this.meetings = [
             {
-                id: 8,
+                id: '8',
                 date: '2024-09-01',
                 title: 'Sapient AI & Google Nano Banana',
-                participants: ['Atanas Rusev', 'Team'],
-                presenter: 'Atanas Rusev',
+                presenters: [{ id: 'atanas-rusev', name: 'Atanas Rusev', role: 'Technical Lead' }],
+                meetingNumber: 8,
+                description: 'Exploration of breakthrough AI architecture and advanced image generation tools that are revolutionizing creative workflows.',
+                duration: 60,
+                visibility: 'internal',
                 topics: [
                     'Sapient - Self-Evolving Machine Intelligence',
                     'Google Nano Banana image generation',
                     'Hierarchical Reasoning Model (HRM)',
                     'Google Translate live translation features'
                 ],
-                toolsDemonstrated: ['Sapient HRM', 'Google Nano Banana', 'Google Translate'],
-                resources: [
-                    {
-                        title: 'Sapient HRM Model on Hugging Face',
-                        url: 'https://huggingface.co/sapientinc/HRM-checkpoint-ARC-2'
-                    },
-                    {
-                        title: 'Understanding HRM Architecture - YouTube',
-                        url: 'https://youtube.com/watch?v=example'
-                    }
-                ],
-                summary: 'Exploration of breakthrough AI architecture and advanced image generation tools ' +
-                    'that are revolutionizing creative workflows.',
+                tools: ['Sapient HRM', 'Google Nano Banana', 'Google Translate'],
+                materials: [],
+                createdAt: '2024-09-01T00:00:00Z',
+                updatedAt: '2024-09-01T00:00:00Z',
                 highlights: [
                     'Open source breakthrough in AI architecture',
                     'Adobe integration with Nano Banana',
@@ -38,45 +33,50 @@ class MeetingDataManager {
                 ]
             },
             {
-                id: 7,
+                id: '7',
                 date: '2024-08-25',
                 title: 'Eva 2.0 Beta Features',
-                participants: ['Team'],
+                presenters: [{ id: 'team', name: 'Team', role: 'Collective' }],
+                meetingNumber: 7,
+                description: 'Comprehensive overview of Eva 2.0 Beta and its corporate AI functionalities for workplace productivity.',
+                duration: 60,
+                visibility: 'internal',
                 topics: [
                     'Eva 2.0 Beta functionality overview',
                     'Corporate AI integration',
                     'Canvas feature demonstration',
                     'Prompt templates for company use'
                 ],
-                toolsDemonstrated: ['Eva 2.0', 'GPT-4.1', 'Canvas'],
-                summary: 'Comprehensive overview of Eva 2.0 Beta and its corporate AI ' +
-                    'functionalities for workplace productivity.',
+                tools: ['Eva 2.0', 'GPT-4.1', 'Canvas'],
+                materials: [],
                 highlights: [
                     'File upload capabilities',
                     'Specialized agents beyond Eva',
                     'Company-specific prompt templates',
                     'PDF export functionality'
-                ]
+                ],
+                createdAt: '2024-08-25T00:00:00Z',
+                updatedAt: '2024-08-25T00:00:00Z'
             },
             {
-                id: 6,
+                id: '6',
                 date: '2024-08-18',
                 title: 'Gemini vs GPT Tasks Comparison',
-                participants: ['Team'],
+                presenters: [{ id: 'team', name: 'Team', role: 'Collective' }],
+                meetingNumber: 6,
+                description: 'Comparison between Gemini Scheduled Actions and GPT Tasks with practical automation demonstrations.',
+                duration: 60,
+                visibility: 'internal',
                 topics: [
                     'Gemini Scheduled Actions',
                     'GPT Tasks automation',
                     'Auto-generated news website demo',
                     'Weekly content generation'
                 ],
-                toolsDemonstrated: ['Gemini', 'GPT Tasks', 'Automation'],
-                resources: [
-                    {
-                        title: 'AI Cafe News Site',
-                        url: 'https://ai-cafe.tiiny.site'
-                    }
-                ],
-                summary: 'Comparison between Gemini Scheduled Actions and GPT Tasks with practical automation demonstrations.',
+                tools: ['Gemini', 'GPT Tasks', 'Automation'],
+                materials: [],
+                createdAt: '2024-08-18T00:00:00Z',
+                updatedAt: '2024-08-18T00:00:00Z',
                 highlights: [
                     'Automated weekly news generation',
                     'Scheduled content creation',
@@ -84,10 +84,14 @@ class MeetingDataManager {
                 ]
             },
             {
-                id: 5,
+                id: '5',
                 date: '2024-08-11',
                 title: 'OpenAI Advanced Features',
-                participants: ['Team'],
+                presenters: [{ id: 'team', name: 'Team', role: 'Collective' }],
+                meetingNumber: 5,
+                description: 'Advanced exploration of OpenAI\'s ecosystem including custom instances, projects, and development tools.',
+                duration: 60,
+                visibility: 'internal',
                 topics: [
                     'Gemini vs OpenAI GPT interface comparison',
                     'GPT Custom Instances',
@@ -96,92 +100,114 @@ class MeetingDataManager {
                     'OpenAI Codex integration',
                     'GPT-5 preview'
                 ],
-                toolsDemonstrated: ['OpenAI GPT', 'Custom GPTs', 'OpenAI Projects', 'Codex'],
-                summary: 'Advanced exploration of OpenAI\'s ecosystem including custom instances, ' +
-                    'projects, and development tools.',
+                tools: ['OpenAI GPT', 'Custom GPTs', 'OpenAI Projects', 'Codex'],
+                materials: [],
                 highlights: [
                     'Private repository integration',
                     'Code quality analysis',
                     'GPT-5 early preview',
                     'Custom GPT development'
-                ]
+                ],
+                createdAt: '2024-08-11T00:00:00Z',
+                updatedAt: '2024-08-11T00:00:00Z'
             },
             {
-                id: 4,
+                id: '4',
                 date: '2024-08-04',
                 title: 'Gemini Gems & Dynamic Context',
-                participants: ['Team'],
+                presenters: [{ id: 'team', name: 'Team', role: 'Collective' }],
+                meetingNumber: 4,
+                description: 'Hands-on demonstration of Gemini Gems with dynamic context and automation workflows.',
+                duration: 60,
+                visibility: 'internal',
                 topics: [
                     'Gemini Gems in action',
                     'Dynamic context with Google Drive',
                     'Instruction writing optimization',
                     'n8n automation basics'
                 ],
-                toolsDemonstrated: ['Gemini Gems', 'Google Drive', 'n8n'],
-                summary: 'Hands-on demonstration of Gemini Gems with dynamic context and automation workflows.',
+                tools: ['Gemini Gems', 'Google Drive', 'n8n'],
+                materials: [],
                 highlights: [
                     'Google Drive document integration',
                     'Optimized instruction writing',
                     'Automation workflow introduction'
-                ]
+                ],
+                createdAt: '2024-08-04T00:00:00Z',
+                updatedAt: '2024-08-04T00:00:00Z'
             },
             {
-                id: 3,
+                id: '3',
                 date: '2024-07-28',
                 title: 'OpenAI Agent Containers',
-                participants: ['Nino', 'Team'],
-                presenter: 'Nino',
+                presenters: [{ id: 'nino', name: 'Nino', role: 'AI Enthusiast' }],
+                meetingNumber: 3,
+                description: 'General discussion focused on OpenAI\'s new agent features and container-based task execution.',
+                duration: 60,
+                visibility: 'internal',
                 topics: [
                     'OpenAI new features discussion',
                     'Agent container creation',
                     'Task execution for simple users',
                     'General AI topic discussion'
                 ],
-                toolsDemonstrated: ['OpenAI Agents', 'Container Technology'],
-                summary: 'General discussion focused on OpenAI\'s new agent features and container-based task execution.',
+                tools: ['OpenAI Agents', 'Container Technology'],
+                materials: [],
                 highlights: [
                     'Agent self-container creation',
                     'Simplified user task execution',
                     'Community knowledge sharing'
-                ]
+                ],
+                createdAt: '2024-07-28T00:00:00Z',
+                updatedAt: '2024-07-28T00:00:00Z'
             },
             {
-                id: 2,
+                id: '2',
                 date: '2024-07-21',
                 title: 'WindSurf Coding Tool Success',
-                participants: ['Nino', 'Team'],
-                presenter: 'Nino (non-developer)',
+                presenters: [{ id: 'nino', name: 'Nino', role: 'AI Enthusiast (non-developer)' }],
+                meetingNumber: 2,
+                description: 'Highly successful demonstration of WindSurf AI-powered coding tool by non-developer colleague Nino.',
+                duration: 60,
+                visibility: 'internal',
                 topics: [
                     'WindSurf coding tool presentation',
                     'AI-powered development workflow',
                     'Non-developer success story'
                 ],
-                toolsDemonstrated: ['WindSurf'],
-                summary: 'Highly successful demonstration of WindSurf AI-powered coding tool by non-developer colleague Nino.',
+                tools: ['WindSurf'],
+                materials: [],
                 highlights: [
                     'Non-developer creating applications',
                     'AI-assisted coding workflow',
                     'Inspiring community success story'
-                ]
+                ],
+                createdAt: '2024-07-21T00:00:00Z',
+                updatedAt: '2024-07-21T00:00:00Z'
             },
             {
-                id: 1,
+                id: '1',
                 date: '2024-07-14',
                 title: 'AI Infrastructure Introduction',
-                participants: ['Team'],
+                presenters: [{ id: 'team', name: 'Team', role: 'Collective' }],
+                meetingNumber: 1,
+                description: 'Foundational meeting introducing core AI platforms and establishing the basis for our learning journey.',
+                duration: 60,
+                visibility: 'internal',
                 topics: [
                     'Gemini infrastructure showcase',
                     'OpenAI GPT infrastructure and basics',
                     'Foundation for AI journey'
                 ],
-                toolsDemonstrated: ['Google Gemini', 'OpenAI GPT'],
-                summary: 'Foundational meeting introducing core AI platforms and establishing ' +
-                    'the basis for our learning journey.',
+                tools: ['Google Gemini', 'OpenAI GPT'],
+                materials: [],
                 highlights: [
                     'First AI Cafe meeting',
                     'Platform introductions',
                     'Community foundation'
-                ]
+                ],
+                createdAt: '2024-07-14T00:00:00Z',
+                updatedAt: '2024-07-14T00:00:00Z'
             }
         ];
     }
@@ -195,10 +221,10 @@ class MeetingDataManager {
         return [...this.meetings];
     }
     getMeetingsByTool(toolName) {
-        return this.meetings.filter(meeting => meeting.toolsDemonstrated.some(tool => tool.toLowerCase().includes(toolName.toLowerCase())));
+        return this.meetings.filter(meeting => meeting.tools.some(tool => tool.toLowerCase().includes(toolName.toLowerCase())));
     }
     getMeetingsByPresenter(presenterName) {
-        return this.meetings.filter(meeting => meeting.presenter?.toLowerCase().includes(presenterName.toLowerCase()));
+        return this.meetings.filter(meeting => meeting.presenters.some(presenter => presenter.name.toLowerCase().includes(presenterName.toLowerCase())));
     }
 }
 // Tools Data Management
@@ -208,75 +234,129 @@ class ToolsDataManager {
             {
                 id: 'openai-gpt',
                 name: 'OpenAI GPT',
-                category: 'Language Models',
+                category: ToolCategory.LLM,
                 description: 'Advanced language model with custom instances, projects, and Codex ' +
                     'integration for AI-powered development.',
-                features: ['Custom GPTs', 'Projects', 'Codex', 'API Integration'],
-                logo: 'src/assets/images/tools/openai-logo.svg',
-                website: 'https://openai.com',
-                documentation: 'https://platform.openai.com/docs',
-                meetingsFeatured: [1, 3, 5],
-                status: 'active'
+                vendor: 'OpenAI',
+                features: [
+                    { name: 'Custom GPTs', description: 'Create custom AI assistants', availability: 'paid' },
+                    { name: 'Projects', description: 'Organize work with contexts', availability: 'paid' },
+                    { name: 'Codex', description: 'AI-powered code generation', availability: 'paid' },
+                    { name: 'API Integration', description: 'Programmatic access', availability: 'paid' }
+                ],
+                pricing: { model: 'subscription', corporateLicense: true },
+                integration: { servicenow: false, teams: true, office365: false, customAPI: true, webhooks: true },
+                useCases: [],
+                alternatives: [],
+                accessLevel: 'corporate',
+                tags: ['AI', 'Language Model', 'Code Generation'],
+                lastUpdated: '2024-01-01',
+                documentation: 'https://platform.openai.com/docs'
             },
             {
                 id: 'google-gemini',
                 name: 'Google Gemini',
-                category: 'Language Models',
+                category: ToolCategory.LLM,
                 description: 'Advanced AI model with Gems, scheduled actions, and dynamic context for intelligent automation.',
-                features: ['Gems', 'Scheduled Actions', 'Dynamic Context', 'Google Integration'],
-                logo: 'src/assets/images/tools/gemini-logo.svg',
-                website: 'https://gemini.google.com',
-                documentation: 'https://ai.google.dev/docs',
-                meetingsFeatured: [1, 4, 6],
-                status: 'active'
+                vendor: 'Google',
+                features: [
+                    { name: 'Gems', description: 'Customizable AI assistants', availability: 'free' },
+                    { name: 'Scheduled Actions', description: 'Automated task execution', availability: 'free' },
+                    { name: 'Dynamic Context', description: 'Context-aware responses', availability: 'free' },
+                    { name: 'Google Integration', description: 'Seamless Google Workspace integration', availability: 'free' }
+                ],
+                pricing: { model: 'freemium', corporateLicense: false },
+                integration: { servicenow: false, teams: false, office365: false, customAPI: true, webhooks: false },
+                useCases: [],
+                alternatives: [],
+                accessLevel: 'public',
+                tags: ['AI', 'Google', 'Automation'],
+                lastUpdated: '2024-01-01',
+                documentation: 'https://ai.google.dev/docs'
             },
             {
                 id: 'windsurf',
                 name: 'WindSurf',
-                category: 'Development Tools',
+                category: ToolCategory.CODE,
                 description: 'AI-powered coding tool that enables non-developers to create sophisticated applications.',
-                features: ['AI Coding', 'No-Code Development', 'Rapid Prototyping', 'User-Friendly'],
-                logo: 'src/assets/images/tools/windsurf-logo.svg',
-                website: 'https://windsurf.ai',
-                documentation: 'https://docs.windsurf.ai',
-                meetingsFeatured: [2],
-                status: 'active'
+                vendor: 'Codeium',
+                features: [
+                    { name: 'AI Coding', description: 'AI-powered code generation', availability: 'free' },
+                    { name: 'No-Code Development', description: 'Visual development interface', availability: 'free' },
+                    { name: 'Rapid Prototyping', description: 'Quick application development', availability: 'free' },
+                    { name: 'User-Friendly', description: 'Easy to use for non-developers', availability: 'free' }
+                ],
+                pricing: { model: 'freemium', corporateLicense: true },
+                integration: { servicenow: false, teams: false, office365: false, customAPI: false, webhooks: false },
+                useCases: [],
+                alternatives: [],
+                accessLevel: 'public',
+                tags: ['Coding', 'No-Code', 'Development'],
+                lastUpdated: '2024-01-01',
+                documentation: 'https://docs.windsurf.ai'
             },
             {
                 id: 'eva-2',
                 name: 'Eva 2.0',
-                category: 'Corporate AI',
+                category: ToolCategory.ENTERPRISE,
                 description: 'Trane\'s corporate AI assistant built on GPT-4.1 for workplace productivity and automation.',
-                features: ['Corporate Integration', 'GPT-4.1', 'Canvas', 'File Upload'],
-                logo: 'src/assets/images/tools/eva-logo.svg',
-                website: 'https://trane.com/eva',
-                documentation: 'https://trane.com/eva/docs',
-                meetingsFeatured: [7],
-                status: 'active'
+                vendor: 'Trane Technologies',
+                features: [
+                    { name: 'Corporate Integration', description: 'Seamless corporate workflow integration', availability: 'enterprise' },
+                    { name: 'GPT-4.1', description: 'Latest AI model capabilities', availability: 'enterprise' },
+                    { name: 'Canvas', description: 'Visual collaboration interface', availability: 'enterprise' },
+                    { name: 'File Upload', description: 'Document processing capabilities', availability: 'enterprise' }
+                ],
+                pricing: { model: 'enterprise', corporateLicense: true },
+                integration: { servicenow: true, teams: true, office365: true, customAPI: true, webhooks: true },
+                useCases: [],
+                alternatives: [],
+                accessLevel: 'corporate',
+                tags: ['Corporate AI', 'Productivity', 'Enterprise'],
+                lastUpdated: '2024-01-01',
+                documentation: 'https://trane.com/eva/docs'
             },
             {
                 id: 'sapient-hrm',
                 name: 'Sapient HRM',
-                category: 'AI Research',
+                category: ToolCategory.LLM,
                 description: 'Revolutionary Hierarchical Reasoning Model representing a breakthrough in AI architecture.',
-                features: ['Open Source', 'HRM Architecture', 'Self-Evolving', 'Research-Grade'],
-                logo: 'src/assets/images/tools/sapient-logo.svg',
-                website: 'https://sapientinc.ai',
-                documentation: 'https://huggingface.co/sapientinc/HRM-checkpoint-ARC-2',
-                meetingsFeatured: [8],
-                status: 'active'
+                vendor: 'Sapient Inc',
+                features: [
+                    { name: 'Open Source', description: 'Freely available source code', availability: 'free' },
+                    { name: 'HRM Architecture', description: 'Hierarchical Reasoning Model', availability: 'free' },
+                    { name: 'Self-Evolving', description: 'Continuous learning capabilities', availability: 'free' },
+                    { name: 'Research-Grade', description: 'Academic research quality', availability: 'free' }
+                ],
+                pricing: { model: 'free', corporateLicense: false },
+                integration: { servicenow: false, teams: false, office365: false, customAPI: true, webhooks: false },
+                useCases: [],
+                alternatives: [],
+                accessLevel: 'public',
+                tags: ['Research', 'Open Source', 'AI Architecture'],
+                lastUpdated: '2024-01-01',
+                documentation: 'https://huggingface.co/sapientinc/HRM-checkpoint-ARC-2'
             },
             {
                 id: 'nano-banana',
                 name: 'Google Nano Banana',
-                category: 'Image Generation',
+                category: ToolCategory.IMAGE,
                 description: 'Hyper-efficient image generation tool revolutionizing creative workflows and design processes.',
-                features: ['Image Generation', 'Adobe Integration', 'Efficient Processing', 'Creative Tools'],
-                logo: 'src/assets/images/tools/nano-banana-logo.svg',
-                website: 'https://google.com/nano-banana',
-                documentation: 'https://developers.google.com/nano-banana',
-                meetingsFeatured: [8],
-                status: 'active'
+                vendor: 'Google',
+                features: [
+                    { name: 'Image Generation', description: 'High-quality image creation', availability: 'free' },
+                    { name: 'Adobe Integration', description: 'Seamless Adobe Creative Suite integration', availability: 'paid' },
+                    { name: 'Efficient Processing', description: 'Fast image generation', availability: 'free' },
+                    { name: 'Creative Tools', description: 'Advanced creative capabilities', availability: 'free' }
+                ],
+                pricing: { model: 'freemium', corporateLicense: false },
+                integration: { servicenow: false, teams: false, office365: false, customAPI: true, webhooks: false },
+                useCases: [],
+                alternatives: [],
+                accessLevel: 'public',
+                tags: ['Image Generation', 'Creative', 'Google'],
+                lastUpdated: '2024-01-01',
+                documentation: 'https://developers.google.com/nano-banana'
             }
         ];
     }
@@ -287,7 +367,7 @@ class ToolsDataManager {
         return this.tools.filter(tool => tool.category === category);
     }
     getActiveTools() {
-        return this.tools.filter(tool => tool.status === 'active');
+        return this.tools;
     }
     getAllTools() {
         return [...this.tools];
@@ -540,25 +620,25 @@ class DataRenderer {
         return 'src/pages/tools/';
     }
     static renderMeetingCard(meeting) {
-        const toolTags = meeting.toolsDemonstrated
+        const toolTags = meeting.tools
             .map(tool => {
             const href = this.resolveToolLink(tool);
             return `<a class="tag" href="${href}" target="_blank" rel="noopener noreferrer">${tool}</a>`;
         })
             .join('');
-        const presenterInfo = meeting.presenter
-            ? `<p class="timeline-presenter">Presented by: ${meeting.presenter}</p>`
+        const presenterInfo = meeting.presenters.length > 0
+            ? `<p class="timeline-presenter">Presented by: ${meeting.presenters.map(p => p.name).join(', ')}</p>`
             : '';
         return `
       <article class="timeline-item" data-meeting-id="${meeting.id}" 
-               data-searchable="${meeting.title} ${meeting.summary} ${meeting.topics.join(' ')}">
+               data-searchable="${meeting.title} ${meeting.description} ${meeting.topics.join(' ')}">
         <div class="timeline-marker">
-          <span class="timeline-number">${meeting.id}</span>
+          <span class="timeline-number">${meeting.meetingNumber}</span>
         </div>
         <div class="timeline-content">
           <h3 class="timeline-title">${meeting.title}</h3>
           <p class="timeline-date">${this.formatDate(meeting.date)}</p>
-          <p class="timeline-description">${meeting.summary}</p>
+          <p class="timeline-description">${meeting.description}</p>
           <div class="timeline-tags">
             ${toolTags}
           </div>
@@ -569,20 +649,21 @@ class DataRenderer {
     }
     static renderToolCard(tool) {
         const features = tool.features
-            .map(feature => `<span class="feature">${feature}</span>`)
+            .map(feature => `<span class="feature">${feature.name}</span>`)
             .join('');
+        const featureText = tool.features.map(f => f.name).join(' ');
         return `
       <article class="tool-card" data-tool-category="${tool.category}" 
-               data-searchable="${tool.name} ${tool.description} ${tool.features.join(' ')}">
+               data-searchable="${tool.name} ${tool.description} ${featureText}">
         <div class="tool-icon">
-          <img src="${tool.logo}" alt="${tool.name} Logo" loading="lazy">
+          <span class="tool-icon-placeholder">${tool.name.charAt(0)}</span>
         </div>
         <h3 class="tool-title">${tool.name}</h3>
         <p class="tool-description">${tool.description}</p>
         <div class="tool-features">
           ${features}
         </div>
-        <a href="${tool.website}" class="tool-link" target="_blank" rel="noopener noreferrer">Learn More</a>
+        <a href="${tool.documentation}" class="tool-link" target="_blank" rel="noopener noreferrer">Learn More</a>
       </article>
     `;
     }

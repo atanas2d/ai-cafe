@@ -338,8 +338,10 @@ class Animations {
 class Performance {
   private metrics: PerformanceMetrics = {
     loadTime: 0,
-    renderTime: 0,
-    interactionTime: 0
+    firstContentfulPaint: 0,
+    timeToInteractive: 0,
+    totalBlockingTime: 0,
+    cumulativeLayoutShift: 0
   };
 
   init(): void {

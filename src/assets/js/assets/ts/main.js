@@ -275,8 +275,10 @@ class Performance {
     constructor() {
         this.metrics = {
             loadTime: 0,
-            renderTime: 0,
-            interactionTime: 0
+            firstContentfulPaint: 0,
+            timeToInteractive: 0,
+            totalBlockingTime: 0,
+            cumulativeLayoutShift: 0
         };
     }
     init() {
