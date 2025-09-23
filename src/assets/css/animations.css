@@ -19,6 +19,16 @@
 /* Variant C uses its own <g> fill; keep it subtle */
 .variant-grid > article:nth-child(3) .ai-network .node { filter: drop-shadow(0 2px 6px rgba(30,58,138,0.15)); animation: nodePulse 6s ease-in-out infinite; }
 
+/* Dark theme support for logos in animations */
+[data-theme="dark"] .ai-network image {
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.8)) 
+          drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
+}
+
+[data-theme="light"] .ai-network image {
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.2));
+}
+
 @media (prefers-reduced-motion: reduce) {
   .variant-card .ai-network .pulse, .variant-card .ai-network .node { animation: none !important; }
 }

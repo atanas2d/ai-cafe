@@ -117,28 +117,28 @@
 
 /* Dark theme specific overrides for better contrast */
 [data-theme="dark"] .hero-title {
-  color: #000000 !important;
-  text-shadow: 0 0 8px rgba(255,255,255,0.8);
+  color: #F8FAFC !important;
+  text-shadow: 0 0 8px rgba(0,0,0,0.8);
 }
 
 [data-theme="dark"] .hero-subtitle {
-  color: #1E293B !important;
-  text-shadow: 0 0 4px rgba(255,255,255,0.6);
+  color: #E2E8F0 !important;
+  text-shadow: 0 0 4px rgba(0,0,0,0.6);
 }
 
 [data-theme="dark"] .hero-description {
-  color: #334155 !important;
-  text-shadow: 0 0 4px rgba(255,255,255,0.5);
+  color: #CBD5E1 !important;
+  text-shadow: 0 0 4px rgba(0,0,0,0.5);
 }
 
 [data-theme="dark"] .stat-number {
-  color: #000000 !important;
-  text-shadow: 0 0 6px rgba(255,255,255,0.7);
+  color: #F8FAFC !important;
+  text-shadow: 0 0 6px rgba(0,0,0,0.7);
 }
 
 [data-theme="dark"] .stat-label {
-  color: #1E293B !important;
-  text-shadow: 0 0 4px rgba(255,255,255,0.6);
+  color: #E2E8F0 !important;
+  text-shadow: 0 0 4px rgba(0,0,0,0.6);
 }
 
 /* Reset and Base Styles */
@@ -303,13 +303,20 @@ a:focus {
   color: var(--color-primary);
 }
 
-/* Logo theme adjustments */
-[data-theme="dark"] .brand-logo {
-  filter: brightness(0) invert(1);
-}
-
+/* Logo theme adjustments - keep main brand logo as-is for both themes */
+[data-theme="dark"] .brand-logo,
 [data-theme="light"] .brand-logo {
   filter: none;
+}
+
+/* Company logos (Nuvolo & Trane) visibility in dark theme */
+[data-theme="dark"] .company-logos img {
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.8)) 
+          drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
+}
+
+[data-theme="light"] .company-logos img {
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.1));
 }
 
 .nav-controls {
