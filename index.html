@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI Cafe - Nuvolo & Trane Technologies AI Learning Initiative. Join our community exploring artificial intelligence tools, sharing knowledge, and advancing AI literacy in the workplace.">
+    <meta name="description" content="AI Cafe - Cutting-edge AI learning community at Nuvolo & Trane Technologies. Explore GPT, Gemini, WindSurf, Eva 2.0, and breakthrough AI tools through hands-on demonstrations and collaborative sessions.">
     <meta name="keywords" content="AI, artificial intelligence, Nuvolo, Trane Technologies, learning, community, OpenAI, Gemini, WindSurf, Eva 2.0">
     <meta name="author" content="AI Cafe Community">
     
@@ -55,7 +55,6 @@
                 </div>
                 
                 <div class="nav-controls">
-                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
                     <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
                         <span class="hamburger"></span>
                         <span class="hamburger"></span>
@@ -77,12 +76,21 @@
                         <a href="#team" class="nav-link" role="menuitem">Team</a>
                     </li>
                     <li class="nav-item" role="none">
-                        <a href="src/pages/news/" class="nav-link" role="menuitem">AI News</a>
+                        <a href="/src/pages/news/" class="nav-link" role="menuitem">AI News</a>
                     </li>
                     <li class="nav-item" role="none">
-                        <a href="src/pages/resources/" class="nav-link" role="menuitem">Resources</a>
+                        <a href="/src/pages/resources/" class="nav-link" role="menuitem">Resources</a>
                     </li>
                 </ul>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <svg class="theme-icon theme-icon-light" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"/>
+                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                    </svg>
+                    <svg class="theme-icon theme-icon-dark" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
             </div>
         </nav>
     </header>
@@ -131,29 +139,29 @@
                                     <stop offset="0%" stop-color="#1E3A8A"/>
                                     <stop offset="100%" stop-color="#E53E3E"/>
                                 </linearGradient>
-                                <!-- Clip paths for crisp circular logo cropping (slightly inset so the ring stays visible) -->
+                                <!-- Clip paths for crisp circular logo cropping (larger for better readability) -->
                                 <clipPath id="clipNuvolo" clipPathUnits="userSpaceOnUse">
-                                    <circle cx="60" cy="60" r="10.4" />
+                                    <circle cx="60" cy="60" r="22.5" />
                                 </clipPath>
                                 <clipPath id="clipTrane" clipPathUnits="userSpaceOnUse">
-                                    <circle cx="240" cy="60" r="10.4" />
+                                    <circle cx="240" cy="60" r="22.5" />
                                 </clipPath>
                             </defs>
                             <g stroke="url(#nnGradient)" stroke-width="2" fill="none" stroke-linecap="round">
                                 <path class="pulse" d="M60 60 L150 90 L240 60 M60 150 L150 150 L240 150 M60 240 L150 210 L240 240"/>
-                                <!-- Logo endpoints: larger nodes with inner logo clipped to circle -->
-                                <circle class="node logo-node" cx="60" cy="60" r="11" fill="#fff" stroke="#1E3A8A" stroke-width="2"/>
-                                <circle class="node" cx="150" cy="90" r="8"/>
-                                <circle class="node logo-node" cx="240" cy="60" r="11" fill="#fff" stroke="#E53E3E" stroke-width="2"/>
-                                <circle class="node" cx="60" cy="150" r="8"/>
-                                <circle class="node" cx="150" cy="150" r="10"/>
-                                <circle class="node" cx="240" cy="150" r="8"/>
-                                <circle class="node" cx="60" cy="240" r="8"/>
-                                <circle class="node" cx="150" cy="210" r="8"/>
-                                <circle class="node" cx="240" cy="240" r="8"/>
-                                <!-- Overlay logos (zoomed slightly to reduce padding) -->
-                                <image href="src/assets/images/nuvolo-logo.svg" x="47" y="47" width="26" height="26" preserveAspectRatio="xMidYMid slice" clip-path="url(#clipNuvolo)" style="pointer-events:none"/>
-                                <image href="src/assets/images/trane-logo.svg" x="227" y="47" width="26" height="26" preserveAspectRatio="xMidYMid slice" clip-path="url(#clipTrane)" style="pointer-events:none"/>
+                                <!-- Logo endpoints: larger nodes with breathing animation -->
+                                <circle class="node logo-node logo-node-nuvolo" cx="60" cy="60" r="25" fill="#fff" stroke="#1E3A8A" stroke-width="4"/>
+                                <circle class="node" cx="150" cy="90" r="10"/>
+                                <circle class="node logo-node logo-node-trane" cx="240" cy="60" r="25" fill="#fff" stroke="#E53E3E" stroke-width="4"/>
+                                <circle class="node" cx="60" cy="150" r="10"/>
+                                <circle class="node" cx="150" cy="150" r="12"/>
+                                <circle class="node" cx="240" cy="150" r="10"/>
+                                <circle class="node" cx="60" cy="240" r="10"/>
+                                <circle class="node" cx="150" cy="210" r="10"/>
+                                <circle class="node" cx="240" cy="240" r="10"/>
+                                <!-- Overlay logos (larger and more visible) -->
+                                <image href="/src/assets/images/nuvolo-logo.svg" x="37.5" y="37.5" width="45" height="45" preserveAspectRatio="xMidYMid slice" clip-path="url(#clipNuvolo)" style="pointer-events:none"/>
+                                <image href="/src/assets/images/trane-logo.svg" x="217.5" y="37.5" width="45" height="45" preserveAspectRatio="xMidYMid slice" clip-path="url(#clipTrane)" style="pointer-events:none"/>
                             </g>
                         </svg>
                     </div>
@@ -224,7 +232,7 @@
                 <div class="tools-grid">
                     <article class="tool-card">
                         <div class="tool-icon">
-                            <img src="src/assets/images/tools/openai-logo.svg" alt="OpenAI GPT Logo" loading="lazy">
+                            <img src="/src/assets/images/tools/openai-logo.svg" alt="OpenAI GPT Logo" loading="lazy">
                         </div>
                         <h3 class="tool-title">OpenAI GPT</h3>
                         <p class="tool-description">
@@ -235,12 +243,12 @@
                             <span class="feature">Projects</span>
                             <span class="feature">Codex</span>
                         </div>
-                        <a href="src/pages/tools/" class="tool-link">Learn More</a>
+                        <a href="/src/pages/tools/" class="tool-link">Learn More</a>
                     </article>
-                    
+
                     <article class="tool-card">
                         <div class="tool-icon">
-                            <img src="src/assets/images/tools/gemini-logo.svg" alt="Google Gemini AI Logo" loading="lazy">
+                            <img src="/src/assets/images/tools/gemini-logo.svg" alt="Google Gemini AI Logo" loading="lazy">
                         </div>
                         <h3 class="tool-title">Google Gemini</h3>
                         <p class="tool-description">
@@ -251,12 +259,12 @@
                             <span class="feature">Scheduled Actions</span>
                             <span class="feature">Dynamic Context</span>
                         </div>
-                        <a href="src/pages/tools/" class="tool-link">Explore</a>
+                        <a href="/src/pages/tools/" class="tool-link">Explore</a>
                     </article>
-                    
+
                     <article class="tool-card">
                         <div class="tool-icon">
-                            <img src="src/assets/images/tools/windsurf-logo.svg" alt="WindSurf AI Coding Tool Logo" loading="lazy">
+                            <img src="/src/assets/images/tools/windsurf-logo.svg" alt="WindSurf AI Coding Tool Logo" loading="lazy">
                         </div>
                         <h3 class="tool-title">WindSurf</h3>
                         <p class="tool-description">
@@ -269,10 +277,10 @@
                         </div>
                         <a href="https://codeium.com/windsurf" class="tool-link" target="_blank" rel="noopener noreferrer">Try It</a>
                     </article>
-                    
+
                     <article class="tool-card">
                         <div class="tool-icon">
-                            <img src="src/assets/images/tools/eva-logo.svg" alt="Eva 2.0 Corporate AI Assistant Logo" loading="lazy">
+                            <img src="/src/assets/images/tools/eva-logo.svg" alt="Eva 2.0 Corporate AI Assistant Logo" loading="lazy">
                         </div>
                         <h3 class="tool-title">Eva 2.0</h3>
                         <p class="tool-description">
@@ -283,12 +291,12 @@
                             <span class="feature">GPT-4.1</span>
                             <span class="feature">Canvas</span>
                         </div>
-                        <a href="src/pages/tools/" class="tool-link">Access</a>
+                        <a href="/src/pages/tools/" class="tool-link">Access</a>
                     </article>
-                    
+
                     <article class="tool-card">
                         <div class="tool-icon">
-                            <img src="src/assets/images/tools/sapient-logo.svg" alt="Sapient HRM AI Architecture Logo" loading="lazy">
+                            <img src="/src/assets/images/tools/sapient-logo.svg" alt="Sapient HRM AI Architecture Logo" loading="lazy">
                         </div>
                         <h3 class="tool-title">Sapient HRM</h3>
                         <p class="tool-description">
@@ -301,10 +309,10 @@
                         </div>
                         <a href="https://huggingface.co/sapientinc/HRM-checkpoint-ARC-2" class="tool-link" target="_blank">Test Model</a>
                     </article>
-                    
+
                     <article class="tool-card">
                         <div class="tool-icon">
-                            <img src="src/assets/images/tools/nano-banana-logo.svg" alt="Google Nano Banana Image Generation Logo" loading="lazy">
+                            <img src="/src/assets/images/tools/nano-banana-logo.svg" alt="Google Nano Banana Image Generation Logo" loading="lazy">
                         </div>
                         <h3 class="tool-title">Google Nano Banana</h3>
                         <p class="tool-description">
@@ -451,9 +459,9 @@
                         Nuvolo & Trane Technologies AI Learning Initiative - Advancing artificial intelligence knowledge
                         through community collaboration and hands-on exploration.
                     </p>
-                    <div class="company-logos" style="margin-top: 1rem; display: flex; gap: 1rem; align-items: center; justify-content: flex-start;">
-                        <img src="src/assets/images/nuvolo-logo.svg" alt="Nuvolo - Smart Building Technology Platform" style="height: 40px;" loading="lazy">
-                        <img src="src/assets/images/trane-logo.svg" alt="Trane Technologies - Climate Innovation Company" style="height: 40px;" loading="lazy">
+                    <div class="company-logos" style="margin-top: 1rem; display: flex; gap: 1.5rem; align-items: center; justify-content: flex-start;">
+                        <img src="src/assets/images/nuvolo-logo.svg" alt="Nuvolo - Smart Building Technology Platform" style="height: 50px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));" loading="lazy">
+                        <img src="src/assets/images/trane-logo.svg" alt="Trane Technologies - Climate Innovation Company" style="height: 50px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));" loading="lazy">
                     </div>
                 </div>
                 
