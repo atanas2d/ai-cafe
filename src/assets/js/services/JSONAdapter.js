@@ -3,7 +3,7 @@
  * Reads data from local JSON files for Phase 1 implementation
  */
 export class JSONAdapter {
-    constructor(baseUrl = '/src/data') {
+    constructor(baseUrl = 'src/data') {
         this.baseUrl = baseUrl;
         this.cache = new Map();
     }

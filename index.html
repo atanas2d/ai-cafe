@@ -76,10 +76,10 @@
                         <a href="#team" class="nav-link" role="menuitem">Team</a>
                     </li>
                     <li class="nav-item" role="none">
-                        <a href="/src/pages/news/" class="nav-link" role="menuitem">AI News</a>
+                        <a href="src/pages/news/" class="nav-link" role="menuitem">AI News</a>
                     </li>
                     <li class="nav-item" role="none">
-                        <a href="/src/pages/resources/" class="nav-link" role="menuitem">Resources</a>
+                        <a href="src/pages/resources/" class="nav-link" role="menuitem">Resources</a>
                     </li>
                 </ul>
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
@@ -150,18 +150,21 @@
                             <g stroke="url(#nnGradient)" stroke-width="2" fill="none" stroke-linecap="round">
                                 <path class="pulse" d="M60 60 L150 90 L240 60 M60 150 L150 150 L240 150 M60 240 L150 210 L240 240"/>
                                 <!-- Logo endpoints: larger nodes with breathing animation -->
-                                <circle class="node logo-node logo-node-nuvolo" cx="60" cy="60" r="25" fill="#fff" stroke="#1E3A8A" stroke-width="4"/>
+                                <g class="logo-group logo-group-nuvolo">
+                                    <circle class="node logo-node logo-node-nuvolo" cx="60" cy="60" r="25" fill="#fff" stroke="#1E3A8A" stroke-width="4"/>
+                                    <image class="logo-image logo-image-nuvolo" href="src/assets/images/nuvolo-logo.svg" x="37.5" y="37.5" width="45" height="45" preserveAspectRatio="xMidYMid slice" clip-path="url(#clipNuvolo)" style="pointer-events:none"/>
+                                </g>
                                 <circle class="node" cx="150" cy="90" r="10"/>
-                                <circle class="node logo-node logo-node-trane" cx="240" cy="60" r="25" fill="#fff" stroke="#E53E3E" stroke-width="4"/>
+                                <g class="logo-group logo-group-trane">
+                                    <circle class="node logo-node logo-node-trane" cx="240" cy="60" r="25" fill="#fff" stroke="#E53E3E" stroke-width="4"/>
+                                    <image class="logo-image logo-image-trane" href="src/assets/images/trane-logo.svg" x="217.5" y="37.5" width="45" height="45" preserveAspectRatio="xMidYMid slice" clip-path="url(#clipTrane)" style="pointer-events:none"/>
+                                </g>
                                 <circle class="node" cx="60" cy="150" r="10"/>
                                 <circle class="node" cx="150" cy="150" r="12"/>
                                 <circle class="node" cx="240" cy="150" r="10"/>
                                 <circle class="node" cx="60" cy="240" r="10"/>
                                 <circle class="node" cx="150" cy="210" r="10"/>
                                 <circle class="node" cx="240" cy="240" r="10"/>
-                                <!-- Overlay logos (larger and more visible) -->
-                                <image href="/src/assets/images/nuvolo-logo.svg" x="37.5" y="37.5" width="45" height="45" preserveAspectRatio="xMidYMid slice" clip-path="url(#clipNuvolo)" style="pointer-events:none"/>
-                                <image href="/src/assets/images/trane-logo.svg" x="217.5" y="37.5" width="45" height="45" preserveAspectRatio="xMidYMid slice" clip-path="url(#clipTrane)" style="pointer-events:none"/>
                             </g>
                         </svg>
                     </div>
@@ -232,7 +235,7 @@
                 <div class="tools-grid">
                     <article class="tool-card">
                         <div class="tool-icon">
-                            <img src="/src/assets/images/tools/openai-logo.svg" alt="OpenAI GPT Logo" loading="lazy">
+                            <img src="src/assets/images/tools/openai-logo.svg" alt="OpenAI GPT Logo" loading="lazy">
                         </div>
                         <h3 class="tool-title">OpenAI GPT</h3>
                         <p class="tool-description">
@@ -243,12 +246,12 @@
                             <span class="feature">Projects</span>
                             <span class="feature">Codex</span>
                         </div>
-                        <a href="/src/pages/tools/" class="tool-link">Learn More</a>
+                        <a href="src/pages/tools/" class="tool-link">Learn More</a>
                     </article>
 
                     <article class="tool-card">
                         <div class="tool-icon">
-                            <img src="/src/assets/images/tools/gemini-logo.svg" alt="Google Gemini AI Logo" loading="lazy">
+                            <img src="src/assets/images/tools/gemini-logo.svg" alt="Google Gemini AI Logo" loading="lazy">
                         </div>
                         <h3 class="tool-title">Google Gemini</h3>
                         <p class="tool-description">
@@ -259,12 +262,12 @@
                             <span class="feature">Scheduled Actions</span>
                             <span class="feature">Dynamic Context</span>
                         </div>
-                        <a href="/src/pages/tools/" class="tool-link">Explore</a>
+                        <a href="src/pages/tools/" class="tool-link">Explore</a>
                     </article>
 
                     <article class="tool-card">
                         <div class="tool-icon">
-                            <img src="/src/assets/images/tools/windsurf-logo.svg" alt="WindSurf AI Coding Tool Logo" loading="lazy">
+                            <img src="src/assets/images/tools/windsurf-logo.svg" alt="WindSurf AI Coding Tool Logo" loading="lazy">
                         </div>
                         <h3 class="tool-title">WindSurf</h3>
                         <p class="tool-description">
@@ -280,7 +283,7 @@
 
                     <article class="tool-card">
                         <div class="tool-icon">
-                            <img src="/src/assets/images/tools/eva-logo.svg" alt="Eva 2.0 Corporate AI Assistant Logo" loading="lazy">
+                            <img src="src/assets/images/tools/eva-logo.svg" alt="Eva 2.0 Corporate AI Assistant Logo" loading="lazy">
                         </div>
                         <h3 class="tool-title">Eva 2.0</h3>
                         <p class="tool-description">
@@ -291,12 +294,12 @@
                             <span class="feature">GPT-4.1</span>
                             <span class="feature">Canvas</span>
                         </div>
-                        <a href="/src/pages/tools/" class="tool-link">Access</a>
+                        <a href="src/pages/tools/" class="tool-link">Access</a>
                     </article>
 
                     <article class="tool-card">
                         <div class="tool-icon">
-                            <img src="/src/assets/images/tools/sapient-logo.svg" alt="Sapient HRM AI Architecture Logo" loading="lazy">
+                            <img src="src/assets/images/tools/sapient-logo.svg" alt="Sapient HRM AI Architecture Logo" loading="lazy">
                         </div>
                         <h3 class="tool-title">Sapient HRM</h3>
                         <p class="tool-description">
@@ -312,7 +315,7 @@
 
                     <article class="tool-card">
                         <div class="tool-icon">
-                            <img src="/src/assets/images/tools/nano-banana-logo.svg" alt="Google Nano Banana Image Generation Logo" loading="lazy">
+                            <img src="src/assets/images/tools/nano-banana-logo.svg" alt="Google Nano Banana Image Generation Logo" loading="lazy">
                         </div>
                         <h3 class="tool-title">Google Nano Banana</h3>
                         <p class="tool-description">

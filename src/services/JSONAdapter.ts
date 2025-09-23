@@ -19,7 +19,7 @@ export class JSONAdapter implements DatabaseAdapter {
   private cache: Map<string, any> = new Map();
   private static readonly CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
-  constructor(private baseUrl: string = '/src/data') {}
+  constructor(private baseUrl: string = 'src/data') {}
 
   /**
    * Fetch data from JSON files with caching
