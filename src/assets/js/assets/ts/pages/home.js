@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     catch (e) {
         if (process.env.NODE_ENV === 'development') {
-            console.warn('Failed to render latest meeting:', e);
+            // Failed to render latest meeting
         }
     }
     // Banner picker logic

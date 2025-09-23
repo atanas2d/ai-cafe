@@ -19,7 +19,8 @@ class MeetingDataManager {
       title: 'Sapient AI & Google Nano Banana',
       presenters: [{ id: 'atanas-rusev', name: 'Atanas Rusev', role: 'Technical Lead' }],
       meetingNumber: 8,
-      description: 'Exploration of breakthrough AI architecture and advanced image generation tools that are revolutionizing creative workflows.',
+      description: 'Exploration of breakthrough AI architecture and advanced image generation ' +
+        'tools that are revolutionizing creative workflows.',
       duration: 60,
       visibility: 'internal' as const,
       topics: [
@@ -44,7 +45,8 @@ class MeetingDataManager {
       title: 'Eva 2.0 Beta Features',
       presenters: [{ id: 'team', name: 'Team', role: 'Collective' }],
       meetingNumber: 7,
-      description: 'Comprehensive overview of Eva 2.0 Beta and its corporate AI functionalities for workplace productivity.',
+      description: 'Comprehensive overview of Eva 2.0 Beta and its corporate AI ' +
+        'functionalities for workplace productivity.',
       duration: 60,
       visibility: 'internal' as const,
       topics: [
@@ -70,7 +72,8 @@ class MeetingDataManager {
       title: 'Gemini vs GPT Tasks Comparison',
       presenters: [{ id: 'team', name: 'Team', role: 'Collective' }],
       meetingNumber: 6,
-      description: 'Comparison between Gemini Scheduled Actions and GPT Tasks with practical automation demonstrations.',
+      description: 'Comparison between Gemini Scheduled Actions and GPT Tasks with ' +
+        'practical automation demonstrations.',
       duration: 60,
       visibility: 'internal' as const,
       topics: [
@@ -95,7 +98,8 @@ class MeetingDataManager {
       title: 'OpenAI Advanced Features',
       presenters: [{ id: 'team', name: 'Team', role: 'Collective' }],
       meetingNumber: 5,
-      description: 'Advanced exploration of OpenAI\'s ecosystem including custom instances, projects, and development tools.',
+      description: 'Advanced exploration of OpenAI\'s ecosystem including custom ' +
+        'instances, projects, and development tools.',
       duration: 60,
       visibility: 'internal' as const,
       topics: [
@@ -173,7 +177,8 @@ class MeetingDataManager {
       title: 'WindSurf Coding Tool Success',
       presenters: [{ id: 'nino', name: 'Nino', role: 'AI Enthusiast (non-developer)' }],
       meetingNumber: 2,
-      description: 'Highly successful demonstration of WindSurf AI-powered coding tool by non-developer colleague Nino.',
+      description: 'Highly successful demonstration of WindSurf AI-powered coding tool ' +
+        'by non-developer colleague Nino.',
       duration: 60,
       visibility: 'internal' as const,
       topics: [
@@ -197,7 +202,8 @@ class MeetingDataManager {
       title: 'AI Infrastructure Introduction',
       presenters: [{ id: 'team', name: 'Team', role: 'Collective' }],
       meetingNumber: 1,
-      description: 'Foundational meeting introducing core AI platforms and establishing the basis for our learning journey.',
+      description: 'Foundational meeting introducing core AI platforms and ' +
+        'establishing the basis for our learning journey.',
       duration: 60,
       visibility: 'internal' as const,
       topics: [
@@ -320,7 +326,11 @@ class ToolsDataManager {
       description: 'Trane\'s corporate AI assistant built on GPT-4.1 for workplace productivity and automation.',
       vendor: 'Trane Technologies',
       features: [
-        { name: 'Corporate Integration', description: 'Seamless corporate workflow integration', availability: 'enterprise' },
+        {
+          name: 'Corporate Integration',
+          description: 'Seamless corporate workflow integration',
+          availability: 'enterprise'
+        },
         { name: 'GPT-4.1', description: 'Latest AI model capabilities', availability: 'enterprise' },
         { name: 'Canvas', description: 'Visual collaboration interface', availability: 'enterprise' },
         { name: 'File Upload', description: 'Document processing capabilities', availability: 'enterprise' }

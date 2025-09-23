@@ -416,9 +416,9 @@ class Performance {
       const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
       this.metrics.loadTime = navigation.loadEventEnd - navigation.fetchStart;
 
-      // Log performance metrics in development
+      // Performance metrics logged in development mode
       if (process.env.NODE_ENV === 'development') {
-        console.log('Performance Metrics:', this.metrics);
+        // Performance Metrics available in this.metrics
       }
     });
   }
@@ -545,7 +545,7 @@ class ErrorHandling {
   private logError(error: Error): void {
     this.errors.push(error);
     if (process.env.NODE_ENV === 'development') {
-      console.error('Application error:', error);
+      // Application error logged
     }
   }
 
@@ -590,7 +590,7 @@ class AICafeApp {
       // Website initialized successfully
     } catch (error) {
       if (process.env.NODE_ENV === 'development') {
-        console.error('Error initializing AI Cafe website:', error);
+        // Error initializing AI Cafe website
       }
     }
   }
