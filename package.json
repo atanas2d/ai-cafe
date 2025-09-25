@@ -4,7 +4,7 @@
   "description": "AI Cafe - Trane Technologies AI Learning Initiative Website",
   "main": "index.html",
   "scripts": {
-    "dev": "python -m http.server 8000",
+    "dev": "python3 -m http.server 8000",
     "build": "npm run build:ts && npm run optimize",
     "build:ts": "tsc",
     "build:watch": "tsc --watch",

@@ -83,12 +83,27 @@
                     </li>
                 </ul>
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-                    <svg class="theme-icon theme-icon-light" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"/>
-                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                    <svg class="theme-icon theme-icon-light" viewBox="0 0 24 24" aria-hidden="true">
+                        <defs>
+                            <radialGradient id="themeSunGradient" cx="12" cy="12" r="9" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#fde68a" />
+                                <stop offset="55%" stop-color="#fbbf24" />
+                                <stop offset="100%" stop-color="#f97316" />
+                            </radialGradient>
+                        </defs>
+                        <circle cx="12" cy="12" r="5.2" fill="url(#themeSunGradient)" stroke="currentColor" stroke-width="1.4"/>
+                        <path d="M12 2.5v2.3M12 19.2v2.3M5.6 5.6l1.6 1.6M16.8 16.8l1.6 1.6M2.5 12h2.3M19.2 12h2.3M5.6 18.4l1.6-1.6M16.8 7.2l1.6-1.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
                     </svg>
-                    <svg class="theme-icon theme-icon-dark" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="themeMoonGradient" x1="6" y1="4" x2="20" y2="20" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#38bdf8" />
+                                <stop offset="100%" stop-color="#6366f1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M17.8 18.3a7.5 7.5 0 1 1-7.1-12.9 6.2 6.2 0 0 0 7.1 12.9z" fill="url(#themeMoonGradient)" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+                        <circle cx="18.5" cy="7" r="1.1" fill="currentColor" opacity="0.7"/>
+                        <circle cx="20.4" cy="10.2" r="0.8" fill="currentColor" opacity="0.5"/>
                     </svg>
                 </button>
             </div>
@@ -126,8 +141,8 @@
                         </div>
                     </div>
                     <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center lg:justify-start justify-center">
-                        <a href="#meetings" class="btn-primary">View Meetings</a>
-                        <a href="#tools" class="btn-secondary">Explore Tools</a>
+                        <a href="#meetings" class="btn btn-primary btn-large">View Meetings</a>
+                        <a href="#tools" class="btn btn-secondary btn-large">Explore Tools</a>
                     </div>
                 </div>
                 <div class="hero-visual">
@@ -139,12 +154,8 @@
                                     <stop offset="0%" stop-color="#1E3A8A"/>
                                     <stop offset="100%" stop-color="#E53E3E"/>
                                 </linearGradient>
-                                <!-- Clip paths for crisp circular logo cropping (larger for better readability) -->
-                                <clipPath id="clipNuvolo" clipPathUnits="userSpaceOnUse">
-                                    <circle cx="60" cy="60" r="22.5" />
-                                </clipPath>
-                                <clipPath id="clipTrane" clipPathUnits="userSpaceOnUse">
-                                    <circle cx="240" cy="60" r="22.5" />
+                                <clipPath id="logoCircle" clipPathUnits="objectBoundingBox">
+                                    <circle cx="0.5" cy="0.5" r="0.48" />
                                 </clipPath>
                             </defs>
                             <g stroke="url(#nnGradient)" stroke-width="2" fill="none" stroke-linecap="round">
@@ -152,12 +163,12 @@
                                 <!-- Logo endpoints: larger nodes with breathing animation -->
                                 <g class="logo-group logo-group-nuvolo">
                                     <circle class="node logo-node logo-node-nuvolo" cx="60" cy="60" r="25" fill="#fff" stroke="#1E3A8A" stroke-width="4"/>
-                                    <image class="logo-image logo-image-nuvolo" href="src/assets/images/nuvolo-logo.svg" x="37.5" y="37.5" width="45" height="45" preserveAspectRatio="xMidYMid slice" clip-path="url(#clipNuvolo)" style="pointer-events:none"/>
+                                    <image class="logo-image logo-image-nuvolo" href="src/assets/images/nuvolo-logo.svg" x="37.5" y="37.5" width="45" height="45" preserveAspectRatio="xMidYMid meet" clip-path="url(#logoCircle)" style="pointer-events:none"/>
                                 </g>
                                 <circle class="node" cx="150" cy="90" r="10"/>
                                 <g class="logo-group logo-group-trane">
                                     <circle class="node logo-node logo-node-trane" cx="240" cy="60" r="25" fill="#fff" stroke="#E53E3E" stroke-width="4"/>
-                                    <image class="logo-image logo-image-trane" href="src/assets/images/trane-logo.svg" x="217.5" y="37.5" width="45" height="45" preserveAspectRatio="xMidYMid slice" clip-path="url(#clipTrane)" style="pointer-events:none"/>
+                                    <image class="logo-image logo-image-trane" href="src/assets/images/trane-logo.svg" x="217.5" y="37.5" width="45" height="45" preserveAspectRatio="xMidYMid meet" clip-path="url(#logoCircle)" style="pointer-events:none"/>
                                 </g>
                                 <circle class="node" cx="60" cy="150" r="10"/>
                                 <circle class="node" cx="150" cy="150" r="12"/>
@@ -218,7 +229,7 @@
                 <div class="timeline timeline--single" id="latest-timeline"></div>
                 
                 <div class="text-center mt-12">
-                    <a href="src/pages/meetings/" class="btn-primary">View All Meetings</a>
+                    <a href="src/pages/meetings/" class="btn btn-primary">View All Meetings</a>
                 </div>
 
             </div>
@@ -331,7 +342,7 @@
                 </div>
                 
                 <div class="text-center mt-12">
-                    <a href="src/pages/tools/" class="btn-primary">View All Tools</a>
+                    <a href="src/pages/tools/" class="btn btn-primary">View All Tools</a>
                 </div>
             </div>
         </section>
@@ -484,7 +495,7 @@
                         <li><a href="CONTRIBUTING.md">Contributing</a></li>
                         <li><a href="CODE_OF_CONDUCT.md">Code of Conduct</a></li>
                         <li><a href="https://github.com/atanas2d/ai-cafe">GitHub</a></li>
-                        <li><a href="#">Teams Channel</a></li>
+                        <li><a href="mailto:aicafe@nuvolo.com?subject=AI%20Cafe%20Teams%20Access">Teams Channel Request</a></li>
                     </ul>
                 </div>
                 
@@ -492,8 +503,8 @@
                     <h4 class="footer-heading">Resources</h4>
                     <ul class="footer-links">
                         <li><a href="src/pages/news/">AI News</a></li>
-                        <li><a href="src/pages/resources/">Learning Paths</a></li>
-                        <li><a href="src/pages/resources/">Documentation</a></li>
+                        <li><a href="src/pages/resources/#practical-title">Practical Resources</a></li>
+                        <li><a href="src/pages/resources/#docs-title">Governance &amp; Docs</a></li>
                         <li><a href="SECURITY.md">Security</a></li>
                     </ul>
                 </div>
@@ -512,9 +523,9 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="src/assets/js/theme.js"></script>
-    <script src="src/assets/js/main.js"></script>
-    <script src="src/assets/js/components.js"></script>
-    <script src="src/assets/js/home.js"></script>
+    <script type="module" src="src/assets/js/theme.js"></script>
+    <script type="module" src="src/assets/js/main.js"></script>
+    <script type="module" src="src/assets/js/components.js"></script>
+    <script type="module" src="src/assets/js/home.js"></script>
 </body>
 </html>

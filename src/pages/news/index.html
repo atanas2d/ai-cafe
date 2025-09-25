@@ -40,14 +40,15 @@
                         <span class="brand-text">AI Cafe</span>
                     </a>
                 </div>
-                
-                <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                    <span class="hamburger"></span>
-                    <span class="hamburger"></span>
-                    <span class="hamburger"></span>
-                </button>
-                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
-                
+
+                <div class="nav-controls">
+                    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                        <span class="hamburger"></span>
+                        <span class="hamburger"></span>
+                        <span class="hamburger"></span>
+                    </button>
+                </div>
+
                 <ul class="nav-menu" role="menubar">
                     <li class="nav-item" role="none">
                         <a href="../../../index.html" class="nav-link" role="menuitem">Home</a>
@@ -62,12 +63,36 @@
                         <a href="../../../index.html#team" class="nav-link" role="menuitem">Team</a>
                     </li>
                     <li class="nav-item" role="none">
-                        <a href="#" class="nav-link active" role="menuitem">AI News</a>
+                        <a href="../news/" class="nav-link active" role="menuitem">AI News</a>
                     </li>
                     <li class="nav-item" role="none">
                         <a href="../resources/" class="nav-link" role="menuitem">Resources</a>
                     </li>
                 </ul>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <svg class="theme-icon theme-icon-light" viewBox="0 0 24 24" aria-hidden="true">
+                        <defs>
+                            <radialGradient id="themeSunGradient" cx="12" cy="12" r="9" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#fde68a" />
+                                <stop offset="55%" stop-color="#fbbf24" />
+                                <stop offset="100%" stop-color="#f97316" />
+                            </radialGradient>
+                        </defs>
+                        <circle cx="12" cy="12" r="5.2" fill="url(#themeSunGradient)" stroke="currentColor" stroke-width="1.4"/>
+                        <path d="M12 2.5v2.3M12 19.2v2.3M5.6 5.6l1.6 1.6M16.8 16.8l1.6 1.6M2.5 12h2.3M19.2 12h2.3M5.6 18.4l1.6-1.6M16.8 7.2l1.6-1.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+                    </svg>
+                    <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="themeMoonGradient" x1="6" y1="4" x2="20" y2="20" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#38bdf8" />
+                                <stop offset="100%" stop-color="#6366f1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M17.8 18.3a7.5 7.5 0 1 1-7.1-12.9 6.2 6.2 0 0 0 7.1 12.9z" fill="url(#themeMoonGradient)" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+                        <circle cx="18.5" cy="7" r="1.1" fill="currentColor" opacity="0.7"/>
+                        <circle cx="20.4" cy="10.2" r="0.8" fill="currentColor" opacity="0.5"/>
+                    </svg>
+                </button>
             </div>
         </nav>
     </header>
@@ -75,12 +100,13 @@
     <!-- Main Content -->
     <main id="main-content" role="main">
         <!-- Hero Section -->
-        <section class="hero compact" aria-labelledby="hero-title">
+        <section class="hero hero-subpage compact" aria-labelledby="hero-title">
             <div class="hero-container">
                 <div class="hero-content">
                     <h1 id="hero-title" class="hero-title playful-accent">
                         AI <span class="highlight">News Hub</span>
                     </h1>
+                    <p class="hero-subtitle hero-subtitle-muted">Weekly briefings, research highlights, and industry signals curated for the AI Cafe community.</p>
                 </div>
             </div>
         </section>
@@ -328,8 +354,8 @@
                 <div class="footer-section">
                     <h4 class="footer-heading">Resources</h4>
                     <ul class="footer-links">
-                        <li><a href="#">AI News</a></li>
-                        <li><a href="../resources/">Learning Paths</a></li>
+                        <li><a href="#featured-title">AI News</a></li>
+                        <li><a href="../resources/#practical-title">Practical Resources</a></li>
                         <li><a href="../../../CONTRIBUTING.md">Contributing</a></li>
                         <li><a href="../../../SECURITY.md">Security</a></li>
                     </ul>
@@ -339,9 +365,9 @@
                     <h4 class="footer-heading">Community</h4>
                     <ul class="footer-links">
                         <li><a href="https://github.com/atanas2d/ai-cafe">GitHub</a></li>
-                        <li><a href="#">Teams Channel</a></li>
+                        <li><a href="mailto:aicafe@nuvolo.com?subject=AI%20Cafe%20Teams%20Access">Teams Channel Request</a></li>
                         <li><a href="../../../CODE_OF_CONDUCT.md">Code of Conduct</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="mailto:aicafe@nuvolo.com?subject=AI%20Cafe%20Inquiry">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -359,8 +385,9 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="../../assets/js/theme.js"></script>
-    <script src="../../assets/js/main.js"></script>
-    <script src="../../assets/js/components.js"></script>
+    <script type="module" src="../../assets/js/theme.js"></script>
+    <script type="module" src="../../assets/js/main.js"></script>
+    <script type="module" src="../../assets/js/components.js"></script>
+    <script type="module" src="../../assets/js/news.js"></script>
 </body>
 </html>

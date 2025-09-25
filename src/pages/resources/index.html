@@ -40,14 +40,15 @@
                         <span class="brand-text">AI Cafe</span>
                     </a>
                 </div>
-                
-                <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                    <span class="hamburger"></span>
-                    <span class="hamburger"></span>
-                    <span class="hamburger"></span>
-                </button>
-                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
-                
+
+                <div class="nav-controls">
+                    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                        <span class="hamburger"></span>
+                        <span class="hamburger"></span>
+                        <span class="hamburger"></span>
+                    </button>
+                </div>
+
                 <ul class="nav-menu" role="menubar">
                     <li class="nav-item" role="none">
                         <a href="../../../index.html" class="nav-link" role="menuitem">Home</a>
@@ -65,9 +66,33 @@
                         <a href="../news/" class="nav-link" role="menuitem">AI News</a>
                     </li>
                     <li class="nav-item" role="none">
-                        <a href="#" class="nav-link active" role="menuitem">Resources</a>
+                        <a href="../resources/" class="nav-link active" role="menuitem">Resources</a>
                     </li>
                 </ul>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <svg class="theme-icon theme-icon-light" viewBox="0 0 24 24" aria-hidden="true">
+                        <defs>
+                            <radialGradient id="themeSunGradient" cx="12" cy="12" r="9" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#fde68a" />
+                                <stop offset="55%" stop-color="#fbbf24" />
+                                <stop offset="100%" stop-color="#f97316" />
+                            </radialGradient>
+                        </defs>
+                        <circle cx="12" cy="12" r="5.2" fill="url(#themeSunGradient)" stroke="currentColor" stroke-width="1.4"/>
+                        <path d="M12 2.5v2.3M12 19.2v2.3M5.6 5.6l1.6 1.6M16.8 16.8l1.6 1.6M2.5 12h2.3M19.2 12h2.3M5.6 18.4l1.6-1.6M16.8 7.2l1.6-1.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+                    </svg>
+                    <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="themeMoonGradient" x1="6" y1="4" x2="20" y2="20" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#38bdf8" />
+                                <stop offset="100%" stop-color="#6366f1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M17.8 18.3a7.5 7.5 0 1 1-7.1-12.9 6.2 6.2 0 0 0 7.1 12.9z" fill="url(#themeMoonGradient)" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+                        <circle cx="18.5" cy="7" r="1.1" fill="currentColor" opacity="0.7"/>
+                        <circle cx="20.4" cy="10.2" r="0.8" fill="currentColor" opacity="0.5"/>
+                    </svg>
+                </button>
             </div>
         </nav>
     </header>
@@ -75,12 +100,13 @@
     <!-- Main Content -->
     <main id="main-content" role="main">
         <!-- Hero Section -->
-        <section class="hero compact" aria-labelledby="hero-title">
+        <section class="hero hero-subpage compact" aria-labelledby="hero-title">
             <div class="hero-container">
                 <div class="hero-content">
                     <h1 id="hero-title" class="hero-title playful-accent">
                         AI Learning <span class="highlight">Resources</span>
                     </h1>
+                    <p class="hero-subtitle hero-subtitle-muted">Handpicked research, governance playbooks, and upskilling hubs that complement the tools we showcase.</p>
                 </div>
             </div>
         </section>
@@ -89,244 +115,39 @@
         <section class="practical-resources" aria-labelledby="practical-title">
             <div class="container">
                 <h2 id="practical-title" class="section-title">Practical Resources</h2>
-                <p class="section-subtitle">Curated links to hands-on courses, tutorials, and repos</p>
+                <p class="section-subtitle">Strategic guides, governance frameworks, and research hubs to deepen your AI practice</p>
                 <div class="tools-grid">
                     <article class="tool-card">
-                        <h3 class="tool-title">Courses & Guides</h3>
+                        <h3 class="tool-title">Strategy & Adoption</h3>
                         <ul class="tool-features" style="justify-content:flex-start;">
-                            <li><a class="tool-link" href="https://huggingface.co/learn" target="_blank" rel="noopener noreferrer">Hugging Face Learn</a></li>
-                            <li><a class="tool-link" href="https://course.fast.ai" target="_blank" rel="noopener noreferrer">fast.ai Practical DL</a></li>
-                            <li><a class="tool-link" href="https://learn.microsoft.com/ai/" target="_blank" rel="noopener noreferrer">Microsoft Learn AI</a></li>
-                            <li><a class="tool-link" href="https://ai.google.dev/docs" target="_blank" rel="noopener noreferrer">Google AI Docs</a></li>
+                            <li><a class="tool-link" href="https://hbr.org/2024/02/how-to-build-an-ai-roadmap" target="_blank" rel="noopener noreferrer">Harvard Business Review: AI Roadmap</a></li>
+                            <li><a class="tool-link" href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" target="_blank" rel="noopener noreferrer">McKinsey: State of AI Report</a></li>
+                            <li><a class="tool-link" href="https://www.ibm.com/think/insights/ai-adoption" target="_blank" rel="noopener noreferrer">IBM: AI Adoption Toolkit</a></li>
+                            <li><a class="tool-link" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/innovate/ai" target="_blank" rel="noopener noreferrer">Microsoft AI Innovation Playbook</a></li>
                         </ul>
                     </article>
                     <article class="tool-card">
-                        <h3 class="tool-title">Developer Repos</h3>
+                        <h3 class="tool-title">Responsible AI & Governance</h3>
                         <ul class="tool-features" style="justify-content:flex-start;">
-                            <li><a class="tool-link" href="https://github.com/openai/openai-cookbook" target="_blank" rel="noopener noreferrer">OpenAI Cookbook</a></li>
-                            <li><a class="tool-link" href="https://github.com/huggingface/transformers" target="_blank" rel="noopener noreferrer">Transformers</a></li>
-                            <li><a class="tool-link" href="https://github.com/langchain-ai/langchain" target="_blank" rel="noopener noreferrer">LangChain</a></li>
-                            <li><a class="tool-link" href="https://pytorch.org/tutorials/" target="_blank" rel="noopener noreferrer">PyTorch Tutorials</a></li>
+                            <li><a class="tool-link" href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST AI Risk Management Framework</a></li>
+                            <li><a class="tool-link" href="https://www.gov.uk/government/publications/uk-government-approach-to-ai-safety" target="_blank" rel="noopener noreferrer">UK Government AI Safety Policy</a></li>
+                            <li><a class="tool-link" href="https://www.oecd.ai/en/" target="_blank" rel="noopener noreferrer">OECD AI Policy Observatory</a></li>
+                            <li><a class="tool-link" href="https://responsibleaitoolkit.global/" target="_blank" rel="noopener noreferrer">Global Responsible AI Toolkit</a></li>
                         </ul>
                     </article>
                     <article class="tool-card">
-                        <h3 class="tool-title">Tools</h3>
+                        <h3 class="tool-title">Research & Benchmarking</h3>
                         <ul class="tool-features" style="justify-content:flex-start;">
-                            <li><a class="tool-link" href="https://openai.com" target="_blank" rel="noopener noreferrer">OpenAI</a></li>
-                            <li><a class="tool-link" href="https://gemini.google.com" target="_blank" rel="noopener noreferrer">Google Gemini</a></li>
-                            <li><a class="tool-link" href="https://codeium.com/windsurf" target="_blank" rel="noopener noreferrer">WindSurf</a></li>
-                            <li><a class="tool-link" href="https://n8n.io" target="_blank" rel="noopener noreferrer">n8n Automation</a></li>
+                            <li><a class="tool-link" href="https://paperswithcode.com/" target="_blank" rel="noopener noreferrer">Papers with Code Leaderboards</a></li>
+                            <li><a class="tool-link" href="https://arxiv.org/list/cs.AI/recent" target="_blank" rel="noopener noreferrer">arXiv AI Recent Papers</a></li>
+                            <li><a class="tool-link" href="https://www.stateofai.com/" target="_blank" rel="noopener noreferrer">State of AI Report (full library)</a></li>
+                            <li><a class="tool-link" href="https://aisnakeoil.substack.com/" target="_blank" rel="noopener noreferrer">AI Snake Oil Briefings</a></li>
                         </ul>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- Learning Paths Section -->
-        <section class="learning-paths" aria-labelledby="paths-title">
-            <div class="container">
-                <h2 id="paths-title" class="section-title">Learning Paths</h2>
-                <p class="section-subtitle">
-                    Structured learning journeys for different skill levels and interests
-                </p>
-                
-                <div class="paths-grid">
-                    <article class="path-card">
-                        <div class="path-header">
-                            <div class="path-icon">🚀</div>
-                            <h3 class="path-title">AI Fundamentals</h3>
-                            <span class="path-level beginner">Beginner</span>
-                        </div>
-                        <div class="path-content">
-                            <p class="path-description">
-                                Start your AI journey with fundamental concepts, basic terminology, and practical applications.
-                            </p>
-                            <ul class="path-modules">
-                                <li>Introduction to Artificial Intelligence</li>
-                                <li>Machine Learning Basics</li>
-                                <li>Understanding Large Language Models</li>
-                                <li>AI Ethics and Responsible Use</li>
-                            </ul>
-                            <div class="path-meta">
-                                <span class="path-duration">4-6 weeks</span>
-                                <span class="path-modules-count">12 modules</span>
-                            </div>
-                            <a href="#" class="path-link">Start Learning</a>
-                        </div>
-                    </article>
-
-                    <article class="path-card">
-                        <div class="path-header">
-                            <div class="path-icon">🛠️</div>
-                            <h3 class="path-title">AI Tools Mastery</h3>
-                            <span class="path-level intermediate">Intermediate</span>
-                        </div>
-                        <div class="path-content">
-                            <p class="path-description">
-                                Master the AI tools demonstrated in our meetings and learn to integrate them into your workflow.
-                            </p>
-                            <ul class="path-modules">
-                                <li>OpenAI GPT and Custom Instances</li>
-                                <li>Google Gemini and Gems</li>
-                                <li>WindSurf for AI-Powered Development</li>
-                                <li>Eva 2.0 Corporate Integration</li>
-                            </ul>
-                            <div class="path-meta">
-                                <span class="path-duration">6-8 weeks</span>
-                                <span class="path-modules-count">16 modules</span>
-                            </div>
-                            <a href="#" class="path-link">Explore Tools</a>
-                        </div>
-                    </article>
-
-                    <article class="path-card">
-                        <div class="path-header">
-                            <div class="path-icon">🔬</div>
-                            <h3 class="path-title">AI Research & Development</h3>
-                            <span class="path-level advanced">Advanced</span>
-                        </div>
-                        <div class="path-content">
-                            <p class="path-description">
-                                Dive deep into AI research, model architectures, and cutting-edge developments in the field.
-                            </p>
-                            <ul class="path-modules">
-                                <li>Advanced Model Architectures</li>
-                                <li>Local AI Model Deployment</li>
-                                <li>Research Paper Analysis</li>
-                                <li>Contributing to Open Source AI</li>
-                            </ul>
-                            <div class="path-meta">
-                                <span class="path-duration">8-12 weeks</span>
-                                <span class="path-modules-count">20 modules</span>
-                            </div>
-                            <a href="#" class="path-link">Advanced Track</a>
-                        </div>
-                    </article>
-
-                    <article class="path-card">
-                        <div class="path-header">
-                            <div class="path-icon">🏢</div>
-                            <h3 class="path-title">AI in Enterprise</h3>
-                            <span class="path-level intermediate">Intermediate</span>
-                        </div>
-                        <div class="path-content">
-                            <p class="path-description">
-                                Learn to implement AI solutions in corporate environments with focus on security and compliance.
-                            </p>
-                            <ul class="path-modules">
-                                <li>Enterprise AI Strategy</li>
-                                <li>Corporate AI Tools (Eva 2.0)</li>
-                                <li>AI Governance and Compliance</li>
-                                <li>ROI and Business Impact</li>
-                            </ul>
-                            <div class="path-meta">
-                                <span class="path-duration">5-7 weeks</span>
-                                <span class="path-modules-count">14 modules</span>
-                            </div>
-                            <a href="#" class="path-link">Enterprise Focus</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Quick Start Guides Section -->
-        <section class="quick-guides" aria-labelledby="guides-title">
-            <div class="container">
-                <h2 id="guides-title" class="section-title">Quick Start Guides</h2>
-                <div class="guides-grid">
-                    <article class="guide-card">
-                        <div class="guide-icon">
-                            <img src="../../assets/images/tools/openai-logo.svg" alt="OpenAI Logo">
-                        </div>
-                        <h3 class="guide-title">Getting Started with OpenAI GPT</h3>
-                        <p class="guide-description">
-                            Learn to create custom GPT instances and integrate them into your workflow.
-                        </p>
-                        <div class="guide-meta">
-                            <span class="guide-time">15 min read</span>
-                            <span class="guide-difficulty">Beginner</span>
-                        </div>
-                        <a href="#" class="guide-link">Read Guide</a>
-                    </article>
-
-                    <article class="guide-card">
-                        <div class="guide-icon">
-                            <img src="../../assets/images/tools/gemini-logo.svg" alt="Gemini Logo">
-                        </div>
-                        <h3 class="guide-title">Mastering Google Gemini Gems</h3>
-                        <p class="guide-description">
-                            Create powerful Gems with dynamic context and scheduled actions.
-                        </p>
-                        <div class="guide-meta">
-                            <span class="guide-time">20 min read</span>
-                            <span class="guide-difficulty">Intermediate</span>
-                        </div>
-                        <a href="#" class="guide-link">Read Guide</a>
-                    </article>
-
-                    <article class="guide-card">
-                        <div class="guide-icon">
-                            <img src="../../assets/images/tools/windsurf-logo.svg" alt="WindSurf Logo">
-                        </div>
-                        <h3 class="guide-title">WindSurf for Non-Developers</h3>
-                        <p class="guide-description">
-                            Build applications without coding experience using AI-powered development.
-                        </p>
-                        <div class="guide-meta">
-                            <span class="guide-time">25 min read</span>
-                            <span class="guide-difficulty">Beginner</span>
-                        </div>
-                        <a href="#" class="guide-link">Read Guide</a>
-                    </article>
-
-                    <article class="guide-card">
-                        <div class="guide-icon">
-                            <img src="../../assets/images/tools/eva-logo.svg" alt="Eva Logo">
-                        </div>
-                        <h3 class="guide-title">Eva 2.0 Corporate Setup</h3>
-                        <p class="guide-description">
-                            Configure and optimize Eva 2.0 for your corporate environment and workflows.
-                        </p>
-                        <div class="guide-meta">
-                            <span class="guide-time">30 min read</span>
-                            <span class="guide-difficulty">Intermediate</span>
-                        </div>
-                        <a href="#" class="guide-link">Read Guide</a>
-                    </article>
-
-                    <article class="guide-card">
-                        <div class="guide-icon">
-                            <img src="../../assets/images/tools/sapient-logo.svg" alt="Sapient Logo">
-                        </div>
-                        <h3 class="guide-title">Exploring Sapient HRM</h3>
-                        <p class="guide-description">
-                            Understand and experiment with the revolutionary Hierarchical Reasoning Model.
-                        </p>
-                        <div class="guide-meta">
-                            <span class="guide-time">35 min read</span>
-                            <span class="guide-difficulty">Advanced</span>
-                        </div>
-                        <a href="https://huggingface.co/sapientinc/HRM-checkpoint-ARC-2" class="guide-link" target="_blank" rel="noopener noreferrer">Try Model</a>
-                    </article>
-
-                    <article class="guide-card">
-                        <div class="guide-icon">
-                            <img src="../../assets/images/tools/nano-banana-logo.svg" alt="Nano Banana Logo">
-                        </div>
-                        <h3 class="guide-title">Google Nano Banana Basics</h3>
-                        <p class="guide-description">
-                            Generate high-quality images efficiently with Google's latest image generation tool.
-                        </p>
-                        <div class="guide-meta">
-                            <span class="guide-time">18 min read</span>
-                            <span class="guide-difficulty">Beginner</span>
-                        </div>
-                        <a href="#" class="guide-link">Read Guide</a>
-                    </article>
-                </div>
-            </div>
-        </section>
 
         <!-- Documentation Section -->
         <section class="documentation" aria-labelledby="docs-title">
@@ -334,32 +155,32 @@
                 <h2 id="docs-title" class="section-title">Documentation & References</h2>
                 <div class="docs-categories">
                     <div class="docs-category">
-                        <h3 class="category-title">API Documentation</h3>
+                        <h3 class="category-title">Governance Frameworks</h3>
                         <ul class="docs-list">
-                            <li><a href="https://platform.openai.com/docs" target="_blank" rel="noopener noreferrer">OpenAI API Documentation</a></li>
-                            <li><a href="https://ai.google.dev/docs" target="_blank" rel="noopener noreferrer">Google AI Platform Docs</a></li>
-                            <li><a href="https://docs.anthropic.com/" target="_blank" rel="noopener noreferrer">Anthropic Claude API</a></li>
-                            <li><a href="https://docs.cohere.ai/" target="_blank" rel="noopener noreferrer">Cohere API Documentation</a></li>
+                            <li><a href="https://digital-strategy.ec.europa.eu/en/policies/eu-ai-act" target="_blank" rel="noopener noreferrer">EU AI Act Summary & Timeline</a></li>
+                            <li><a href="https://www.weforum.org/agenda/2024/01/practical-guide-to-responsible-ai" target="_blank" rel="noopener noreferrer">World Economic Forum Responsible AI Guide</a></li>
+                            <li><a href="https://unesdoc.unesco.org/ark:/48223/pf0000381137" target="_blank" rel="noopener noreferrer">UNESCO Recommendation on AI Ethics</a></li>
+                            <li><a href="https://www.datainnovation.org/2023/05/nist-ai-risk-management-framework-quick-reference-guide/" target="_blank" rel="noopener noreferrer">NIST RMF Quick Reference</a></li>
                         </ul>
                     </div>
 
                     <div class="docs-category">
-                        <h3 class="category-title">Tool Documentation</h3>
+                        <h3 class="category-title">Enterprise Implementation</h3>
                         <ul class="docs-list">
-                            <li><a href="#" target="_blank" rel="noopener noreferrer">WindSurf User Guide</a></li>
-                            <li><a href="#" target="_blank" rel="noopener noreferrer">Eva 2.0 Corporate Manual</a></li>
-                            <li><a href="https://n8n.io/docs/" target="_blank" rel="noopener noreferrer">n8n Automation Docs</a></li>
-                            <li><a href="https://huggingface.co/docs" target="_blank" rel="noopener noreferrer">Hugging Face Documentation</a></li>
+                            <li><a href="https://www2.deloitte.com/global/en/pages/consulting/articles/ai-implementation-playbook.html" target="_blank" rel="noopener noreferrer">Deloitte AI Implementation Playbook</a></li>
+                            <li><a href="https://www.bcg.com/publications/2024/building-an-ai-center-of-excellence" target="_blank" rel="noopener noreferrer">BCG: Building an AI Center of Excellence</a></li>
+                            <li><a href="https://www.accenture.com/us-en/insights/artificial-intelligence/ai-change-management" target="_blank" rel="noopener noreferrer">Accenture AI Change Management</a></li>
+                            <li><a href="https://aws.amazon.com/executive-insights/cloud-strategy/ai-best-practices/" target="_blank" rel="noopener noreferrer">AWS Executive Insights on AI</a></li>
                         </ul>
                     </div>
 
                     <div class="docs-category">
-                        <h3 class="category-title">Best Practices</h3>
+                        <h3 class="category-title">Prompting & Workflow Patterns</h3>
                         <ul class="docs-list">
-                            <li><a href="#" target="_blank" rel="noopener noreferrer">AI Prompt Engineering Guide</a></li>
-                            <li><a href="#" target="_blank" rel="noopener noreferrer">Corporate AI Security Guidelines</a></li>
-                            <li><a href="#" target="_blank" rel="noopener noreferrer">AI Ethics and Responsible Use</a></li>
-                            <li><a href="#" target="_blank" rel="noopener noreferrer">Performance Optimization Tips</a></li>
+                            <li><a href="https://www.promptingguide.ai/" target="_blank" rel="noopener noreferrer">Prompt Engineering Guide</a></li>
+                            <li><a href="https://betterprogramming.pub/advanced-chatgpt-prompts-for-productivity-87d2f3fa0295" target="_blank" rel="noopener noreferrer">Advanced Productivity Prompts</a></li>
+                            <li><a href="https://github.com/dair-ai/Prompt-Engineering-Guide" target="_blank" rel="noopener noreferrer">DAIR AI Prompt Patterns</a></li>
+                            <li><a href="https://www.linkedin.com/pulse/decision-trees-ai-agents-how-structure-your-prompts-better-mishra" target="_blank" rel="noopener noreferrer">Prompt Decision Trees for Agents</a></li>
                         </ul>
                     </div>
 
@@ -396,10 +217,10 @@
                     <div class="external-category">
                         <h3 class="external-heading">Books & Publications</h3>
                         <ul class="external-list">
-                            <li><a href="#" target="_blank" rel="noopener noreferrer">"Artificial Intelligence: A Modern Approach"</a></li>
-                            <li><a href="#" target="_blank" rel="noopener noreferrer">"The Hundred-Page Machine Learning Book"</a></li>
-                            <li><a href="#" target="_blank" rel="noopener noreferrer">"Human Compatible" by Stuart Russell</a></li>
-                            <li><a href="#" target="_blank" rel="noopener noreferrer">"Life 3.0" by Max Tegmark</a></li>
+                            <li><a href="https://aima.cs.berkeley.edu/" target="_blank" rel="noopener noreferrer">Artificial Intelligence: A Modern Approach</a></li>
+                            <li><a href="https://themlbook.com/" target="_blank" rel="noopener noreferrer">The Hundred-Page Machine Learning Book</a></li>
+                            <li><a href="https://humancompatible.ai/book/" target="_blank" rel="noopener noreferrer">Human Compatible — Stuart Russell</a></li>
+                            <li><a href="https://www.basicbooks.com/titles/max-tegmark/life-30/9781101946602" target="_blank" rel="noopener noreferrer">Life 3.0 — Max Tegmark</a></li>
                         </ul>
                     </div>
 
@@ -416,10 +237,10 @@
                     <div class="external-category">
                         <h3 class="external-heading">Podcasts</h3>
                         <ul class="external-list">
-                            <li><a href="#" target="_blank" rel="noopener noreferrer">AI Alignment Podcast</a></li>
-                            <li><a href="#" target="_blank" rel="noopener noreferrer">The AI Podcast by NVIDIA</a></li>
-                            <li><a href="#" target="_blank" rel="noopener noreferrer">Machine Learning Street Talk</a></li>
-                            <li><a href="#" target="_blank" rel="noopener noreferrer">Practical AI</a></li>
+                            <li><a href="https://futureoflife.org/ai-alignment-podcast/" target="_blank" rel="noopener noreferrer">AI Alignment Podcast</a></li>
+                            <li><a href="https://blogs.nvidia.com/blog/category/the-ai-podcast/" target="_blank" rel="noopener noreferrer">The AI Podcast by NVIDIA</a></li>
+                            <li><a href="https://www.youtube.com/c/MachineLearningStreetTalk" target="_blank" rel="noopener noreferrer">Machine Learning Street Talk</a></li>
+                            <li><a href="https://changelog.com/practicalai" target="_blank" rel="noopener noreferrer">Practical AI</a></li>
                         </ul>
                     </div>
                 </div>
@@ -469,10 +290,10 @@
                 <div class="footer-section">
                     <h4 class="footer-heading">Learning</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Learning Paths</a></li>
-                        <li><a href="#">Quick Guides</a></li>
-                        <li><a href="#">Documentation</a></li>
-                        <li><a href="#">Templates</a></li>
+                        <li><a href="#practical-title">Practical Resources</a></li>
+                        <li><a href="#docs-title">Governance &amp; Docs</a></li>
+                        <li><a href="#external-title">External Learning</a></li>
+                        <li><a href="../news/">AI News Hub</a></li>
                     </ul>
                 </div>
                 
@@ -480,7 +301,6 @@
                     <h4 class="footer-heading">Community</h4>
                     <ul class="footer-links">
                         <li><a href="https://github.com/atanas2d/ai-cafe">GitHub</a></li>
-                        <li><a href="#">Teams Channel</a></li>
                         <li><a href="../../../CONTRIBUTING.md">Contributing</a></li>
                         <li><a href="../../../CODE_OF_CONDUCT.md">Code of Conduct</a></li>
                     </ul>
@@ -500,8 +320,8 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="../../assets/js/theme.js"></script>
-    <script src="../../assets/js/main.js"></script>
-    <script src="../../assets/js/components.js"></script>
+    <script type="module" src="../../assets/js/theme.js"></script>
+    <script type="module" src="../../assets/js/main.js"></script>
+    <script type="module" src="../../assets/js/components.js"></script>
 </body>
 </html>
