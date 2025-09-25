@@ -1,21 +1,15 @@
 {
   "name": "ai-cafe",
-  "version": "1.0.0",
-  "description": "AI Cafe - Trane Technologies AI Learning Initiative Website",
-  "main": "index.html",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AI Cafe - Trane Technologies AI Learning Initiative React Application",
   "scripts": {
-    "dev": "python3 -m http.server 8000",
-    "build": "npm run build:ts && npm run optimize",
-    "build:ts": "tsc",
-    "build:watch": "tsc --watch",
-    "optimize": "echo 'Optimizing assets...'",
-    "test": "echo 'Running tests...'",
-    "lint": "npm run lint:ts && npm run lint:html && npm run lint:css",
-    "lint:ts": "eslint \"src/assets/ts/**/*.ts\" --config .eslintrc.json",
-    "lint:html": "htmlhint \"**/*.html\" --config .htmlhintrc",
-    "lint:css": "stylelint \"src/assets/css/**/*.css\" --config .stylelintrc.json",
-    "type-check": "tsc --noEmit",
-    "deploy": "npm run build && echo 'Deploying to GitHub Pages...'"
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "eslint \"src/**/*.{ts,tsx}\" --max-warnings=0",
+    "type-check": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
@@ -27,8 +21,8 @@
     "trane-technologies",
     "learning",
     "community",
-    "website",
-    "typescript"
+    "react",
+    "primereact"
   ],
   "author": "AI Cafe Community",
   "license": "MIT",
@@ -36,15 +30,26 @@
     "url": "https://github.com/atanas2d/ai-cafe/issues"
   },
   "homepage": "https://atanas2d.github.io/ai-cafe",
+  "dependencies": {
+    "primeflex": "^4.0.0",
+    "primeicons": "^7.0.0",
+    "primereact": "^10.9.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.9.2"
+  },
   "devDependencies": {
-    "@types/node": "^20.8.0",
+    "@types/node": "^20.17.6",
+    "@types/react": "^18.3.24",
+    "@types/react-dom": "^18.3.7",
     "@typescript-eslint/eslint-plugin": "^6.7.0",
     "@typescript-eslint/parser": "^6.7.0",
-    "eslint": "^8.50.0",
-    "htmlhint": "^1.1.4",
-    "jsdom": "^27.0.0",
-    "stylelint": "^15.10.0",
-    "stylelint-config-standard": "^34.0.0",
-    "typescript": "^5.2.2"
+    "@vitejs/plugin-react": "^5.0.3",
+    "eslint": "^8.57.1",
+    "eslint-plugin-jsx-a11y": "^6.9.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "typescript": "^5.6.3",
+    "vite": "^7.1.7"
   }
 }

@@ -98,6 +98,7 @@ export interface RouterState {
 }
 
 // Event types - Custom event interface that extends browser CustomEvent
-export interface CustomEventDetail<T = any> {
+export interface CustomEventDetail<T = unknown> {
   detail: T;
 }
+export type { NewsArticle, ResourceCategory, ResourceLink, LearningTrack, AnimationPreset, PartnerLogo, TimelineEvent } from './content';
