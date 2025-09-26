@@ -16,15 +16,6 @@ interface HeroBanner {
   image: string;
 }
 
-interface HeroToolLink {
-  id: string;
-  name: string;
-  caption: string;
-  href: string;
-  image: string;
-  spanColumns?: boolean;
-}
-
 const heroBanners: HeroBanner[] = [
   {
     id: 'design-sprint',
@@ -39,31 +30,6 @@ const heroBanners: HeroBanner[] = [
 ];
 
 const BANNER_STORAGE_KEY = 'aicafe_banner';
-
-const heroToolLinks: HeroToolLink[] = [
-  {
-    id: 'openai-chatgpt',
-    name: 'OpenAI ChatGPT',
-    caption: 'Assistants & automations',
-    href: 'https://openai.com/chatgpt/',
-    image: new URL('../assets/images/tools/openai-logo.svg', import.meta.url).href
-  },
-  {
-    id: 'google-gemini',
-    name: 'Google Gemini',
-    caption: 'Workspace actions',
-    href: 'https://ai.google.dev/',
-    image: new URL('../assets/images/tools/gemini-logo.svg', import.meta.url).href
-  },
-  {
-    id: 'anthropic-claude',
-    name: 'Anthropic Claude',
-    caption: 'Reasoning & code',
-    href: 'https://www.anthropic.com/product',
-    image: new URL('../assets/images/tools/claude-logo.svg', import.meta.url).href,
-    spanColumns: true
-  }
-];
 
 export const Hero = ({ title, description, stats }: HeroProps): JSX.Element => {
   const navigate = useNavigate();
@@ -148,25 +114,6 @@ export const Hero = ({ title, description, stats }: HeroProps): JSX.Element => {
               })}
             </div>
           </div>
-          <nav className="hero__quick-links" aria-label="Featured AI tooling">
-            {heroToolLinks.map(link => (
-              <a
-                key={link.id}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`hero__tool-link${link.spanColumns ? ' hero__tool-link--wide' : ''}`}
-              >
-                <span className="hero__tool-icon" aria-hidden="true">
-                  <img src={link.image} alt="" />
-                </span>
-                <span className="hero__tool-copy">
-                  <span className="hero__tool-name">{link.name}</span>
-                  <span className="hero__tool-caption">{link.caption}</span>
-                </span>
-              </a>
-            ))}
-          </nav>
         </div>
         <dl className="hero__stats">
           {stats.map(stat => (
