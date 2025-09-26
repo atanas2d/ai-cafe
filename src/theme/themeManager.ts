@@ -1,13 +1,15 @@
 import lightThemeHref from 'primereact/resources/themes/lara-light-blue/theme.css?url';
 import darkThemeHref from 'primereact/resources/themes/lara-dark-blue/theme.css?url';
+import vibrantThemeHref from 'primereact/resources/themes/md-light-indigo/theme.css?url';
 
 const THEME_LINK_ID = 'prime-react-theme';
 
-export type ThemeMode = 'light' | 'dark';
+export type ThemeMode = 'light' | 'dark' | 'vibrant';
 
 const themeHrefByMode: Record<ThemeMode, string> = {
   light: lightThemeHref,
-  dark: darkThemeHref
+  dark: darkThemeHref,
+  vibrant: vibrantThemeHref
 };
 
 export const applyTheme = (mode: ThemeMode): void => {
@@ -30,10 +32,15 @@ export const applyTheme = (mode: ThemeMode): void => {
   document.body.dataset.theme = mode;
 };
 
+const isThemeMode = (value: string): value is ThemeMode => value in themeHrefByMode;
+
 export const getStoredTheme = (): ThemeMode | null => {
   if (typeof window === 'undefined') return null;
-  const stored = window.localStorage.getItem('ai-cafe-theme') as ThemeMode | null;
-  return stored ?? null;
+  const stored = window.localStorage.getItem('ai-cafe-theme');
+  if (stored && isThemeMode(stored)) {
+    return stored;
+  }
+  return null;
 };
 
 export const persistTheme = (mode: ThemeMode): void => {

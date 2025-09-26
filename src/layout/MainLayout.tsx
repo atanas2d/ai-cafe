@@ -2,16 +2,43 @@ import { useMemo } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { Menubar } from 'primereact/menubar';
 import type { MenuItem } from 'primereact/menuitem';
-import { Button } from 'primereact/button';
+import { SelectButton } from 'primereact/selectbutton';
+import type { ThemeMode } from '../theme/themeManager';
 
 const logoUrl = new URL('../assets/images/ai-cafe-logo.svg', import.meta.url).href;
 
 interface MainLayoutProps {
-  onToggleTheme?: () => void;
-  isDarkMode?: boolean;
+  onThemeChange?: (mode: ThemeMode) => void;
+  themeMode?: ThemeMode;
 }
 
-export const MainLayout = ({ onToggleTheme, isDarkMode }: MainLayoutProps): JSX.Element => {
+const themeOptions = [
+  {
+    label: 'Classic',
+    value: 'light',
+    icon: 'pi pi-sun',
+    description: 'Balanced light theme with Trane blues.',
+    swatch: 'linear-gradient(135deg, #1d4ed8, #9333ea)'
+  },
+  {
+    label: 'Midnight',
+    value: 'dark',
+    icon: 'pi pi-moon',
+    description: 'Low-light experience for late sessions.',
+    swatch: 'linear-gradient(135deg, #0ea5e9, #312e81)'
+  },
+  {
+    label: 'Vibrant',
+    value: 'vibrant',
+    icon: 'pi pi-star',
+    description: 'Playful gradient accents and indigo focus.',
+    swatch: 'linear-gradient(135deg, #f97316, #ec4899, #6366f1)'
+  }
+];
+
+type ThemeOption = (typeof themeOptions)[number];
+
+export const MainLayout = ({ onThemeChange, themeMode = 'light' }: MainLayoutProps): JSX.Element => {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -51,13 +78,34 @@ export const MainLayout = ({ onToggleTheme, isDarkMode }: MainLayoutProps): JSX.
       <span className="text-sm text-500 hidden md:block">
         {location.pathname === '/' ? 'Learning Community' : 'AI Cafe Platform'}
       </span>
-      <Button
-        icon={isDarkMode ? 'pi pi-moon' : 'pi pi-sun'}
-        rounded
-        text
-        severity="secondary"
-        aria-label="Toggle theme"
-        onClick={onToggleTheme}
+      <SelectButton
+        value={themeMode}
+        options={themeOptions as unknown as Array<Record<string, unknown>>}
+        onChange={(event) => {
+          const nextTheme = event.value as ThemeMode | null;
+          if (nextTheme && nextTheme !== themeMode) {
+            onThemeChange?.(nextTheme);
+          }
+        }}
+        allowEmpty={false}
+        aria-label="Theme selector"
+        itemTemplate={(option) => (
+          <div className="flex flex-column align-items-start">
+            <span className="flex align-items-center gap-2 font-medium">
+              <span
+                className="theme-option-swatch"
+                aria-hidden
+                style={{ backgroundImage: (option as ThemeOption).swatch }}
+              />
+              <i className={(option as ThemeOption).icon} aria-hidden />
+              {(option as ThemeOption).label}
+            </span>
+            <span className="text-xs text-500 hidden xl:block" style={{ maxWidth: '12rem', lineHeight: 1.3 }}>
+              {(option as ThemeOption).description}
+            </span>
+          </div>
+        )}
+        className="theme-select-button"
       />
     </div>
   );

@@ -35,7 +35,7 @@ const App = (): JSX.Element => {
     <Suspense fallback={<LoadingFallback />}>
       <Routes>
         <Route
-          element={<MainLayout isDarkMode={themeMode === 'dark'} onToggleTheme={() => setThemeMode((prev) => (prev === 'dark' ? 'light' : 'dark'))} />}
+          element={<MainLayout themeMode={themeMode} onThemeChange={setThemeMode} />}
         >
           <Route index element={<HomePage />} />
           <Route path="meetings" element={<MeetingsPage />} />
