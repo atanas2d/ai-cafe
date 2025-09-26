@@ -1,6 +1,6 @@
 import { Card } from 'primereact/card';
 import { Chip } from 'primereact/chip';
-import type { TeamMember } from '@/types';
+import type { TeamMember } from '../types';
 
 interface TeamMemberCardProps {
   member: TeamMember;

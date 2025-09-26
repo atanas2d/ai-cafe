@@ -1,7 +1,7 @@
 import { Card } from 'primereact/card';
 import { Chip } from 'primereact/chip';
 import { Button } from 'primereact/button';
-import type { Meeting } from '@/types';
+import type { Meeting } from '../types';
 
 interface MeetingCardProps {
   meeting: Meeting;

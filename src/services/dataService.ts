@@ -1,6 +1,6 @@
-import { meetings } from '@/data/meetings';
-import { tools } from '@/data/tools';
-import type { Meeting, Tool } from '@/types';
+import { meetings } from '../data/meetings';
+import { tools } from '../data/tools';
+import type { Meeting, Tool } from '../types';
 
 const DELAY_MS = 500; // Simulate network latency
 

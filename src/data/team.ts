@@ -1,4 +1,4 @@
-import type { TeamMember } from '@/types';
+import type { TeamMember } from '../types';
 
 const image = (filename: string): string =>
   new URL(`../assets/images/team/${filename}`, import.meta.url).href;

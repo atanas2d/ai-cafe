@@ -1,6 +1,6 @@
-import { Section } from '@/components/Section';
-import { NewsCard } from '@/components/NewsCard';
-import { newsArticles } from '@/data/news';
+import { Section } from '../../components/Section';
+import { NewsCard } from '../../components/NewsCard';
+import { newsArticles } from '../../data/news';
 import { InputText } from 'primereact/inputtext';
 import { useMemo, useState } from 'react';
 

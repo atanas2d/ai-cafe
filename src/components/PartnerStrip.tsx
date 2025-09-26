@@ -1,4 +1,4 @@
-import type { PartnerLogo } from '@/types';
+import type { PartnerLogo } from '../types';
 
 interface PartnerStripProps {
   partners: PartnerLogo[];

@@ -1,6 +1,6 @@
 import { Card } from 'primereact/card';
 import { Tag } from 'primereact/tag';
-import type { NewsArticle } from '@/types';
+import type { NewsArticle } from '../types';
 
 interface NewsCardProps {
   article: NewsArticle;

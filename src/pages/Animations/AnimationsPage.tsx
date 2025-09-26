@@ -1,6 +1,6 @@
-import { animationPresets } from '@/data/animations';
-import { AnimationPreview } from '@/components/AnimationPreview';
-import { Section } from '@/components/Section';
+import { animationPresets } from '../../data/animations.ts';
+import { AnimationPreview } from '../../components/AnimationPreview';
+import { Section } from '../../components/Section';
 import { Carousel } from 'primereact/carousel';
 import { Card } from 'primereact/card';
 

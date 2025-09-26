@@ -1,11 +1,11 @@
 import { useEffect, useMemo, useState } from 'react';
-import { DataService } from '@/services/dataService';
-import { Section } from '@/components/Section';
-import { ToolCard } from '@/components/ToolCard';
+import { DataService } from '../../services/dataService';
+import { Section } from '../../components/Section';
+import { ToolCard } from '../../components/ToolCard';
 import { InputText } from 'primereact/inputtext';
 import { Dropdown } from 'primereact/dropdown';
 import { DataView } from 'primereact/dataview';
-import type { Tool } from '@/types';
+import type { Tool } from '../../types';
 
 export const ToolsPage = (): JSX.Element => {
   const [allTools, setAllTools] = useState<Tool[]>([]);

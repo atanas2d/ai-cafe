@@ -1,6 +1,6 @@
 import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
-import type { ResourceCategory } from '@/types';
+import type { ResourceCategory } from '../types';
 
 interface ResourceCategoryCardProps {
   category: ResourceCategory;

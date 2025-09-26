@@ -1,6 +1,6 @@
 import { Card } from 'primereact/card';
 import { Tag } from 'primereact/tag';
-import type { LearningTrack } from '@/types';
+import type { LearningTrack } from '../types';
 
 interface LearningTrackCardProps {
   track: LearningTrack;

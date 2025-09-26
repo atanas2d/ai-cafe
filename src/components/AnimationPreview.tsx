@@ -1,4 +1,4 @@
-import type { AnimationPreset } from '@/types';
+import type { AnimationPreset } from '../types';
 
 interface AnimationPreviewProps {
   preset: AnimationPreset;

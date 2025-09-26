@@ -1,7 +1,7 @@
-import { Section } from '@/components/Section';
-import { ResourceCategoryCard } from '@/components/ResourceCategoryCard';
-import { LearningTrackCard } from '@/components/LearningTrackCard';
-import { resourceCategories, learningTracks } from '@/data/resources';
+import { Section } from '../../components/Section';
+import { ResourceCategoryCard } from '../../components/ResourceCategoryCard';
+import { LearningTrackCard } from '../../components/LearningTrackCard';
+import { resourceCategories, learningTracks } from '../../data/resources';
 import { Card } from 'primereact/card';
 
 export const ResourcesPage = (): JSX.Element => (

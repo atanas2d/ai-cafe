@@ -1,5 +1,5 @@
-import { ToolCategory } from '@/types';
-import type { Tool } from '@/types';
+import { ToolCategory } from '../types';
+import type { Tool } from '../types';
 
 const baseTimestamp = (date: string): string => new Date(date).toISOString();
 

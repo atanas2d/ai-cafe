@@ -1,4 +1,4 @@
-import type { PartnerLogo } from '@/types';
+import type { PartnerLogo } from '../types';
 
 const nuvoloLogo = new URL('../assets/images/nuvolo-logo.svg', import.meta.url).href;
 const traneLogo = new URL('../assets/images/trane-logo.svg', import.meta.url).href;

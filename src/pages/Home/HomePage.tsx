@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
-import { Hero } from '@/components/Hero';
-import { Section } from '@/components/Section';
-import { MeetingCard } from '@/components/MeetingCard';
-import { ToolCard } from '@/components/ToolCard';
-import { TeamMemberCard } from '@/components/TeamMemberCard';
-import { PartnerStrip } from '@/components/PartnerStrip';
-import { DataService } from '@/services/dataService';
-import { teamMembers } from '@/data/team';
-import { partnerLogos } from '@/data/partners';
-import { roadmapTimeline } from '@/data/timeline';
+import { Hero } from '../../components/Hero';
+import { Section } from '../../components/Section';
+import { MeetingCard } from '../../components/MeetingCard';
+import { ToolCard } from '../../components/ToolCard';
+import { TeamMemberCard } from '../../components/TeamMemberCard';
+import { PartnerStrip } from '../../components/PartnerStrip';
+import { DataService } from '../../services/dataService';
+import { teamMembers } from '../../data/team';
+import { partnerLogos } from '../../data/partners';
+import { roadmapTimeline } from '../../data/timeline';
 import { Timeline } from 'primereact/timeline';
 import { Card } from 'primereact/card';
-import type { Meeting, Tool } from '@/types';
+import type { Meeting, Tool } from '../../types';
 
 export const HomePage = (): JSX.Element => {
   const [meetings, setMeetings] = useState<Meeting[]>([]);

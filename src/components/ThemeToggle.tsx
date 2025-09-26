@@ -1,5 +1,5 @@
 import { InputSwitch } from 'primereact/inputswitch';
-import type { ThemeMode } from '@/theme/themeManager';
+import type { ThemeMode } from '../theme/themeManager';
 
 interface ThemeToggleProps {
   value: ThemeMode;

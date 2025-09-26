@@ -1,4 +1,4 @@
-import type { LearningTrack, ResourceCategory } from '@/types';
+import type { LearningTrack, ResourceCategory } from '../types';
 
 export const resourceCategories: ResourceCategory[] = [
   {

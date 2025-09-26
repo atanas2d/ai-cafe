@@ -1,11 +1,11 @@
 import { useEffect, useMemo, useState } from 'react';
-import { DataService } from '@/services/dataService';
-import { Section } from '@/components/Section';
+import { DataService } from '../../services/dataService';
+import { Section } from '../../components/Section';
 import { Timeline } from 'primereact/timeline';
 import { InputText } from 'primereact/inputtext';
 import { Dropdown } from 'primereact/dropdown';
 import { Chip } from 'primereact/chip';
-import type { Meeting } from '@/types';
+import type { Meeting } from '@/types/index';
 
 const visibilityOptions: { label: string; value: Meeting['visibility'] | null }[] = [
   { label: 'All sessions', value: null },
@@ -19,7 +19,7 @@ export const MeetingsPage = (): JSX.Element => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [query, setQuery] = useState('');
-  const [visibility, setVisibility] = useState<(typeof visibilityOptions)[number]['value']>(null);
+  const [visibility, setVisibility] = useState<typeof visibilityOptions[number]['value']>(null);
 
   useEffect(() => {
     const fetchMeetings = async () => {

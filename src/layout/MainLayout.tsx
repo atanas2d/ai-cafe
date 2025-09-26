@@ -3,7 +3,7 @@ import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { Menubar } from 'primereact/menubar';
 import type { MenuItem } from 'primereact/menuitem';
 import type { ThemeMode } from '../theme/themeManager';
-import { ThemeToggle } from '@/components/ThemeToggle';
+import { ThemeToggle } from '../components/ThemeToggle';
 
 interface MainLayoutProps {
   onThemeChange?: (mode: ThemeMode) => void;

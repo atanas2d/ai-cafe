@@ -1,4 +1,4 @@
-import type { AnimationPreset } from '@/types';
+import type { AnimationPreset } from '../types';
 
 export const animationPresets: AnimationPreset[] = [
   {

@@ -1,4 +1,4 @@
-import type { Meeting } from '@/types';
+import type { Meeting } from '../types';
 
 const baseTimestamp = (date: string): string => new Date(date).toISOString();
 
