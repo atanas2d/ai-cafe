@@ -106,9 +106,10 @@ jobs:
           "README.md"
           "LICENSE"
           "package.json"
+          "tsconfig.json"
           "index.html"
-          "src/assets/css/main.css"
-          "src/assets/js/main.js"
+          "src/main.tsx"
+          "src/styles/global.css"
           ".github/workflows/deploy.yml"
         )
         
@@ -150,14 +151,14 @@ jobs:
         echo "Validating CSS architecture..."
         
         # Check for CSS custom properties
-        if ! grep -q ':root' src/assets/css/main.css; then
-          echo "❌ Missing CSS custom properties in main.css"
+        if ! grep -q ':root' src/styles/global.css; then
+          echo "❌ Missing CSS custom properties in global.css"
           exit 1
         fi
         
-        # Check for responsive design
-        if ! grep -q '@media' src/assets/css/responsive.css; then
-          echo "❌ Missing media queries in responsive.css"
+        # Check for responsive design tokens
+        if ! grep -q '@media' src/styles/global.css; then
+          echo "❌ Missing responsive breakpoints in global.css"
           exit 1
         fi
         
