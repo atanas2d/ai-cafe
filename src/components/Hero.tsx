@@ -1,8 +1,10 @@
-import { Button } from 'primereact/button';
-import { Tag } from 'primereact/tag';
+import type { CSSProperties } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import type { CSSProperties } from 'react';
+import { Button } from 'primereact/button';
+import { Tag } from 'primereact/tag';
+import { partnerLogos } from '@/data/partners';
+import type { PartnerLogo } from '@/types';
 
 interface HeroProps {
   title: string;
@@ -33,6 +35,10 @@ const BANNER_STORAGE_KEY = 'aicafe_banner';
 
 export const Hero = ({ title, description, stats }: HeroProps): JSX.Element => {
   const navigate = useNavigate();
+  const heroToolLinks = useMemo<PartnerLogo[]>(
+    () => partnerLogos.filter((entry) => entry.type === 'tool'),
+    []
+  );
   const [bannerId, setBannerId] = useState<HeroBanner['id']>(() => {
     if (typeof window === 'undefined') {
       return heroBanners[0].id;
@@ -114,6 +120,25 @@ export const Hero = ({ title, description, stats }: HeroProps): JSX.Element => {
               })}
             </div>
           </div>
+          <nav className="hero__quick-links" aria-label="Featured AI tooling">
+            {heroToolLinks.map(link => (
+              <a
+                key={link.id}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`hero__tool-link${link.spanColumns ? ' hero__tool-link--wide' : ''}`}
+              >
+                <span className="hero__tool-icon" aria-hidden="true">
+                  <img src={link.image} alt="" />
+                </span>
+                <span className="hero__tool-copy">
+                  <span className="hero__tool-name">{link.name}</span>
+                  <span className="hero__tool-caption">{link.caption}</span>
+                </span>
+              </a>
+            ))}
+          </nav>
         </div>
         <dl className="hero__stats">
           {stats.map(stat => (

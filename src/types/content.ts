@@ -45,8 +45,11 @@ export interface AnimationPreset {
 export interface PartnerLogo {
   id: string;
   name: string;
+  caption: string;
   image: string;
   url: string;
+  type: 'partner' | 'tool';
+  spanColumns?: boolean;
 }
 
 export interface TimelineEvent {
