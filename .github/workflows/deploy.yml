@@ -32,10 +32,10 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Compile TypeScript
-        run: npm run build:ts
+      - name: Lint TypeScript sources
+        run: npm run lint
 
       - name: Type check
         run: npm run type-check
@@ -48,26 +48,13 @@ jobs:
         run: |
           npx stylelint "src/assets/css/**/*.css" --config .stylelintrc.json || echo "CSS linting completed with warnings"
 
-      - name: Lint TypeScript
-        run: |
-          npx eslint "src/assets/ts/**/*.ts" --config .eslintrc.json || echo "TypeScript linting completed with warnings"
-
       - name: Optimize images
         run: |
           echo "Image optimization would run here in production"
           # npx imagemin src/assets/images/**/* --out-dir=dist/assets/images
 
-      - name: Build website
-        run: |
-          echo "Building AI Cafe website..."
-          rm -rf dist
-          mkdir -p dist
-          cp -r src dist/
-          cp -f index.html dist/
-          # Include root banner candidates in the served images directory
-          mkdir -p dist/src/assets/images
-          cp -f unnamed*.jpg dist/src/assets/images/ 2>/dev/null || true
-          echo "Build completed successfully"
+      - name: Build production bundle
+        run: npm run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
