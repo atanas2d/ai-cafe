@@ -98,6 +98,7 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Validate project structure
+      shell: bash
       run: |
         echo "Validating project structure..."
         
@@ -125,6 +126,7 @@ jobs:
         echo "Project structure validation completed successfully!"
 
     - name: Validate HTML structure
+      shell: bash
       run: |
         echo "Validating HTML semantic structure..."
         
@@ -147,6 +149,7 @@ jobs:
         echo "✅ HTML semantic structure validation passed!"
 
     - name: Validate CSS architecture
+      shell: bash
       run: |
         echo "Validating CSS architecture..."
         
