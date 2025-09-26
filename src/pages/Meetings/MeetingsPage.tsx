@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { DataService } from '@/services/dataService';
 import { Section } from '@/components/Section';
 import { Timeline } from 'primereact/timeline';
@@ -15,9 +15,28 @@ const visibilityOptions: { label: string; value: Meeting['visibility'] | null }[
 ];
 
 export const MeetingsPage = (): JSX.Element => {
-  const allMeetings = useMemo(() => DataService.getMeetings(), []);
+  const [allMeetings, setAllMeetings] = useState<Meeting[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [query, setQuery] = useState('');
   const [visibility, setVisibility] = useState<(typeof visibilityOptions)[number]['value']>(null);
+
+  useEffect(() => {
+    const fetchMeetings = async () => {
+      try {
+        setLoading(true);
+        const meetings = await DataService.getMeetings();
+        setAllMeetings(meetings);
+      } catch (err) {
+        setError('Failed to fetch meetings.');
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchMeetings();
+  }, []);
 
   const filteredMeetings = useMemo(() => {
     return allMeetings.filter((meeting) => {
@@ -32,6 +51,14 @@ export const MeetingsPage = (): JSX.Element => {
       return matchesQuery && matchesVisibility;
     });
   }, [allMeetings, query, visibility]);
+
+  if (loading) {
+    return <div className="surface-section p-5 text-center">Loading meetings...</div>;
+  }
+
+  if (error) {
+    return <div className="surface-section p-5 text-center text-red-500">Error: {error}</div>;
+  }
 
   return (
     <div className="surface-section">

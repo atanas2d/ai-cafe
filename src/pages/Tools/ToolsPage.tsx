@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { DataService } from '@/services/dataService';
 import { Section } from '@/components/Section';
 import { ToolCard } from '@/components/ToolCard';
@@ -8,14 +8,33 @@ import { DataView } from 'primereact/dataview';
 import type { Tool } from '@/types';
 
 export const ToolsPage = (): JSX.Element => {
-  const tools = useMemo(() => DataService.getTools(), []);
-  const categories = useMemo(() => Array.from(new Set(tools.map(tool => tool.category))), [tools]);
-
+  const [allTools, setAllTools] = useState<Tool[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState<string | null>(null);
 
+  useEffect(() => {
+    const fetchTools = async () => {
+      try {
+        setLoading(true);
+        const fetchedTools = await DataService.getTools();
+        setAllTools(fetchedTools);
+      } catch (err) {
+        setError('Failed to fetch tools.');
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchTools();
+  }, []);
+
+  const categories = useMemo(() => Array.from(new Set(allTools.map(tool => tool.category))), [allTools]);
+
   const filteredTools = useMemo(() => {
-    return tools.filter(tool => {
+    return allTools.filter(tool => {
       const matchesCategory = category ? tool.category === category : true;
       const matchesQuery = query
         ? tool.name.toLowerCase().includes(query.toLowerCase()) ||
@@ -24,7 +43,15 @@ export const ToolsPage = (): JSX.Element => {
         : true;
       return matchesCategory && matchesQuery;
     });
-  }, [tools, query, category]);
+  }, [allTools, query, category]);
+
+  if (loading) {
+    return <div className="surface-section p-5 text-center">Loading tools...</div>;
+  }
+
+  if (error) {
+    return <div className="surface-section p-5 text-center text-red-500">Error: {error}</div>;
+  }
 
   return (
     <div className="surface-section">

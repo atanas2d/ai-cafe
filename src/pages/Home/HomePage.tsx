@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Hero } from '@/components/Hero';
 import { Section } from '@/components/Section';
 import { MeetingCard } from '@/components/MeetingCard';
@@ -10,12 +11,54 @@ import { partnerLogos } from '@/data/partners';
 import { roadmapTimeline } from '@/data/timeline';
 import { Timeline } from 'primereact/timeline';
 import { Card } from 'primereact/card';
+import type { Meeting, Tool } from '@/types';
 
 export const HomePage = (): JSX.Element => {
-  const allMeetings = DataService.getMeetings();
-  const meetings = allMeetings.slice(0, 3);
-  const allTools = DataService.getTools();
-  const tools = allTools.slice(0, 6);
+  const [meetings, setMeetings] = useState<Meeting[]>([]);
+  const [tools, setTools] = useState<Tool[]>([]);
+  const [loadingMeetings, setLoadingMeetings] = useState(true);
+  const [loadingTools, setLoadingTools] = useState(true);
+  const [errorMeetings, setErrorMeetings] = useState<string | null>(null);
+  const [errorTools, setErrorTools] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchMeetings = async () => {
+      try {
+        setLoadingMeetings(true);
+        const fetchedMeetings = await DataService.getMeetings();
+        setMeetings(fetchedMeetings.slice(0, 3));
+      } catch (err) {
+        setErrorMeetings('Failed to fetch meetings.');
+        console.error(err);
+      } finally {
+        setLoadingMeetings(false);
+      }
+    };
+
+    const fetchTools = async () => {
+      try {
+        setLoadingTools(true);
+        const fetchedTools = await DataService.getTools();
+        setTools(fetchedTools.slice(0, 6));
+      } catch (err) {
+        setErrorTools('Failed to fetch tools.');
+        console.error(err);
+      } finally {
+        setLoadingTools(false);
+      }
+    };
+
+    fetchMeetings();
+    fetchTools();
+  }, []);
+
+  if (loadingMeetings || loadingTools) {
+    return <div className="surface-section p-5 text-center">Loading AI Cafe content...</div>;
+  }
+
+  if (errorMeetings || errorTools) {
+    return <div className="surface-section p-5 text-center text-red-500">Error loading content.</div>;
+  }
 
   return (
     <div>
@@ -23,8 +66,8 @@ export const HomePage = (): JSX.Element => {
         title="Welcome to the AI Cafe"
         description="Hands-on learning experiences, community showcases, and responsible AI delivery patterns for Nuvolo & Trane teams."
         stats={[
-          { label: 'Meetings hosted', value: String(allMeetings.length) },
-          { label: 'Tools explored', value: String(allTools.length) },
+          { label: 'Meetings hosted', value: String(meetings.length) },
+          { label: 'Tools explored', value: String(tools.length) },
           { label: 'Community champions', value: String(teamMembers.length) }
         ]}
       />
