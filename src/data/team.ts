@@ -9,17 +9,18 @@ export const teamMembers: TeamMember[] = [
     name: 'Nino Vlahov',
     role: 'AI Program Lead',
     avatar: image('nino-avatar.jpg'),
-    description: 'Drives the AI Cafe vision and connects cross-functional teams to accelerate adoption.',
+    description:
+      'Connects cross-functional teams, curates vendor partnerships, and brings tools to life through live demos.',
     contributions: [
-      'Guided the AI Cafe roadmap and growth strategy',
-      'Hosted launch sessions and live demos with partner teams',
-      'Curated vendor partnerships for enterprise-ready tooling'
+      'Guided the AI Cafe roadmap from pilot to enterprise initiative',
+      'Hosted WindSurf and OpenAI showcase sessions with hands-on playbooks',
+      'Co-designed adoption guardrails and onboarding kits for new members'
     ],
-    meetingsPresented: [1, 4, 7],
-    specialties: ['Enterprise AI strategy', 'Innovation leadership', 'Process orchestration'],
+    meetingsPresented: [2, 4],
+    specialties: ['Enterprise AI strategy', 'Innovation leadership', 'Community building'],
     achievements: [
-      'Built Nuvolo + Trane AI collaboration hub',
-      'Expanded community from pilot to enterprise initiative'
+      'Expanded Nuvolo + Trane AI collaboration hub to eight recurring sessions',
+      'Built vendor pipeline keeping evaluations aligned with security standards'
     ]
   },
   {
@@ -27,35 +28,37 @@ export const teamMembers: TeamMember[] = [
     name: 'Plamen Genchev',
     role: 'Senior AI Engineer',
     avatar: image('plamen-avatar.jpg'),
-    description: 'Leads technical integrations, demos, and hands-on workshops for advanced AI workflows.',
+    description:
+      'Leads technical integrations, automations, and advanced demos that translate AI research into production-ready workflows.',
     contributions: [
-      'Delivered Gemini, GPT-4o, and Claude deep-dive sessions',
-      'Built rapid prototypes showcasing AI-driven automation',
-      'Co-created internal guardrails for AI experimentation'
+      'Delivered Gemini vs GPT automation clinics and Eva 2.0 pilot sessions',
+      'Built rapid prototypes showcasing ServiceNow and Teams orchestration',
+      'Co-created evaluation scorecards for new model and agent rollouts'
     ],
-    meetingsPresented: [2, 5, 6],
+    meetingsPresented: [6, 7],
     specialties: ['Generative AI', 'Workflow automation', 'Rapid prototyping'],
     achievements: [
-      'Architected secure prompt pipelines for field teams',
-      'Deployed automation toolkit across multiple business units'
+      'Architected guardrail-first automation pipelines for field teams',
+      'Published reusable evaluators for pilot governance reviews'
     ]
   },
   {
     id: 'team-atanas',
-    name: 'Atanas Dimov',
-    role: 'Experience Designer & Developer',
+    name: 'Atanas Dimitrov',
+    role: 'Founder & Host',
     avatar: image('atanas-avatar.jpg'),
-    description: 'Designs delightful learning experiences and builds the AI Cafe digital platform.',
+    description:
+      'Experience designer and developer who started the AI Cafe to help teams explore practical, responsible AI.',
     contributions: [
-      'Crafted the AI Cafe brand and visual identity',
-      'Delivered front-end and UX improvements across web properties',
-      'Championed accessibility and hybrid meeting workflows'
+      'Launched the AI Cafe program and curated every community session',
+      'Designed the visual identity, website, and enablement materials',
+      'Built hands-on demos showing how AI copilots improve day-to-day work'
     ],
-    meetingsPresented: [3, 8],
-    specialties: ['Design systems', 'UX research', 'Design-to-code delivery'],
+    meetingsPresented: [1, 3, 4, 5, 7, 8],
+    specialties: ['Design systems', 'AI enablement', 'Experience research'],
     achievements: [
-      'Launched interactive AI learning portal for global teams',
-      'Streamlined feedback-to-iteration loop for community releases'
+      'Hosted the first AI Cafe events for Nuvolo & Trane colleagues',
+      'Delivered the React refactor of the AI Cafe web experience'
     ]
   }
 ];

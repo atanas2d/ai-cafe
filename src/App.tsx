@@ -21,7 +21,7 @@ const LoadingFallback = () => (
 const App = (): JSX.Element => {
   const [themeMode, setThemeMode] = useState<ThemeMode>(() => {
     if (typeof window === 'undefined') {
-      return 'light';
+      return 'classic';
     }
     return initializeTheme();
   });

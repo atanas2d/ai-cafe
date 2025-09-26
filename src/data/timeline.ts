@@ -2,35 +2,35 @@ import type { TimelineEvent } from '@/types';
 
 export const roadmapTimeline: TimelineEvent[] = [
   {
-    id: 'event-launch',
-    title: 'AI Cafe v1 Launch',
-    description: 'Kick-off session introducing the community, charter, and first set of AI showcases.',
-    date: '2024-06-14',
-    icon: 'pi pi-megaphone',
+    id: 'event-ideation',
+    title: 'Idea sketched over coffee',
+    description: 'Concept for a community-first AI learning space drafted at Nuvolo HQ.',
+    date: '2023-11-10',
+    icon: 'pi pi-lightbulb',
     status: 'completed'
   },
   {
-    id: 'event-cohort',
-    title: 'Automation Cohort Sprint',
-    description: 'Cross-functional team prototyped quote automation with Gemini Apps Script connectors.',
-    date: '2024-09-02',
-    icon: 'pi pi-bolt',
+    id: 'event-kickoff',
+    title: 'First AI Cafe session',
+    description: 'Opened the series with the mission, responsible AI principles, and first demos.',
+    date: '2024-01-18',
+    icon: 'pi pi-calendar',
     status: 'completed'
   },
   {
-    id: 'event-governance',
-    title: 'Responsible AI Guardrails',
-    description: 'Policy, risk review, and safety instrumentation rolled out across the toolkit ecosystem.',
-    date: '2024-11-20',
-    icon: 'pi pi-shield',
+    id: 'event-coffees',
+    title: 'Monthly coffee sessions',
+    description: 'Introduced relaxed “coffee & prompts” mornings for peer learning.',
+    date: '2024-03-14',
+    icon: 'pi pi-coffee',
     status: 'completed'
   },
   {
-    id: 'event-campus',
-    title: 'AI Campus Accelerator',
-    description: 'Deep-dive cohort enabling Trane business units with end-to-end AI delivery pipelines.',
-    date: '2025-02-10',
-    icon: 'pi pi-globe',
-    status: 'in-progress'
+    id: 'event-resource-hub',
+    title: 'Resource hub refresh',
+    description: 'Launched the React + PrimeReact experience with curated enablement content.',
+    date: '2024-09-12',
+    icon: 'pi pi-cloud-upload',
+    status: 'completed'
   }
 ];

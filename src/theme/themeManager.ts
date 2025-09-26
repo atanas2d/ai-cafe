@@ -1,15 +1,13 @@
 import lightThemeHref from 'primereact/resources/themes/lara-light-blue/theme.css?url';
 import darkThemeHref from 'primereact/resources/themes/lara-dark-blue/theme.css?url';
-import vibrantThemeHref from 'primereact/resources/themes/md-light-indigo/theme.css?url';
 
 const THEME_LINK_ID = 'prime-react-theme';
 
-export type ThemeMode = 'light' | 'dark' | 'vibrant';
+export type ThemeMode = 'classic' | 'midnight';
 
 const themeHrefByMode: Record<ThemeMode, string> = {
-  light: lightThemeHref,
-  dark: darkThemeHref,
-  vibrant: vibrantThemeHref
+  classic: lightThemeHref,
+  midnight: darkThemeHref
 };
 
 export const applyTheme = (mode: ThemeMode): void => {
@@ -28,8 +26,9 @@ export const applyTheme = (mode: ThemeMode): void => {
     link.href = href;
   }
 
-  document.documentElement.dataset.theme = mode;
-  document.body.dataset.theme = mode;
+  const themeToken = mode === 'midnight' ? 'midnight' : 'classic';
+  document.documentElement.dataset.theme = themeToken;
+  document.body.dataset.theme = themeToken;
 };
 
 const isThemeMode = (value: string): value is ThemeMode => value in themeHrefByMode;
@@ -56,7 +55,7 @@ export const initializeTheme = (): ThemeMode => {
   }
 
   const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const mode: ThemeMode = prefersDark ? 'dark' : 'light';
+  const mode: ThemeMode = prefersDark ? 'midnight' : 'classic';
   applyTheme(mode);
   return mode;
 };

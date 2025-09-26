@@ -39,7 +39,7 @@ export interface Recording {
 }
 
 export interface Material {
-  type: 'slides' | 'document' | 'code' | 'demo';
+  type: 'slides' | 'document' | 'code' | 'demo' | 'video';
   title: string;
   url: string;
   size?: number;

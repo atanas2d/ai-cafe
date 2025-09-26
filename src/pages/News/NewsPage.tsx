@@ -26,7 +26,7 @@ export const NewsPage = (): JSX.Element => {
         <p className="text-600 max-w-3xl">
           Weekly highlights on AI platform releases, safety updates, and enterprise adoption stories that matter to the AI Cafe.
         </p>
-        <div className="p-input-icon-left mt-4 w-full md:w-22rem">
+        <div className="p-input-icon-left mt-4 w-full md:w-22rem input-with-icon">
           <i className="pi pi-search" />
           <InputText
             value={query}

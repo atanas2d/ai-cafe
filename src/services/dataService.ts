@@ -1,9 +1,6 @@
-import meetingsRaw from '@/data/meetings.json';
-import toolsRaw from '@/data/tools.json';
-import type { Meeting, MeetingsResponse, Tool, ToolsResponse } from '@/types';
-
-const meetings = (meetingsRaw as MeetingsResponse).meetings;
-const tools = (toolsRaw as unknown as ToolsResponse).tools;
+import { meetings } from '@/data/meetings';
+import { tools } from '@/data/tools';
+import type { Meeting, Tool } from '@/types';
 
 export const DataService = {
   getMeetings(): Meeting[] {

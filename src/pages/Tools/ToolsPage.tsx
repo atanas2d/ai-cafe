@@ -34,7 +34,7 @@ export const ToolsPage = (): JSX.Element => {
           Evaluated copilots, API platforms, and enablement tooling prioritized for secure rollout across the enterprise.
         </p>
         <div className="flex flex-column md:flex-row gap-3 mt-4">
-          <span className="p-input-icon-left w-full md:w-20rem">
+          <span className="p-input-icon-left w-full md:w-20rem input-with-icon">
             <i className="pi pi-search" />
             <InputText
               value={query}

@@ -1,36 +1,40 @@
 import type { PartnerLogo } from '@/types';
 
-const logo = (path: string): string => new URL(`../assets/images/${path}`, import.meta.url).href;
+const nuvoloLogo = new URL('../assets/images/nuvolo-logo.svg', import.meta.url).href;
+const traneLogo = new URL('../assets/images/trane-logo.svg', import.meta.url).href;
+const openAILogo = new URL('../assets/images/tools/openai-logo.svg', import.meta.url).href;
+const geminiLogo = new URL('../assets/images/tools/gemini-logo.svg', import.meta.url).href;
+const anthropicLogo = new URL('../assets/images/tools/windsurf-logo.svg', import.meta.url).href;
 
 export const partnerLogos: PartnerLogo[] = [
   {
     id: 'nuvolo',
     name: 'Nuvolo',
-    image: logo('nuvolo-logo.svg'),
+    image: nuvoloLogo,
     url: 'https://www.nuvolo.com/'
   },
   {
     id: 'trane',
     name: 'Trane Technologies',
-    image: logo('trane-logo.svg'),
+    image: traneLogo,
     url: 'https://www.tranetechnologies.com/'
   },
   {
     id: 'openai',
     name: 'OpenAI',
-    image: logo('tools/openai-logo.svg'),
+    image: openAILogo,
     url: 'https://openai.com/'
   },
   {
     id: 'gemini',
     name: 'Google Gemini',
-    image: logo('tools/gemini-logo.svg'),
+    image: geminiLogo,
     url: 'https://deepmind.google/technologies/gemini/'
   },
   {
-    id: 'claude',
+    id: 'anthropic',
     name: 'Anthropic Claude',
-    image: logo('tools/windsurf-logo.svg'),
+    image: anthropicLogo,
     url: 'https://www.anthropic.com/'
   }
 ];

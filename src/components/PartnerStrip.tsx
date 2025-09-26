@@ -6,7 +6,7 @@ interface PartnerStripProps {
 
 export const PartnerStrip = ({ partners }: PartnerStripProps): JSX.Element => (
   <div className="surface-section py-4">
-    <div className="px-4 md:px-6 lg:px-8 flex flex-wrap gap-4 align-items-center justify-content-center">
+    <div className="px-4 md:px-6 lg:px-8 section-container flex flex-wrap gap-4 align-items-center justify-content-center">
       {partners.map(partner => (
         <a
           key={partner.id}
