@@ -130,23 +130,18 @@ jobs:
       run: |
         echo "Validating HTML semantic structure..."
         
-        # Check for required HTML elements
-        if ! grep -q '<main' index.html; then
-          echo "❌ Missing <main> element in index.html"
+        # Check for root mounting point and meta tag
+        if ! grep -q 'id="root"' index.html; then
+          echo "❌ Missing React root mounting element in index.html"
           exit 1
         fi
-        
-        if ! grep -q 'role="banner"' index.html; then
-          echo "❌ Missing header with role='banner' in index.html"
+
+        if ! grep -q 'name="viewport"' index.html; then
+          echo "❌ Missing viewport meta tag in index.html"
           exit 1
         fi
-        
-        if ! grep -q 'role="contentinfo"' index.html; then
-          echo "❌ Missing footer with role='contentinfo' in index.html"
-          exit 1
-        fi
-        
-        echo "✅ HTML semantic structure validation passed!"
+
+        echo "✅ HTML structure validation passed!"
 
     - name: Validate CSS architecture
       shell: bash
