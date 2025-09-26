@@ -116,8 +116,8 @@ export const learningTracks: LearningTrack[] = [
     ],
     resources: [
       {
-        label: 'AI Governance Canvas',
-        url: 'https://www.forhumanity.center/ai-governance',
+        label: 'ForHumanity Governance Hub',
+        url: 'https://forhumanity.center/',
         external: true
       },
       {

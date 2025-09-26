@@ -61,7 +61,7 @@ export const ToolsPage = (): JSX.Element => {
           rows={8}
           emptyMessage="No tools match your filters yet"
           itemTemplate={(tool: Tool) => (
-            <div className="col-12 md:col-6 lg:col-3">
+            <div className="col-12 md:col-6 lg:col-3 p-3">
               <ToolCard tool={tool} />
             </div>
           )}

@@ -115,7 +115,7 @@ ai-cafe-website/
   "meetings": [
     {
       "id": 1,
-      "date": "2024-XX-XX",
+      "date": "2025-XX-XX",
       "title": "Introduction to AI Infrastructure",
       "participants": ["Nino", "Team"],
       "topics": [

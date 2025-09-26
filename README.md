@@ -33,11 +33,11 @@ Our community has explored and demonstrated various AI tools and platforms:
 
 ## 📅 Meeting Highlights
 
-### Recent Sessions
-- **Meeting #8**: Sapient AI architecture breakthrough and Google Nano Banana image generation
-- **Meeting #7**: Eva 2.0 Beta features and corporate AI integration
-- **Meeting #6**: Gemini Scheduled Actions vs GPT Tasks comparison
-- **Meeting #5**: OpenAI Custom Instances and Projects deep dive
+### Summer/Fall 2025 Sessions
+- **Meeting #8 (Dec 18, 2025)**: Sapient AI architecture breakthrough and Google Nano Banana image generation
+- **Meeting #7 (Dec 4, 2025)**: Eva 2.0 Canvas collaboration and corporate AI integration
+- **Meeting #6 (Nov 13, 2025)**: Gemini Scheduled Actions vs GPT Tasks comparison
+- **Meeting #5 (Oct 9, 2025)**: OpenAI Custom Instances and Projects deep dive
 
 [View all meeting recaps →](./src/pages/meetings/)
 

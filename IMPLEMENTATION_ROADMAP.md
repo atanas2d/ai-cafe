@@ -115,7 +115,7 @@ Based on the meeting recaps provided, here's the structured data we'll implement
   "meetings": [
     {
       "id": 1,
-      "date": "2024-XX-XX",
+      "date": "2025-XX-XX",
       "title": "Introduction to AI Infrastructure",
       "participants": ["Team"],
       "topics": [
@@ -127,7 +127,7 @@ Based on the meeting recaps provided, here's the structured data we'll implement
     },
     {
       "id": 2,
-      "date": "2024-XX-XX",
+      "date": "2025-XX-XX",
       "title": "WindSurf Coding Tool Demonstration",
       "participants": ["Nino", "Team"],
       "presenter": "Nino (non-developer)",
@@ -140,7 +140,7 @@ Based on the meeting recaps provided, here's the structured data we'll implement
     },
     {
       "id": 8,
-      "date": "2024-XX-XX",
+      "date": "2025-XX-XX",
       "title": "Sapient AI & Google Nano Banana",
       "participants": ["Atanas Rusev", "Team"],
       "topics": [

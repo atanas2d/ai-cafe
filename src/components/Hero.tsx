@@ -18,16 +18,6 @@ interface HeroBanner {
 
 const heroBanners: HeroBanner[] = [
   {
-    id: 'signature',
-    label: 'Signature',
-    image: new URL('../assets/images/AICafeBanner.png', import.meta.url).href
-  },
-  {
-    id: 'vibrant-orbit',
-    label: 'Vibrant Orbit',
-    image: new URL('../assets/images/AICafeBanner1.jpg', import.meta.url).href
-  },
-  {
     id: 'design-sprint',
     label: 'Design Sprint',
     image: new URL('../assets/images/AICafeBanner2.jpg', import.meta.url).href
@@ -85,14 +75,19 @@ export const Hero = ({ title, description, stats }: HeroProps): JSX.Element => {
           <h1 className="hero__title">{title}</h1>
           <p className="hero__description">{description}</p>
           <div className="hero__actions">
-            <Button label="View Meetings" icon="pi pi-calendar" onClick={() => navigate('/meetings')} size="large" />
+            <Button
+              label="View Meetings"
+              icon="pi pi-calendar"
+              onClick={() => navigate('/meetings')}
+              size="large"
+              className="hero__action hero__action--primary"
+            />
             <Button
               label="Explore Tools"
               icon="pi pi-compass"
-              severity="secondary"
-              outlined
               onClick={() => navigate('/tools')}
               size="large"
+              className="hero__action hero__action--support"
             />
           </div>
           <div className="hero__banner-switch" role="group" aria-label="Select hero background">

@@ -52,7 +52,7 @@ export const tools: Tool[] = [
     documentation: 'https://platform.openai.com/docs',
     accessLevel: 'corporate',
     tags: ['LLM', 'Custom workflows', 'Secure rollout'],
-    lastUpdated: baseTimestamp('2024-09-01T00:00:00Z')
+    lastUpdated: baseTimestamp('2025-09-01T00:00:00Z')
   },
   {
     id: 'tool-google-gemini',
@@ -101,7 +101,7 @@ export const tools: Tool[] = [
     documentation: 'https://ai.google.dev/docs',
     accessLevel: 'corporate',
     tags: ['Workspace AI', 'Automations', 'Multi-modal'],
-    lastUpdated: baseTimestamp('2024-08-20T00:00:00Z')
+    lastUpdated: baseTimestamp('2025-08-20T00:00:00Z')
   },
   {
     id: 'tool-openai-codex',
@@ -145,7 +145,7 @@ export const tools: Tool[] = [
     documentation: 'https://platform.openai.com/docs/guides/codex',
     accessLevel: 'corporate',
     tags: ['Code generation', 'Compliance', 'Pair programming'],
-    lastUpdated: baseTimestamp('2024-07-18T00:00:00Z')
+    lastUpdated: baseTimestamp('2025-07-18T00:00:00Z')
   },
   {
     id: 'tool-claude-code',
@@ -188,7 +188,7 @@ export const tools: Tool[] = [
     documentation: 'https://docs.anthropic.com/claude/docs',
     accessLevel: 'public',
     tags: ['Code review', 'Reasoning', 'Pair coding'],
-    lastUpdated: baseTimestamp('2024-09-05T00:00:00Z')
+    lastUpdated: baseTimestamp('2025-09-05T00:00:00Z')
   },
   {
     id: 'tool-kilo-code',
@@ -232,7 +232,7 @@ export const tools: Tool[] = [
     rating: 4.1,
     accessLevel: 'beta',
     tags: ['Internal pilot', 'ServiceNow', 'Code generation'],
-    lastUpdated: baseTimestamp('2024-06-30T00:00:00Z')
+    lastUpdated: baseTimestamp('2025-06-30T00:00:00Z')
   },
   {
     id: 'tool-windsurf',
@@ -275,7 +275,7 @@ export const tools: Tool[] = [
     documentation: 'https://windsurf.ai/docs',
     accessLevel: 'public',
     tags: ['Code generation', 'ServiceNow', 'Pair programming'],
-    lastUpdated: baseTimestamp('2024-03-01T00:00:00Z')
+    lastUpdated: baseTimestamp('2025-07-01T00:00:00Z')
   },
   {
     id: 'tool-n8n',
@@ -318,7 +318,7 @@ export const tools: Tool[] = [
     documentation: 'https://docs.n8n.io/',
     accessLevel: 'public',
     tags: ['Automation', 'Integrations', 'Workflow'],
-    lastUpdated: baseTimestamp('2024-05-20T00:00:00Z')
+    lastUpdated: baseTimestamp('2025-08-30T00:00:00Z')
   },
   {
     id: 'tool-openai-gpt-tasks',
@@ -362,7 +362,7 @@ export const tools: Tool[] = [
     documentation: 'https://platform.openai.com/docs/assistants/tools/task-automation',
     accessLevel: 'corporate',
     tags: ['Automation', 'Scheduling', 'Enterprise AI'],
-    lastUpdated: baseTimestamp('2024-07-12T00:00:00Z')
+    lastUpdated: baseTimestamp('2025-09-18T00:00:00Z')
   },
   {
     id: 'tool-eva-20',
@@ -406,7 +406,7 @@ export const tools: Tool[] = [
     rating: 4.6,
     accessLevel: 'corporate',
     tags: ['Enterprise AI', 'Assistant', 'Knowledge management'],
-    lastUpdated: baseTimestamp('2024-11-15T00:00:00Z')
+    lastUpdated: baseTimestamp('2025-12-05T00:00:00Z')
   },
   {
     id: 'tool-microsoft-canvas',
@@ -450,7 +450,7 @@ export const tools: Tool[] = [
     documentation: 'https://support.microsoft.com/en-us/office/loop-components-in-microsoft-365',
     accessLevel: 'corporate',
     tags: ['Collaboration', 'Workflow', 'Planning'],
-    lastUpdated: baseTimestamp('2024-10-01T00:00:00Z')
+    lastUpdated: baseTimestamp('2025-11-20T00:00:00Z')
   },
   {
     id: 'tool-sapient-hrm',
@@ -493,7 +493,7 @@ export const tools: Tool[] = [
     documentation: 'https://huggingface.co/sapientinc',
     accessLevel: 'beta',
     tags: ['Reasoning', 'Enterprise AI', 'Research'],
-    lastUpdated: baseTimestamp('2024-12-12T00:00:00Z')
+    lastUpdated: baseTimestamp('2025-12-12T00:00:00Z')
   },
   {
     id: 'tool-google-nano-banana',
@@ -535,7 +535,7 @@ export const tools: Tool[] = [
     rating: 4.0,
     accessLevel: 'beta',
     tags: ['Image generation', 'Rapid prototyping', 'Creative'],
-    lastUpdated: baseTimestamp('2024-12-10T00:00:00Z')
+    lastUpdated: baseTimestamp('2025-12-10T00:00:00Z')
   },
   {
     id: 'tool-google-translate',
@@ -578,11 +578,11 @@ export const tools: Tool[] = [
     documentation: 'https://cloud.google.com/translate/docs',
     accessLevel: 'public',
     tags: ['Translation', 'Accessibility', 'Localization'],
-    lastUpdated: baseTimestamp('2024-10-15T00:00:00Z')
+    lastUpdated: baseTimestamp('2025-10-15T00:00:00Z')
   }
 ];
 
 export const toolsVersion = {
-  lastUpdated: baseTimestamp('2024-12-15T00:00:00Z'),
-  version: '1.2.0'
+  lastUpdated: baseTimestamp('2025-12-18T00:00:00Z'),
+  version: '2.0.0'
 };

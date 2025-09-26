@@ -152,7 +152,7 @@ json
       "id": "meet-001",
       "meetingNumber": 8,
       "title": "Sapient AI & Google Nano",
-      "date": "2024-12-15T14:00:00Z",
+      "date": "2025-12-15T14:00:00Z",
       "duration": 60,
       "description": "Exploring Sapient AI architecture breakthrough...",
       "presenters": [

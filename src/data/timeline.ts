@@ -2,34 +2,34 @@ import type { TimelineEvent } from '@/types';
 
 export const roadmapTimeline: TimelineEvent[] = [
   {
-    id: 'event-ideation',
-    title: 'Idea sketched over coffee',
-    description: 'Concept for a community-first AI learning space drafted at Nuvolo HQ.',
-    date: '2023-11-10',
+    id: 'event-concept',
+    title: 'Summer pilot conceived',
+    description: 'Sketched the AI Cafe concept during Nuvolo + Trane innovation workshops ahead of the 2025 cohort.',
+    date: '2025-05-27',
     icon: 'pi pi-lightbulb',
     status: 'completed'
   },
   {
     id: 'event-kickoff',
-    title: 'First AI Cafe session',
-    description: 'Opened the series with the mission, responsible AI principles, and first demos.',
-    date: '2024-01-18',
-    icon: 'pi pi-calendar',
+    title: 'Cohort kickoff session',
+    description: 'Opened the program with shared charter, responsible adoption principles, and summer learning roadmap.',
+    date: '2025-06-19',
+    icon: 'pi pi-calendar-plus',
     status: 'completed'
   },
   {
-    id: 'event-coffees',
-    title: 'Monthly coffee sessions',
-    description: 'Introduced relaxed “coffee & prompts” mornings for peer learning.',
-    date: '2024-03-14',
-    icon: 'pi pi-coffee',
+    id: 'event-playbooks',
+    title: 'Prompt playbooks published',
+    description: 'Delivered reusable prompt libraries and automation guardrails following the August lab.',
+    date: '2025-08-20',
+    icon: 'pi pi-book',
     status: 'completed'
   },
   {
     id: 'event-resource-hub',
-    title: 'Resource hub refresh',
-    description: 'Launched the React + PrimeReact experience with curated enablement content.',
-    date: '2024-09-12',
+    title: 'Resource hub refreshed',
+    description: 'Rolled out the React + PrimeReact experience with live data catalog and header backdrop picker.',
+    date: '2025-12-18',
     icon: 'pi pi-cloud-upload',
     status: 'completed'
   }

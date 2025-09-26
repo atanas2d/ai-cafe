@@ -43,7 +43,7 @@ export const newsArticles: NewsArticle[] = [
     summary: 'Regulators publish model risk maps and conformity assessment tooling ahead of the 2026 enforcement milestone.',
     source: 'European Commission',
     url: 'https://digital-strategy.ec.europa.eu/en/library/artificial-intelligence',
-    publishedAt: '2024-12-15T09:00:00.000Z',
+    publishedAt: '2025-02-10T09:00:00.000Z',
     tags: ['Regulation', 'Risk', 'Governance']
   },
   {
@@ -52,7 +52,7 @@ export const newsArticles: NewsArticle[] = [
     summary: 'Five cross-functional squads will prototype AI workflows across service operations, supply chain, and sales enablement.',
     source: 'Trane Technologies',
     url: 'https://www.tranetechnologies.com/en/index/newsroom.html',
-    publishedAt: '2024-12-01T10:45:00.000Z',
+    publishedAt: '2025-02-24T10:45:00.000Z',
     tags: ['Trane', 'Innovation', 'Community']
   }
 ];

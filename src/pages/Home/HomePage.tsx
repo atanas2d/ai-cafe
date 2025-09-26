@@ -38,7 +38,7 @@ export const HomePage = (): JSX.Element => {
       >
         <div className="grid">
           {meetings.map(meeting => (
-            <div key={meeting.id} className="col-12 md:col-4">
+            <div key={meeting.id} className="col-12 md:col-4 p-3">
               <MeetingCard meeting={meeting} />
             </div>
           ))}
@@ -52,7 +52,7 @@ export const HomePage = (): JSX.Element => {
       >
         <div className="grid">
           {tools.map(tool => (
-            <div key={tool.id} className="col-12 md:col-4 lg:col-3">
+            <div key={tool.id} className="col-12 md:col-4 lg:col-3 p-3">
               <ToolCard tool={tool} />
             </div>
           ))}
@@ -92,7 +92,7 @@ export const HomePage = (): JSX.Element => {
       >
         <div className="grid">
           {teamMembers.map(member => (
-            <div key={member.id} className="col-12 md:col-4">
+            <div key={member.id} className="col-12 md:col-4 p-3">
               <TeamMemberCard member={member} />
             </div>
           ))}

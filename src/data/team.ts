@@ -12,14 +12,14 @@ export const teamMembers: TeamMember[] = [
     description:
       'Connects cross-functional teams, curates vendor partnerships, and brings tools to life through live demos.',
     contributions: [
-      'Guided the AI Cafe roadmap from pilot to enterprise initiative',
+      'Guided the AI Cafe summer 2025 roadmap from pilot to enterprise initiative',
       'Hosted WindSurf and OpenAI showcase sessions with hands-on playbooks',
       'Co-designed adoption guardrails and onboarding kits for new members'
     ],
     meetingsPresented: [2, 4],
     specialties: ['Enterprise AI strategy', 'Innovation leadership', 'Community building'],
     achievements: [
-      'Expanded Nuvolo + Trane AI collaboration hub to eight recurring sessions',
+      'Expanded Nuvolo + Trane AI collaboration hub to eight summer/fall 2025 sessions',
       'Built vendor pipeline keeping evaluations aligned with security standards'
     ]
   },
@@ -33,7 +33,7 @@ export const teamMembers: TeamMember[] = [
     contributions: [
       'Delivered Gemini vs GPT automation clinics and Eva 2.0 pilot sessions',
       'Built rapid prototypes showcasing ServiceNow and Teams orchestration',
-      'Co-created evaluation scorecards for new model and agent rollouts'
+      'Co-created 2025 evaluation scorecards for new model and agent rollouts'
     ],
     meetingsPresented: [6, 7],
     specialties: ['Generative AI', 'Workflow automation', 'Rapid prototyping'],
@@ -50,7 +50,7 @@ export const teamMembers: TeamMember[] = [
     description:
       'Experience designer and developer who started the AI Cafe to help teams explore practical, responsible AI.',
     contributions: [
-      'Launched the AI Cafe program and curated every community session',
+      'Launched the AI Cafe summer 2025 program and curated every community session',
       'Designed the visual identity, website, and enablement materials',
       'Built hands-on demos showing how AI copilots improve day-to-day work'
     ],
