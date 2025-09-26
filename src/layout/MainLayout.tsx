@@ -1,7 +1,9 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { Menubar } from 'primereact/menubar';
 import type { MenuItem } from 'primereact/menuitem';
+import { Button } from 'primereact/button';
+import { Sidebar } from 'primereact/sidebar';
 import type { ThemeMode } from '../theme/themeManager';
 import { ThemeToggle } from '../components/ThemeToggle';
 
@@ -13,6 +15,7 @@ interface MainLayoutProps {
 export const MainLayout = ({ onThemeChange, themeMode = 'classic' }: MainLayoutProps): JSX.Element => {
   const navigate = useNavigate();
   const location = useLocation();
+  const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
 
   const items = useMemo<MenuItem[]>(() => {
     const navItems = [
@@ -26,8 +29,11 @@ export const MainLayout = ({ onThemeChange, themeMode = 'classic' }: MainLayoutP
 
     return navItems.map((item) => ({
       label: item.label,
-      command: () => navigate(item.path),
-      className: location.pathname === item.path ? 'menubar-item-active' : undefined
+      command: () => {
+        navigate(item.path);
+        setIsMobileMenuVisible(false);
+      },
+      className: location.pathname === item.path ? 'menubar-item-active' : ''
     }));
   }, [navigate, location.pathname]);
 
@@ -52,9 +58,6 @@ export const MainLayout = ({ onThemeChange, themeMode = 'classic' }: MainLayoutP
 
   const end = (
     <div className="flex align-items-center gap-3">
-      <span className="text-sm text-500 hidden lg:block">
-        {location.pathname === '/' ? 'Learning Community' : 'AI Cafe Platform'}
-      </span>
       <ThemeToggle
         value={themeMode}
         onChange={(nextTheme) => {
@@ -63,6 +66,11 @@ export const MainLayout = ({ onThemeChange, themeMode = 'classic' }: MainLayoutP
           }
         }}
       />
+      <Button
+        icon="pi pi-bars"
+        className="p-button-text lg:hidden"
+        onClick={() => setIsMobileMenuVisible(true)}
+      />
     </div>
   );
 
@@ -70,7 +78,11 @@ export const MainLayout = ({ onThemeChange, themeMode = 'classic' }: MainLayoutP
     <div className="min-h-screen surface-ground flex flex-column">
       <header className="app-header sticky top-0 z-5">
         <div className="app-header__inner px-3 md:px-4 lg:px-6">
-          <Menubar model={items} start={start} end={end} className="app-menubar" />
+          <Menubar model={items} start={start} end={end} className="app-menubar hidden lg:flex" />
+          <div className="flex lg:hidden justify-content-between align-items-center py-2">
+            {start}
+            {end}
+          </div>
         </div>
       </header>
       <main className="flex-auto">
@@ -95,6 +107,14 @@ export const MainLayout = ({ onThemeChange, themeMode = 'classic' }: MainLayoutP
           </div>
         </div>
       </footer>
+      <Sidebar
+        visible={isMobileMenuVisible}
+        onHide={() => setIsMobileMenuVisible(false)}
+        position="right"
+        className="w-15rem"
+      >
+        <Menubar model={items} className="p-menubar-mobile" />
+      </Sidebar>
     </div>
   );
 };
