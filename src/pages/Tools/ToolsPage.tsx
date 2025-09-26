@@ -6,16 +6,6 @@ import { InputText } from 'primereact/inputtext';
 import { Dropdown } from 'primereact/dropdown';
 import { DataView } from 'primereact/dataview';
 import type { Tool } from '@/types';
-import type { CSSProperties } from 'react';
-
-const toolCellStyle: CSSProperties = {
-  padding: '1.25rem',
-  display: 'flex',
-  flex: '1 1 28rem',
-  minWidth: '26rem',
-  maxWidth: '32rem',
-  width: 'auto'
-};
 
 export const ToolsPage = (): JSX.Element => {
   const tools = useMemo(() => DataService.getTools(), []);
@@ -72,7 +62,7 @@ export const ToolsPage = (): JSX.Element => {
           rows={8}
           emptyMessage="No tools match your filters yet"
           itemTemplate={(tool: Tool) => (
-            <div className="tool-card-cell col-12 md:col-6" style={toolCellStyle}>
+            <div className="tool-card-cell">
               <ToolCard tool={tool} />
             </div>
           )}

@@ -5,8 +5,6 @@ import type { MenuItem } from 'primereact/menuitem';
 import type { ThemeMode } from '../theme/themeManager';
 import { ThemeToggle } from '@/components/ThemeToggle';
 
-const logoUrl = new URL('../assets/images/AICafeLogo.png', import.meta.url).href;
-
 interface MainLayoutProps {
   onThemeChange?: (mode: ThemeMode) => void;
   themeMode?: ThemeMode;
@@ -35,15 +33,20 @@ export const MainLayout = ({ onThemeChange, themeMode = 'classic' }: MainLayoutP
 
   const start = (
     <a
-      className="flex align-items-center gap-2"
+      className="flex align-items-center"
       onClick={(event) => {
         event.preventDefault();
         navigate('/');
       }}
       href="/"
     >
-      <img src={logoUrl} alt="AI Cafe logo" width={38} height={38} />
-      <span className="font-semibold text-xl">AI Cafe</span>
+      <span className="app-brand">
+        <span className="app-brand__bean" aria-hidden="true" />
+        <span className="app-brand__text">
+          <span>AI</span>
+          <span>Cafe</span>
+        </span>
+      </span>
     </a>
   );
 
