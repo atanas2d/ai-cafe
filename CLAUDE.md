@@ -3,6 +3,11 @@
 ## Project Overview
 AI Cafe is a corporate learning initiative web application for Trane Technologies (acquired by Nuvolo) that showcases AI tools, meetings, and educational content to help colleagues stay updated with AI developments.
 
+## Current Data (as of latest update)
+- **8 Meetings**: Full meeting archive from kickoff to latest sessions
+- **13 AI Tools**: Comprehensive tool catalog with detailed evaluations
+- **3 Community Champions**: Core team members and contributors
+
 ## Core Architecture Principles
 
 - **React + TypeScript**: Modern React 18 with TypeScript for type safety

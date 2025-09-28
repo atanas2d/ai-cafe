@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Hero } from '../../components/Hero';
 import { Section } from '../../components/Section';
 import { MeetingCard } from '../../components/MeetingCard';
@@ -11,11 +12,15 @@ import { partnerLogos } from '../../data/partners';
 import { roadmapTimeline } from '../../data/timeline';
 import { Timeline } from 'primereact/timeline';
 import { Card } from 'primereact/card';
+import { Button } from 'primereact/button';
 import type { Meeting, Tool } from '../../types';
 
 export const HomePage = (): JSX.Element => {
+  const navigate = useNavigate();
   const [meetings, setMeetings] = useState<Meeting[]>([]);
+  const [allMeetings, setAllMeetings] = useState<Meeting[]>([]);
   const [tools, setTools] = useState<Tool[]>([]);
+  const [allTools, setAllTools] = useState<Tool[]>([]);
   const [loadingMeetings, setLoadingMeetings] = useState(true);
   const [loadingTools, setLoadingTools] = useState(true);
   const [errorMeetings, setErrorMeetings] = useState<string | null>(null);
@@ -26,6 +31,7 @@ export const HomePage = (): JSX.Element => {
       try {
         setLoadingMeetings(true);
         const fetchedMeetings = await DataService.getMeetings();
+        setAllMeetings(fetchedMeetings);
         setMeetings(fetchedMeetings.slice(0, 3));
       } catch (err) {
         setErrorMeetings('Failed to fetch meetings.');
@@ -39,6 +45,7 @@ export const HomePage = (): JSX.Element => {
       try {
         setLoadingTools(true);
         const fetchedTools = await DataService.getTools();
+        setAllTools(fetchedTools);
         setTools(fetchedTools.slice(0, 6));
       } catch (err) {
         setErrorTools('Failed to fetch tools.');
@@ -66,8 +73,8 @@ export const HomePage = (): JSX.Element => {
         title="Welcome to the AI Cafe"
         description="Hands-on learning experiences, community showcases, and responsible AI delivery patterns for Nuvolo & Trane teams."
         stats={[
-          { label: 'Meetings hosted', value: String(meetings.length) },
-          { label: 'Tools explored', value: String(tools.length) },
+          { label: 'Meetings hosted', value: String(allMeetings.length) },
+          { label: 'Tools explored', value: String(allTools.length) },
           { label: 'Community champions', value: String(teamMembers.length) }
         ]}
       />
@@ -86,6 +93,16 @@ export const HomePage = (): JSX.Element => {
             </div>
           ))}
         </div>
+        {allMeetings.length > 3 && (
+          <div className="text-center mt-4">
+            <Button
+              label={`View All ${allMeetings.length} Meetings`}
+              icon="pi pi-arrow-right"
+              className="p-button-outlined"
+              onClick={() => navigate('/meetings')}
+            />
+          </div>
+        )}
       </Section>
 
       <Section

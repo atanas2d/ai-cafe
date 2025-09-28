@@ -267,18 +267,30 @@ a {
 
 .hero__wrapper {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-  align-items: flex-start;
   z-index: 1;
 }
 
+.hero__main-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+  max-width: none;
+}
+
 .hero__content {
-  max-width: 34rem;
+  flex: 1;
+  max-width: 42rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+
+.hero__banner-switch {
+  flex-shrink: 0;
+  align-self: flex-start;
+  margin-top: 1rem;
 }
 
 .hero__tag {
@@ -378,7 +390,8 @@ a {
   flex-direction: column;
   align-items: flex-start;
   gap: 0.65rem;
-  margin-top: 1.25rem;
+  margin-top: 0;
+  min-width: 200px;
 }
 
 .hero__banner-switch-label {
@@ -673,9 +686,14 @@ a {
     padding-block: 3rem 3.5rem;
   }
 
-  .hero__wrapper {
-    align-items: stretch;
+  .hero__main-content {
+    flex-direction: column;
     gap: 2rem;
+  }
+
+  .hero__banner-switch {
+    align-self: flex-start;
+    margin-top: 1rem;
   }
 
   .hero__quick-links {

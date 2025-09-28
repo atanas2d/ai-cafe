@@ -40,8 +40,13 @@ export const ComponentName = ({
 ## Component Catalog
 
 ### Layout Components
-- **MainLayout** (`../layout/MainLayout.tsx`): Main application layout with navigation
+- **MainLayout** (`../layout/MainLayout.tsx`): Main application layout with navigation and integrated theme switcher
 - **Section** (`Section.tsx`): Content section wrapper with consistent spacing
+
+### Navigation Integration
+- **Theme Switcher**: Integrated as last navigation item on desktop with visual separator
+- **Responsive Design**: Theme switcher in navigation (desktop) vs header (mobile)
+- **Statistics Display**: Hero component shows accurate counts (8 meetings, 13 tools, 3 team members)
 
 ### Content Display Components
 - **Hero** (`Hero.tsx`): Homepage hero section with banner switching
