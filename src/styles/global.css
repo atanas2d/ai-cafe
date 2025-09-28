@@ -67,6 +67,11 @@ body[data-theme='midnight'] {
   box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
   padding-block: 0.45rem;
   padding-inline: clamp(0.75rem, 2.5vw, 1.25rem);
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 :root[data-theme='midnight'] .app-menubar {
@@ -77,16 +82,65 @@ body[data-theme='midnight'] {
 
 .app-menubar .p-menubar-root-list {
   display: flex;
-  gap: clamp(0.8rem, 1.8vw, 1.35rem);
+  gap: clamp(0.35rem, 0.8vw, 0.6rem);
   flex-wrap: nowrap;
   align-items: center;
-  margin-left: clamp(1.05rem, 2.4vw, 1.95rem);
+  margin-left: clamp(0.4rem, 1vw, 0.8rem);
+}
+
+.app-menubar .p-menubar-end {
+  margin-left: auto;
+}
+
+.app-menubar .p-menubar-end .theme-toggle {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0.4rem 0.7rem;
+}
+
+.theme-menu-item-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-left: clamp(0.35rem, 0.8vw, 0.6rem);
+}
+
+.theme-separator {
+  width: 1px;
+  height: 1.2rem;
+  background: var(--nav-border);
+  opacity: 0.5;
+}
+
+.theme-menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-menu-item .theme-toggle {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0.35rem 0.65rem;
+  border-radius: 9999px;
+  transition: background 200ms ease, color 200ms ease, box-shadow 200ms ease;
+}
+
+.theme-menu-item .theme-toggle:hover {
+  background: rgba(148, 163, 184, 0.16);
+}
+
+:root[data-theme='midnight'] .theme-menu-item .theme-toggle:hover {
+  background: rgba(148, 163, 184, 0.18);
 }
 
 .app-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-content {
   border-radius: 9999px;
-  padding: 0.45rem 0.95rem;
+  padding: 0.35rem 0.65rem;
   transition: background 200ms ease, color 200ms ease, box-shadow 200ms ease;
+  font-size: 0.95rem;
 }
 
 .app-brand {
@@ -97,7 +151,7 @@ body[data-theme='midnight'] {
   font-size: 1.22rem;
   letter-spacing: -0.01em;
   color: #0f172a;
-  margin-right: clamp(0.95rem, 2.5vw, 1.75rem);
+  margin-right: clamp(0.4rem, 1.2vw, 0.8rem);
 }
 
 .app-brand__bean {
@@ -250,6 +304,19 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .hero__actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .hero__action.p-button {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 .hero__action.p-button {
@@ -603,36 +670,170 @@ a {
 
 @media (max-width: 960px) {
   .hero {
-    padding-block: 4rem 4.5rem;
+    padding-block: 3rem 3.5rem;
   }
 
   .hero__wrapper {
     align-items: stretch;
+    gap: 2rem;
   }
-  
+
   .hero__quick-links {
     grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .hero__content {
+    gap: 1.25rem;
   }
 }
 
 @media (max-width: 640px) {
+  .hero {
+    padding-block: 2.5rem 3rem;
+  }
+
   .hero__wrapper {
-    gap: 2rem;
+    gap: 1.5rem;
+  }
+
+  .hero__content {
+    gap: 1rem;
+  }
+
+  .hero__title {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .hero__description {
+    font-size: 1rem;
+  }
+
+  .hero__actions {
+    gap: 0.75rem;
   }
 
   .hero__banner-options {
     gap: 0.5rem;
   }
-  
-  
+
+  .hero__banner-chip {
+    padding: 0.3rem 0.7rem 0.3rem 0.4rem;
+    font-size: 0.8rem;
+  }
+
+  .hero__banner-thumb {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+
   .hero__quick-links {
     gap: 0.75rem;
+  }
+
+  .hero__stats {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+  }
+
+  .hero__stat {
+    padding: 0.85rem 1rem;
+  }
+
+  .hero__stat dd {
+    font-size: 1.8rem;
   }
 
   .partner-strip__grid {
     gap: 0.75rem;
     padding-bottom: 0.2rem;
   }
+
+  .app-header__inner {
+    padding-block: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-block: 2rem 2.5rem;
+  }
+
+  .hero__title {
+    font-size: 1.75rem;
+  }
+
+  .hero__description {
+    font-size: 0.95rem;
+  }
+
+  .meeting-card__title,
+  .tool-card__name {
+    font-size: 1.2rem;
+  }
+
+  .meeting-card__meta,
+  .tool-card__vendor {
+    font-size: 0.8rem;
+  }
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+  padding: 1rem 0;
+}
+
+.mobile-nav__title {
+  color: var(--text-color);
+  padding: 0 1rem;
+  border-bottom: 1px solid var(--nav-border);
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.mobile-nav__item {
+  margin: 0;
+}
+
+.mobile-nav__link {
+  display: block;
+  width: 100%;
+  padding: 0.875rem 1rem;
+  color: var(--text-color);
+  text-decoration: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 150ms ease, color 150ms ease;
+  border-radius: 0;
+  text-align: left;
+}
+
+.mobile-nav__link:hover,
+.mobile-nav__link:focus {
+  background-color: rgba(59, 130, 246, 0.08);
+  color: #1d4ed8;
+  outline: none;
+}
+
+.mobile-nav__link--active {
+  background-color: rgba(59, 130, 246, 0.12);
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+:root[data-theme='midnight'] .mobile-nav__link:hover,
+:root[data-theme='midnight'] .mobile-nav__link:focus {
+  background-color: rgba(148, 163, 184, 0.16);
+  color: #c7d2fe;
+}
+
+:root[data-theme='midnight'] .mobile-nav__link--active {
+  background-color: rgba(165, 180, 252, 0.2);
+  color: #c7d2fe;
 }
 
 .meeting-card,
@@ -713,9 +914,16 @@ a {
 
 .tools-dataview .p-dataview-content .p-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
-  gap: 1.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1.5rem;
   justify-items: stretch;
+}
+
+@media (max-width: 768px) {
+  .tools-dataview .p-dataview-content .p-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 
 .tools-dataview .p-dataview-content .p-grid > div {
@@ -730,11 +938,26 @@ a {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  padding: clamp(1.5rem, 2.5vw, 2rem);
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+@media (max-width: 640px) {
+  .meeting-card .p-card-body,
+  .tool-card .p-card-body,
+  .team-card .p-card-body {
+    gap: 1.25rem;
+    padding: 1.25rem;
+  }
 }
 
 .tool-card .p-card-body {
-  gap: clamp(1.65rem, 2.8vw, 2.1rem);
+  gap: clamp(1.4rem, 2.8vw, 2.1rem);
+}
+
+@media (max-width: 640px) {
+  .tool-card .p-card-body {
+    gap: 1.25rem;
+  }
 }
 
 .meeting-card__meta {
@@ -993,6 +1216,15 @@ code {
   border: 1px solid var(--nav-border);
   box-shadow: 0 6px 14px rgba(15, 23, 42, 0.08);
   transition: background 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+
+/* Mobile theme toggle - next to hamburger menu */
+@media (max-width: 1023px) {
+  .theme-toggle {
+    background: rgba(15, 23, 42, 0.06);
+    border: 1px solid var(--nav-border);
+    box-shadow: 0 6px 14px rgba(15, 23, 42, 0.08);
+  }
 }
 
 :root[data-theme='midnight'] .theme-toggle {

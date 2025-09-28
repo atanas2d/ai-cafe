@@ -55,18 +55,18 @@ export const ToolsPage = (): JSX.Element => {
 
   return (
     <div className="surface-section">
-      <header className="px-4 md:px-6 lg:px-8 py-5 surface-card shadow-1">
-        <h1 className="text-3xl font-bold mb-2">AI Tool Catalog</h1>
-        <p className="text-600 max-w-3xl">
+      <header className="px-3 md:px-6 lg:px-8 py-4 md:py-5 surface-card shadow-1">
+        <h1 className="text-2xl md:text-3xl font-bold mb-2">AI Tool Catalog</h1>
+        <p className="text-600 max-w-3xl text-sm md:text-base">
           Evaluated copilots, API platforms, and enablement tooling prioritized for secure rollout across the enterprise.
         </p>
-        <div className="flex flex-column md:flex-row gap-3 mt-4">
-          <span className="p-input-icon-left w-full md:w-20rem input-with-icon">
+        <div className="flex flex-column gap-3 mt-4">
+          <span className="p-input-icon-left w-full input-with-icon">
             <i className="pi pi-search" />
             <InputText
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search by name, description, or tag"
+              placeholder="Search tools..."
               className="w-full"
             />
           </span>
@@ -74,8 +74,8 @@ export const ToolsPage = (): JSX.Element => {
             value={category}
             options={[{ label: 'All categories', value: null }, ...categories.map(cat => ({ label: cat, value: cat }))]}
             onChange={(e) => setCategory(e.value)}
-            placeholder="Category"
-            className="w-full md:w-16rem"
+            placeholder="Filter by category"
+            className="w-full"
           />
         </div>
       </header>

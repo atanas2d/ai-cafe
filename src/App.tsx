@@ -6,7 +6,7 @@ import { MeetingsPage } from './pages/Meetings/MeetingsPage';
 import { ToolsPage } from './pages/Tools/ToolsPage';
 import { ResourcesPage } from './pages/Resources/ResourcesPage';
 import { NewsPage } from './pages/News/NewsPage';
-import { AnimationsPage } from './pages/Animations/AnimationsPage';
+import { AboutPage } from './pages/About/AboutPage';
 import { ProgressBar } from 'primereact/progressbar';
 import { Suspense } from 'react';
 import type { ThemeMode } from './theme/themeManager';
@@ -42,7 +42,7 @@ const App = (): JSX.Element => {
           <Route path="tools" element={<ToolsPage />} />
           <Route path="resources" element={<ResourcesPage />} />
           <Route path="news" element={<NewsPage />} />
-          <Route path="animations" element={<AnimationsPage />} />
+          <Route path="about" element={<AboutPage />} />
           <Route path="*" element={<HomePage />} />
         </Route>
       </Routes>
