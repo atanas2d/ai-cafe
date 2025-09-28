@@ -27,7 +27,7 @@ export const MainLayout = ({ onThemeChange, themeMode = 'classic' }: MainLayoutP
       { label: 'About', path: '/about' }
     ];
 
-    const navigationItems = navItems.map((item) => ({
+    const navigationItems: MenuItem[] = navItems.map((item) => ({
       label: item.label,
       command: () => {
         navigate(item.path);
@@ -53,7 +53,7 @@ export const MainLayout = ({ onThemeChange, themeMode = 'classic' }: MainLayoutP
           </div>
         </div>
       )
-    } as MenuItem);
+    });
 
     return navigationItems;
   }, [navigate, location.pathname, themeMode, onThemeChange]);
