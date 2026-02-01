@@ -24,6 +24,7 @@ export const MainLayout = ({ onThemeChange, themeMode = 'classic' }: MainLayoutP
       { label: 'Tools', path: '/tools' },
       { label: 'Resources', path: '/resources' },
       { label: 'AI News', path: '/news' },
+      { label: '📰 Digest', path: '/digest' },
       { label: 'About', path: '/about' }
     ];
 
