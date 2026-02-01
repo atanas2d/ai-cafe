@@ -145,81 +145,83 @@ const servicenowUpdates = [
 
 export const DigestPage = (): JSX.Element => {
     return (
-        <div className="surface-section">
+        <div className="surface-ground">
             {/* Hero Header */}
-            <header className="px-4 md:px-6 lg:px-8 py-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-                <div className="max-w-6xl mx-auto">
-                    <div className="flex items-center gap-2 mb-2">
-                        <i className="pi pi-bolt text-2xl"></i>
-                        <span className="text-sm font-semibold uppercase tracking-wider opacity-80">AI Cafe Digest</span>
+            <header className="px-4 py-6" style={{ background: 'linear-gradient(135deg, var(--primary-600) 0%, var(--purple-600) 100%)' }}>
+                <div className="mx-auto" style={{ maxWidth: '1200px' }}>
+                    <div className="flex align-items-center gap-2 mb-2">
+                        <i className="pi pi-bolt text-2xl text-white"></i>
+                        <span className="text-sm font-semibold uppercase text-white-alpha-80" style={{ letterSpacing: '0.1em' }}>AI Cafe Digest</span>
                     </div>
-                    <h1 className="text-4xl md:text-5xl font-bold mb-3">February 2026</h1>
-                    <p className="text-xl opacity-90 max-w-2xl">
+                    <h1 className="text-5xl font-bold text-white mb-3">February 2026</h1>
+                    <p className="text-xl text-white-alpha-90 line-height-3" style={{ maxWidth: '600px' }}>
                         AI Industry Pulse: Latest trends, hot topics, and what matters for your AI Buildathon
                     </p>
-                    <div className="flex gap-2 mt-4">
-                        <Tag value="8 News" icon="pi pi-newspaper" className="bg-white/20" />
-                        <Tag value="4 Trends" icon="pi pi-chart-line" className="bg-white/20" />
-                        <Tag value="ServiceNow Focus" icon="pi pi-server" className="bg-white/20" />
+                    <div className="flex gap-2 mt-4 flex-wrap">
+                        <Tag value="8 News" icon="pi pi-newspaper" style={{ background: 'rgba(255,255,255,0.2)', color: 'white' }} />
+                        <Tag value="4 Trends" icon="pi pi-chart-line" style={{ background: 'rgba(255,255,255,0.2)', color: 'white' }} />
+                        <Tag value="ServiceNow Focus" icon="pi pi-server" style={{ background: 'rgba(255,255,255,0.2)', color: 'white' }} />
                     </div>
                 </div>
             </header>
 
-            <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 py-8">
+            <div className="mx-auto px-4 py-5" style={{ maxWidth: '1200px' }}>
                 {/* Hot News Section */}
-                <section className="mb-10">
-                    <div className="flex items-center gap-3 mb-6">
+                <section className="mb-6">
+                    <div className="flex align-items-center gap-3 mb-4">
                         <i className="pi pi-fire text-2xl text-orange-500"></i>
-                        <h2 className="text-2xl font-bold">Hot This Week</h2>
-                        <span className="text-sm text-500">Jan 27 - Feb 1, 2026</span>
+                        <h2 className="text-2xl font-bold m-0">Hot This Week</h2>
+                        <span className="text-sm text-color-secondary">Jan 27 - Feb 1, 2026</span>
                     </div>
 
                     {/* Featured News (highlighted) */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div className="grid mb-4">
                         {hotNews.filter(n => n.highlight).map(news => (
-                            <Card key={news.id} className="border-2 border-orange-200 bg-orange-50">
-                                <div className="flex flex-col h-full">
-                                    <div className="flex items-center gap-2 mb-2">
-                                        <Tag value="🔥 HOT" severity="warning" />
-                                        <span className="text-xs text-500">{news.source} • {news.date}</span>
-                                    </div>
-                                    <h3 className="text-lg font-bold mb-2">{news.title}</h3>
-                                    <p className="text-sm text-600 flex-1">{news.summary}</p>
-                                    <div className="flex items-center justify-between mt-4">
-                                        <div className="flex gap-1">
-                                            {news.tags.map(tag => (
-                                                <Tag key={tag} value={tag} severity="info" className="text-xs" />
-                                            ))}
+                            <div key={news.id} className="col-12 md:col-6">
+                                <Card className="h-full border-2 border-orange-200" style={{ background: 'var(--orange-50)' }}>
+                                    <div className="flex flex-column h-full">
+                                        <div className="flex align-items-center gap-2 mb-2">
+                                            <Tag value="🔥 HOT" severity="warning" />
+                                            <span className="text-xs text-color-secondary">{news.source} • {news.date}</span>
                                         </div>
-                                        <a href={news.url} target="_blank" rel="noopener noreferrer" className="text-primary-500 text-sm font-medium hover:underline">
-                                            Read more →
-                                        </a>
+                                        <h3 className="text-lg font-bold mb-2 m-0">{news.title}</h3>
+                                        <p className="text-sm text-color-secondary flex-grow-1 line-height-3 m-0">{news.summary}</p>
+                                        <div className="flex align-items-center justify-content-between mt-3">
+                                            <div className="flex gap-1 flex-wrap">
+                                                {news.tags.map(tag => (
+                                                    <Tag key={tag} value={tag} severity="info" className="text-xs" />
+                                                ))}
+                                            </div>
+                                            <a href={news.url} target="_blank" rel="noopener noreferrer" className="text-primary font-medium no-underline hover:underline text-sm">
+                                                Read more →
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-                            </Card>
+                                </Card>
+                            </div>
                         ))}
                     </div>
 
                     {/* Regular News List */}
-                    <div className="space-y-3">
+                    <div className="flex flex-column gap-3">
                         {hotNews.filter(n => !n.highlight).map(news => (
-                            <div key={news.id} className="flex gap-4 p-4 surface-card border-round border-1 surface-border hover:surface-hover transition-colors">
-                                <div className="flex-1">
-                                    <div className="flex items-center gap-2 mb-1">
-                                        <span className="text-xs text-500">{news.source}</span>
-                                        <span className="text-xs text-400">•</span>
-                                        <span className="text-xs text-500">{news.date}</span>
+                            <div key={news.id} className="surface-card border-round border-1 surface-border p-3 flex gap-3 align-items-start hover:surface-hover">
+                                <div className="flex-grow-1" style={{ minWidth: 0 }}>
+                                    <div className="flex align-items-center gap-2 mb-1">
+                                        <span className="text-xs text-color-secondary">{news.source}</span>
+                                        <span className="text-xs text-color-secondary">•</span>
+                                        <span className="text-xs text-color-secondary">{news.date}</span>
                                     </div>
-                                    <h4 className="font-semibold mb-1">{news.title}</h4>
-                                    <p className="text-sm text-600 line-clamp-2">{news.summary}</p>
+                                    <h4 className="font-semibold m-0 mb-1">{news.title}</h4>
+                                    <p className="text-sm text-color-secondary m-0 line-height-3 white-space-nowrap overflow-hidden text-overflow-ellipsis" style={{ maxWidth: '100%' }}>{news.summary}</p>
                                 </div>
-                                <div className="flex flex-col items-end justify-between">
+                                <div className="flex flex-column align-items-end gap-2 flex-shrink-0">
                                     <div className="flex gap-1">
                                         {news.tags.slice(0, 2).map(tag => (
                                             <Tag key={tag} value={tag} className="text-xs" />
                                         ))}
                                     </div>
-                                    <a href={news.url} target="_blank" rel="noopener noreferrer" className="text-primary-500 text-xs hover:underline">
+                                    <a href={news.url} target="_blank" rel="noopener noreferrer" className="text-primary text-xs no-underline hover:underline">
                                         Read →
                                     </a>
                                 </div>
@@ -231,26 +233,27 @@ export const DigestPage = (): JSX.Element => {
                 <Divider />
 
                 {/* Trends Section */}
-                <section className="mb-10">
-                    <div className="flex items-center gap-3 mb-6">
+                <section className="mb-6">
+                    <div className="flex align-items-center gap-3 mb-4">
                         <i className="pi pi-chart-line text-2xl text-blue-500"></i>
-                        <h2 className="text-2xl font-bold">Key Trends</h2>
-                        <span className="text-sm text-500">January 2026</span>
+                        <h2 className="text-2xl font-bold m-0">Key Trends</h2>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid">
                         {trends.map((trend, idx) => (
-                            <Card key={idx} className="h-full">
-                                <div className="flex gap-4">
-                                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center">
-                                        <i className={`${trend.icon} text-xl text-primary-600`}></i>
+                            <div key={idx} className="col-12 md:col-6">
+                                <Card className="h-full">
+                                    <div className="flex gap-3 align-items-start">
+                                        <div className="flex-shrink-0 border-circle bg-primary-100 flex align-items-center justify-content-center" style={{ width: '48px', height: '48px' }}>
+                                            <i className={`${trend.icon} text-xl text-primary-600`}></i>
+                                        </div>
+                                        <div className="flex-grow-1" style={{ minWidth: 0 }}>
+                                            <h4 className="font-bold m-0 mb-2">{trend.title}</h4>
+                                            <p className="text-sm text-color-secondary m-0 line-height-3">{trend.description}</p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h4 className="font-bold mb-1">{trend.title}</h4>
-                                        <p className="text-sm text-600">{trend.description}</p>
-                                    </div>
-                                </div>
-                            </Card>
+                                </Card>
+                            </div>
                         ))}
                     </div>
                 </section>
@@ -258,21 +261,23 @@ export const DigestPage = (): JSX.Element => {
                 <Divider />
 
                 {/* ServiceNow Section */}
-                <section className="mb-10">
-                    <div className="flex items-center gap-3 mb-6">
+                <section className="mb-6">
+                    <div className="flex align-items-center gap-3 mb-4">
                         <i className="pi pi-server text-2xl text-green-500"></i>
-                        <h2 className="text-2xl font-bold">ServiceNow & Now Assist</h2>
+                        <h2 className="text-2xl font-bold m-0">ServiceNow & Now Assist</h2>
                         <Tag value="AI Buildathon" severity="success" />
                     </div>
 
-                    <Card className="bg-gradient-to-br from-green-50 to-blue-50">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <Card style={{ background: 'linear-gradient(135deg, var(--green-50) 0%, var(--blue-50) 100%)' }}>
+                        <div className="grid">
                             {servicenowUpdates.map((item, idx) => (
-                                <div key={idx} className="flex items-start gap-3">
-                                    <i className={`${item.icon} text-xl text-green-600`}></i>
-                                    <div>
-                                        <h5 className="font-semibold text-sm">{item.title}</h5>
-                                        <p className="text-xs text-600">{item.description}</p>
+                                <div key={idx} className="col-12 md:col-6 lg:col-3">
+                                    <div className="flex align-items-start gap-3">
+                                        <i className={`${item.icon} text-xl text-green-600 flex-shrink-0`}></i>
+                                        <div style={{ minWidth: 0 }}>
+                                            <h5 className="font-semibold m-0 mb-1 text-sm">{item.title}</h5>
+                                            <p className="text-xs text-color-secondary m-0 line-height-3">{item.description}</p>
+                                        </div>
                                     </div>
                                 </div>
                             ))}
@@ -281,25 +286,25 @@ export const DigestPage = (): JSX.Element => {
                         <Divider />
 
                         <div className="text-center">
-                            <h4 className="font-bold mb-2">🚀 AI Buildathon Opportunity</h4>
-                            <p className="text-sm text-600 mb-4">
+                            <h4 className="font-bold m-0 mb-2">🚀 AI Buildathon Opportunity</h4>
+                            <p className="text-sm text-color-secondary mb-4">
                                 Now Assist AI Skills = Your chance to build custom enterprise AI agents on the Now Platform
                             </p>
-                            <Button label="Explore Now Assist" icon="pi pi-external-link" className="p-button-sm" onClick={() => window.open('https://www.servicenow.com/now-platform/now-assist.html', '_blank')} />
+                            <Button label="Explore Now Assist" icon="pi pi-external-link" size="small" onClick={() => window.open('https://www.servicenow.com/now-platform/now-assist.html', '_blank')} />
                         </div>
                     </Card>
                 </section>
 
                 {/* Discussion Questions */}
                 <section>
-                    <Card className="bg-purple-50">
-                        <div className="flex items-center gap-3 mb-4">
+                    <Card style={{ background: 'var(--purple-50)' }}>
+                        <div className="flex align-items-center gap-3 mb-4">
                             <i className="pi pi-comments text-2xl text-purple-500"></i>
-                            <h3 className="text-xl font-bold">Discussion Questions</h3>
+                            <h3 className="text-xl font-bold m-0">Discussion Questions</h3>
                         </div>
-                        <ol className="list-decimal list-inside space-y-2 text-sm">
-                            <li>Which AI trend will have the biggest impact on your work?</li>
-                            <li>How can you leverage Now Assist AI Skills for automation?</li>
+                        <ol className="m-0 pl-4 line-height-3">
+                            <li className="mb-2">Which AI trend will have the biggest impact on your work?</li>
+                            <li className="mb-2">How can you leverage Now Assist AI Skills for automation?</li>
                             <li>What agentic workflows would you like to build?</li>
                         </ol>
                     </Card>
@@ -307,11 +312,11 @@ export const DigestPage = (): JSX.Element => {
             </div>
 
             {/* Footer */}
-            <footer className="px-4 md:px-6 lg:px-8 py-6 bg-gray-100 text-center">
-                <p className="text-sm text-600">
+            <footer className="px-4 py-5 surface-100 text-center">
+                <p className="text-sm text-color-secondary m-0">
                     Prepared by NasAI for AI Cafe • February 2026
                 </p>
-                <p className="text-xs text-400 mt-1">
+                <p className="text-xs text-color-secondary mt-2 m-0">
                     Sources: The Verge, Anthropic, ServiceNow Community, OpenAI
                 </p>
             </footer>
