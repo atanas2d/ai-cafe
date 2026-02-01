@@ -229,10 +229,55 @@ export const meetings: Meeting[] = [
     visibility: 'internal',
     createdAt: baseTimestamp('2025-12-01T09:00:00Z'),
     updatedAt: baseTimestamp('2025-12-18T17:30:00Z')
+  },
+  {
+    id: 'meet-2026-02-ai-trends',
+    meetingNumber: 9,
+    title: 'AI Industry Pulse: February 2026 Trends & Hot Topics',
+    date: baseTimestamp('2026-02-02T14:00:00Z'),
+    duration: 60,
+    description:
+      'Comprehensive overview of the latest AI developments including GPT-5 transition, Agentic AI rise, DeepSeek phenomenon, and ServiceNow Now Assist innovations relevant to our AI Buildathon.',
+    presenters: [
+      {
+        id: 'presenter-atanas',
+        name: 'Atanas Dimitrov',
+        role: 'Founder & Host',
+        department: 'Trane Technologies Innovation',
+        bio: 'Design leader exploring practical AI adoption across Trane & Nuvolo teams.'
+      }
+    ],
+    topics: [
+      'OpenAI GPT-4o retirement & GPT-5 era',
+      'Agentic AI: Anthropic Cowork, OpenClaw, Rabbit',
+      'DeepSeek & the efficiency race',
+      'ServiceNow Zurich & Now Assist AI Skills',
+      'AI Buildathon opportunities'
+    ],
+    tools: ['tool-openai-gpt', 'tool-claude-code', 'tool-google-gemini'],
+    recordings: [],
+    materials: [
+      {
+        type: 'document',
+        title: 'AI Trends February 2026 Presentation',
+        url: '/docs/AI-News-Presentation-Feb2026.md'
+      }
+    ],
+    attendeeCount: 0,
+    highlights: [
+      'GPT-4o retiring Feb 13 - only 0.1% still using it',
+      'Nvidia/OpenAI $100B deal on ice',
+      'Anthropic Cowork plugins for domain-specific agents',
+      'ServiceNow Zurich release with enhanced Now Assist',
+      'AI Buildathon: Now Assist AI Skills opportunity'
+    ],
+    visibility: 'public',
+    createdAt: baseTimestamp('2026-02-01T15:00:00Z'),
+    updatedAt: baseTimestamp('2026-02-01T15:00:00Z')
   }
 ];
 
 export const meetingsVersion = {
-  lastUpdated: baseTimestamp('2025-12-18T17:30:00Z'),
-  version: '2.0.0'
+  lastUpdated: baseTimestamp('2026-02-01T15:00:00Z'),
+  version: '2.1.0'
 };
